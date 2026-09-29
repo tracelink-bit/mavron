@@ -31,7 +31,7 @@ Node 20+ required.
 
 | Route | |
 | --- | --- |
-| `/` | Hero with the interactive M-Forge model, numbers, services, process, featured projects, culture, insights, CTA |
+| `/` | Cinematic homepage with the supplied M artwork in an interactive WebGL relief, scroll-responsive text, capabilities, and three project imagery panels |
 | `/about` | Story timeline, values, leadership, monogram, offices |
 | `/services` | Capability overview |
 | `/services/plumbing` · `/hvac-r` · `/vdc-bim` · `/prefabrication` · `/warranty-aftercare` · `/trade-partners` | Six service pages with capabilities, deliverables, related work and FAQs |
@@ -67,19 +67,17 @@ Node 20+ required.
 
 - Fonts self-hosted (`@fontsource-variable`) — no Google Fonts request, no
   render-blocking stylesheet, no layout shift
-- The LCP element is a 54 KB WebP still of the monogram. The ~1 MB 3D runtime
-  loads only when the canvas nears the viewport *and* the browser is idle, and
-  never at all for `prefers-reduced-motion` or browsers without WebGL
-- `model-viewer` is self-hosted under `/vendor` and cached immutably along with
-  the GLB
-- Shared first-load JS ≈ 102 KB; all content routes are statically pre-rendered
+- The homepage uses the supplied M artwork as its visual source. A lightweight
+  WebGL relief adds depth and responds to scrolling and pointer movement.
+  Motion can be paused, and reduced-motion users see the original still image.
+- Three generated editorial images are stored locally as compressed WebP files.
+- `model-viewer` remains self-hosted under `/vendor` for model content elsewhere.
 
 ## Accessibility
 
-Audited with axe-core (WCAG 2.1 A + AA) across all 20 routes at 1440px and
-390px: **zero violations**. The `steel-*` colour scale in `globals.css` is
-tuned so every step clears 4.5:1 against both the darkest and the lightest
-surface — check contrast before darkening any of it.
+The homepage includes a pause-motion control and honours
+`prefers-reduced-motion`. Keyboard navigation and contrast should be reviewed
+again whenever content or colours change.
 
 ## Structure
 
