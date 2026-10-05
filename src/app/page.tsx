@@ -38,6 +38,21 @@ export default function HomePage() {
       <div className="hero-index" aria-hidden="true">M / 01</div>
     </section>
 
+    <section className="services-marquee" aria-label="Mavron services">
+      <div className="services-marquee-track">
+        <ul className="services-marquee-set">
+          {services.map((service) => (
+            <li key={service.slug}><Link href={`/services/${service.slug}`}>{service.navLabel}</Link></li>
+          ))}
+        </ul>
+        <ul className="services-marquee-set" aria-hidden="true">
+          {services.map((service) => (
+            <li key={service.slug}><span>{service.navLabel}</span></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
     <section className="mav-capabilities home-pad" id="capabilities">
       <div className="section-label" data-reveal><span>01 / Our capabilities</span><span>Connected by design.</span></div>
       <h2 className="statement"><Words>Every system. Every connection. One accountable team.</Words></h2>
