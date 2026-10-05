@@ -6,16 +6,16 @@
  */
 
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mavronprotection.ca"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://mavron-blue.vercel.app"
 ).replace(/\/$/, "");
 
 export const site = {
-  name: "Mavron Protection Group",
+  name: "Mavron Mechanical Group",
   shortName: "Mavron",
-  legalName: "Mavron Protection Group Ltd.", // PLACEHOLDER
+  legalName: "Mavron Mechanical Group", // PLACEHOLDER — confirm registered legal name
   tagline: "Mechanical systems, built to hold.",
   description:
-    "Mavron Protection Group is a mechanical contractor delivering commercial plumbing, HVAC-R, VDC/BIM, prefabrication and lifetime aftercare across British Columbia.",
+    "Mavron Mechanical Group is a mechanical contractor delivering commercial plumbing, HVAC-R, VDC/BIM, prefabrication and lifetime aftercare across British Columbia.",
   founded: "2009", // PLACEHOLDER
   url: SITE_URL,
   email: "hello@mavronprotection.ca", // PLACEHOLDER

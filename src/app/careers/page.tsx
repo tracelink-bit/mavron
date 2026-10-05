@@ -13,7 +13,7 @@ const crumbs = [
 export const metadata: Metadata = pageMeta({
   title: "Careers — Mechanical Trades, VDC & Fabrication Jobs in BC",
   description:
-    "Open roles at Mavron Protection Group: journeyperson plumbers, HVAC-R technicians, VDC coordinators, fabrication welders, project managers and sponsored apprenticeships across British Columbia.",
+    "Open roles at Mavron Mechanical Group: journeyperson plumbers, HVAC-R technicians, VDC coordinators, fabrication welders, project managers and sponsored apprenticeships across British Columbia.",
   path: "/careers",
   keywords: [
     "plumber jobs Vancouver",

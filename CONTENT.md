@@ -40,6 +40,8 @@ same list inline.
 
 | Asset | Source |
 | --- | --- |
+| `public/brand/mavron-*.svg` | Scalable transparent black and white versions of the logo supplied by the client, including the full lockup, symbol and wordmark. |
+| `public/brand/mavron-logo-*-hd.png` | 3200 px transparent PNG exports of the supplied logo for high resolution use. |
 | `public/models/M-Forge-Animated.glb` | Your M-Forge build (10 s assembly animation) |
 | `public/models/M-Forge-Static.glb` | Assembled, no animation — spare |
 | `public/images/m-forge-hero.webp` | Studio render, resized and compressed to 54 KB |

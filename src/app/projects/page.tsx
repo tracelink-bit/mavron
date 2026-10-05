@@ -30,7 +30,7 @@ export default function ProjectsPage() {
       <JsonLd
         data={graph(breadcrumbSchema(crumbs), {
           "@type": "CollectionPage",
-          name: "Mavron Protection Group projects",
+          name: "Mavron Mechanical Group projects",
           hasPart: projects.map((p) => ({
             "@type": "CreativeWork",
             name: p.name,

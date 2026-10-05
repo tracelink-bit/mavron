@@ -39,7 +39,7 @@ export function Footer() {
                 rel="noopener noreferrer me"
                 target="_blank"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-sm border border-ink-600 text-steel-300 transition-colors hover:border-copper-500 hover:text-copper-300"
-                aria-label="Mavron Protection Group on LinkedIn"
+                aria-label="Mavron Mechanical Group on LinkedIn"
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.86V21h-4z" />
@@ -50,7 +50,7 @@ export function Footer() {
                 rel="noopener noreferrer me"
                 target="_blank"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-sm border border-ink-600 text-steel-300 transition-colors hover:border-copper-500 hover:text-copper-300"
-                aria-label="Mavron Protection Group on Instagram"
+                aria-label="Mavron Mechanical Group on Instagram"
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.17.4.36 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2a3.8 3.8 0 01-.9 1.38c-.42.42-.82.68-1.38.9-.4.17-1 .36-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42a3.8 3.8 0 01-1.38-.9 3.8 3.8 0 01-.9-1.38c-.17-.4-.36-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.4-.17 1-.36 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 3.4a6.4 6.4 0 100 12.8 6.4 6.4 0 000-12.8zm0 2.25a4.15 4.15 0 110 8.3 4.15 4.15 0 010-8.3zm6.65-3.9a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />

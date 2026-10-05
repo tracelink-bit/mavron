@@ -22,7 +22,7 @@ const crumbs = [
 export const metadata: Metadata = pageMeta({
   title: "About Us — Company, Leadership & Values",
   description:
-    "Mavron Protection Group started in 2009 with two vans and a rented bay. Today: 240 people, a 40,000 sq ft fabrication shop and three offices across British Columbia.",
+    "Mavron Mechanical Group started in 2009 with two vans and a rented bay. Today: 240 people, a 40,000 sq ft fabrication shop and three offices across British Columbia.",
   path: "/about",
   keywords: ["mechanical contractor history", "Mavron leadership", "BC mechanical company"],
 });
@@ -30,7 +30,7 @@ export const metadata: Metadata = pageMeta({
 export default function AboutPage() {
   return (
     <>
-      <JsonLd data={graph(breadcrumbSchema(crumbs), { "@type": "AboutPage", name: "About Mavron Protection Group" })} />
+      <JsonLd data={graph(breadcrumbSchema(crumbs), { "@type": "AboutPage", name: "About Mavron Mechanical Group" })} />
       <PageHero
         kicker="Company"
         title="Two vans, a rented bay, and a stubborn opinion about coordination."

@@ -13,7 +13,7 @@ const crumbs = [
 export const metadata: Metadata = pageMeta({
   title: "Contact — Start a Project, Careers & Partnerships",
   description:
-    "Three routes into Mavron Protection Group: start a project, careers, or partnerships. Offices in Burnaby, Victoria and Kelowna, serving all of British Columbia.",
+    "Three routes into Mavron Mechanical Group: start a project, careers, or partnerships. Offices in Burnaby, Victoria and Kelowna, serving all of British Columbia.",
   path: "/contact",
   keywords: [
     "mechanical contractor contact",
@@ -47,7 +47,7 @@ export default function ContactPage() {
       <JsonLd
         data={graph(breadcrumbSchema(crumbs), {
           "@type": "ContactPage",
-          name: "Contact Mavron Protection Group",
+          name: "Contact Mavron Mechanical Group",
         })}
       />
       <PageHero

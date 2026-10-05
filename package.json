@@ -1,8 +1,8 @@
 {
-  "name": "mavron-protection-group",
+  "name": "mavron-mechanical-group",
   "version": "1.0.0",
   "private": true,
-  "description": "Mavron Protection Group — mechanical contracting website.",
+  "description": "Mavron Mechanical Group — mechanical contracting website.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

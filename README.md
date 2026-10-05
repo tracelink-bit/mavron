@@ -1,6 +1,6 @@
-# Mavron Protection Group
+# Mavron Mechanical Group
 
-Marketing site for Mavron Protection Group — a mechanical contractor
+Marketing site for Mavron Mechanical Group — a mechanical contractor
 delivering plumbing, HVAC-R, VDC/BIM, prefabrication, aftercare and
 coordinated trade scopes.
 

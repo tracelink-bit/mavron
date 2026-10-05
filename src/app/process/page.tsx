@@ -30,7 +30,7 @@ export default function ProcessPage() {
           "@type": "HowTo",
           name: "The Mavron Method",
           description:
-            "How Mavron Protection Group delivers a mechanical scope, from early planning through to aftercare.",
+            "How Mavron Mechanical Group delivers a mechanical scope, from early planning through to aftercare.",
           step: processSteps.map((s, i) => ({
             "@type": "HowToStep",
             position: i + 1,

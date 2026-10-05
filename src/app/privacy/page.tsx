@@ -12,7 +12,7 @@ const crumbs = [
 export const metadata: Metadata = pageMeta({
   title: "Privacy Policy",
   description:
-    "How Mavron Protection Group collects, uses, stores and protects personal information, and how to exercise your privacy rights under PIPA and PIPEDA.",
+    "How Mavron Mechanical Group collects, uses, stores and protects personal information, and how to exercise your privacy rights under PIPA and PIPEDA.",
   path: "/privacy",
 });
 

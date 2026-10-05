@@ -29,7 +29,7 @@ export default function ServicesPage() {
       <JsonLd
         data={graph(breadcrumbSchema(crumbs), {
           "@type": "ItemList",
-          name: "Mavron Protection Group capabilities",
+          name: "Mavron Mechanical Group capabilities",
           itemListElement: services.map((s, i) => ({
             "@type": "ListItem",
             position: i + 1,

@@ -28,24 +28,23 @@ export default async function OgImage() {
               width: 64,
               height: 64,
               borderRadius: 6,
-              background: "linear-gradient(135deg, #d1362f, #7f1410)",
-              border: "2px solid #c87137",
+              background: "#08090b",
+              border: "2px solid #45494b",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#f2ab6b",
-              fontSize: 40,
-              fontWeight: 800,
             }}
           >
-            M
+            <svg width="50" height="34" viewBox="0 0 450 295" fill="none" aria-hidden="true">
+              <path fill="#ffffff" d="M7,6 76,6 223,122 229,121 372,6 443,8 438,17 438,50 221,185 77,289 7,289 43,259 176,166 73,87 73,214 7,249Z M432,84 435,84 435,122 439,125 439,289 373,289 372,173 307,214 229,214Z" />
+            </svg>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{ color: "#f5f6f8", fontSize: 28, fontWeight: 800, letterSpacing: -0.5 }}>
               MAVRON
             </span>
             <span style={{ color: "#9aa2ad", fontSize: 15, letterSpacing: 5 }}>
-              PROTECTION GROUP
+              MECHANICAL GROUP
             </span>
           </div>
         </div>

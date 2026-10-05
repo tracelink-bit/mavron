@@ -28,7 +28,7 @@ export const services: Service[] = [
     navLabel: "Plumbing",
     summary:
       "Water supply, gas piping, drainage and wastewater — designed, prefabricated and installed by our own crews.",
-    metaTitle: "Commercial Plumbing Contractor | Mavron Protection Group",
+    metaTitle: "Commercial Plumbing Contractor | Mavron Mechanical Group",
     metaDescription:
       "Commercial plumbing across BC: potable water supply, natural gas piping, drainage and wastewater systems, mechanical design, preconstruction, installation and maintenance.",
     heroLine: "Every litre accounted for.",

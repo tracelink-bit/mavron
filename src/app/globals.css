@@ -235,6 +235,11 @@
 }
 
 /* Mavron homepage — cinematic industrial direction. */
+.brand-logo {display:inline-flex;align-items:center;gap:9px;flex-shrink:0;line-height:0;transition:opacity .2s ease;}
+.brand-logo:hover {opacity:.8;}
+.brand-logo:focus-visible {outline:2px solid #e8635c;outline-offset:5px;}
+.brand-logo-mark {width:44px;height:auto;flex-shrink:0;}
+.brand-logo-wordmark {width:160px;height:auto;flex-shrink:0;}
 .mav-home { --home-red:#db1c14; --home-muted:#979797; background:#030303; color:#eee; position:relative; isolation:isolate; overflow:clip; font-weight:350; }
 .mav-home h1,.mav-home h2,.mav-home h3 {font-family:var(--font-sans);font-weight:350;letter-spacing:-.055em;text-wrap:initial;}
 .home-pad {padding-inline:clamp(22px,2.4vw,64px);}
@@ -374,7 +379,7 @@
 .image-card-bottom {position:absolute;bottom:35px;left:30px;right:30px;}
 .image-card-bottom .small-label {color:#ddd;}
 .image-card-bottom p {font-size:clamp(23px,2.4vw,50px);line-height:1.13;letter-spacing:-.035em;margin-top:15px;}
-.mav-home-footer {position:relative;min-height:800px;padding-top:60px;}
+.mav-home-footer {position:relative;z-index:4;min-height:800px;padding-top:60px;background:#030303;}
 .footer-top {border-top:1px solid #303030;padding-top:28px;display:grid;grid-template-columns:1fr 1fr 230px;gap:5%;}
 .back-top {display:flex;align-items:center;gap:12px;font-size:11px;align-self:start;}
 .back-top .round-arrow {width:32px;height:32px;border-color:#444;}
@@ -384,6 +389,7 @@
 .footer-main {display:grid;grid-template-columns:1fr 1fr;min-height:550px;align-items:center;gap:30px;}
 .footer-wordmark {font-size:15px;font-weight:600;letter-spacing:.02em;align-self:end;padding-bottom:80px;}
 .footer-wordmark>span {display:block;font-size:8px;color:#999;letter-spacing:.2em;margin-top:4px;}
+.home-footer-brand {width:210px;height:auto;align-self:end;margin-bottom:73px;}
 .footer-cta {max-width:620px;}
 .footer-cta h2 {font-size:clamp(42px,4vw,86px);line-height:1.08;margin-bottom:28px;}
 .footer-legal {display:flex;justify-content:space-between;gap:20px;border-top:1px solid #262626;padding:27px 0;font-size:10px;color:#a0a0a0;}
@@ -403,5 +409,6 @@
  .mav-method{height:960px;min-height:0;padding-top:65px}.method-title{max-width:100%;font-size:43px;margin-top:40px;line-height:1.13}.method-copy{width:70%;right:22px;bottom:83px}.method-copy>p{font-size:30px}.method-copy .muted{font-size:13px}.method-footnote{bottom:27px;font-size:9px;left:22px}.mav-benefits{margin:0 12px 12px;padding:35px 22px 25px}.benefits-heading h2{font-size:52px;margin-top:36px}.benefits-heading h2>span:first-child{margin-left:0}.benefits-heading h2>span:last-child{margin-left:18%}.benefits-list{width:100%;max-width:100%;margin:65px 0 55px}.benefits-list li{gap:17px;margin-bottom:36px}.benefits-list .circle-number{width:36px;height:36px;font-size:16px}.benefits-list h3{font-size:21px}.benefits-list p{font-size:13px;margin-top:8px}.benefits-bottom{font-size:9px;gap:20px}.benefits-bottom>span{max-width:150px}.benefits-bottom a{gap:10px;white-space:nowrap}
  .home-image-grid{grid-template-columns:1fr;padding-inline:12px}.home-image-card{height:560px}.image-card-top{left:22px;right:22px;top:24px}.image-card-top h2{font-size:44px}.image-card-bottom{left:22px;right:22px;bottom:28px}.image-card-bottom p{font-size:31px}.mav-home-footer{min-height:820px;padding-top:42px}.footer-top{grid-template-columns:1fr 1fr;gap:30px 18px}.footer-contact-intro{grid-column:1/-1;grid-row:2}.footer-contact-intro>a{font-size:17px}.footer-top nav{font-size:11px;gap:9px 16px}.footer-main{min-height:460px;display:flex;justify-content:flex-end}.footer-wordmark{display:none}.footer-cta{width:72%;padding-bottom:40px}.footer-cta h2{font-size:38px}.footer-legal{font-size:8px;gap:14px;flex-wrap:wrap;padding-bottom:55px}.footer-legal>span:first-child{width:100%}.motion-toggle{bottom:10px;right:10px}.motion-toggle>span{display:none}
 }
+@media(max-width:767px) {.home-footer-brand{display:none}.brand-logo-mark{width:38px}.brand-logo-wordmark{width:145px}}
 @media(prefers-reduced-motion:reduce) {.motion-enabled [data-reveal]{opacity:1;transform:none}.hero-title>span{animation:none}.scroll-word{opacity:1!important;transform:none!important}.motion-toggle{display:none}.mav-home *{scroll-behavior:auto!important}.services-marquee{overflow-x:auto}.services-marquee-track{animation:none;will-change:auto}.services-marquee-set[aria-hidden="true"]{display:none}.people-carousel-track{transition:none!important;will-change:auto}}
 .statement,.method-title {position:relative;z-index:4;}
