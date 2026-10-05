@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { HomeMotion } from "@/components/HomeMotion";
+import { PeopleCarousel } from "@/components/PeopleCarousel";
 import { JsonLd } from "@/components/JsonLd";
 import { services } from "@/content/services";
 import { graph, pageMeta, faqSchema } from "@/lib/seo";
@@ -69,6 +70,8 @@ export default function HomePage() {
       <div className="story-bottom" data-reveal><p>We bring the thinking, the craft and the follow-through to complex mechanical projects.</p><SplitLink href="/about" outline>Meet Mavron</SplitLink></div>
       <span className="photo-caption">Precision at every scale.</span>
     </section>
+
+    <PeopleCarousel />
 
     <section className="mav-method home-pad" id="method">
       <div className="section-label" data-reveal><span>02 / The Mavron method</span><span>Think ahead. Build better.</span></div>
