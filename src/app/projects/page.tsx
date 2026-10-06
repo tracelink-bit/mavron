@@ -12,10 +12,11 @@ const crumbs = [
 ];
 
 export const metadata: Metadata = pageMeta({
-  title: "Projects — Residential, Commercial, Institutional & Special",
+  title: "Project Concepts — Residential, Commercial, Institutional & Special",
   description:
-    "Mechanical projects delivered by Mavron across British Columbia: residential towers, commercial campuses, healthcare, arenas and below-grade transit infrastructure.",
+    "Illustrative mechanical project concepts across residential, commercial, healthcare, arena and transit settings.",
   path: "/projects",
+  noIndex: true,
   keywords: [
     "mechanical construction projects BC",
     "high rise plumbing project",
@@ -42,7 +43,7 @@ export default function ProjectsPage() {
       <PageHero
         kicker="Projects"
         title="Towers, plant rooms, hospitals and holes in the ground."
-        lead="Every project below is a mechanical scope we designed, coordinated, fabricated and installed — filtered by sector and by where it currently stands."
+        lead="Explore the kinds of mechanical challenges we build for. These project concepts and images are illustrative; real Mavron case studies will replace them."
       />
       <Breadcrumbs items={crumbs} />
       <Section>

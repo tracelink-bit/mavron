@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
@@ -34,6 +35,9 @@ export function ProjectGallery({ projects }: { projects: Project[] }) {
 
   return (
     <div>
+      <p className="mb-8 max-w-3xl border-l-2 border-copper-500 pl-4 text-sm leading-relaxed text-steel-300">
+        These are illustrative project concepts. The images and project details are examples, not photographs or records of completed Mavron work.
+      </p>
       <div className="flex flex-col gap-5 border-b border-ink-700 pb-8">
         <div className="flex flex-wrap items-center gap-2">
           <span className="mr-2 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-steel-500">
@@ -70,7 +74,7 @@ export function ProjectGallery({ projects }: { projects: Project[] }) {
       </div>
 
       <p aria-live="polite" className="mt-6 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-steel-500">
-        {visible.length} {visible.length === 1 ? "project" : "projects"}
+        {visible.length} {visible.length === 1 ? "project concept" : "project concepts"}
       </p>
 
       {visible.length === 0 ? (
@@ -83,8 +87,21 @@ export function ProjectGallery({ projects }: { projects: Project[] }) {
             <Link
               key={p.slug}
               href={`/projects/${p.slug}`}
-              className="surface surface-hover group flex flex-col rounded-sm p-6 md:p-7"
+              className="surface surface-hover group flex flex-col overflow-hidden rounded-sm"
             >
+              <div className="relative aspect-[3/2] overflow-hidden bg-ink-800">
+                <Image
+                  src={p.image}
+                  alt={p.imageAlt}
+                  fill
+                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                />
+                <span className="absolute bottom-3 left-3 rounded-sm bg-ink-950/80 px-2 py-1 font-mono text-[0.58rem] uppercase tracking-[0.12em] text-steel-100 backdrop-blur-sm">
+                  Illustrative image
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col p-6 md:p-7">
               <div className="flex items-center justify-between gap-3">
                 <span className="font-mono text-[0.62rem] uppercase tracking-[0.16em] text-copper-400">
                   {p.sector}
@@ -110,6 +127,7 @@ export function ProjectGallery({ projects }: { projects: Project[] }) {
                   </li>
                 ))}
               </ul>
+              </div>
             </Link>
           ))}
         </div>

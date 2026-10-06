@@ -35,11 +35,15 @@ export type Project = {
   stats: { label: string; value: string }[];
   services: string[];
   accent: string;
+  image: string;
+  imageAlt: string;
 };
 
 export const projects: Project[] = [
   {
     slug: "meridian-tower",
+    image: "/images/projects/meridian-tower.webp",
+    imageAlt: "Residential tower under construction with exposed mechanical services on its lower floors",
     name: "Meridian Tower",
     sector: "Residential",
     status: "Complete",
@@ -69,6 +73,8 @@ export const projects: Project[] = [
   },
   {
     slug: "cascadia-exchange",
+    image: "/images/projects/cascadia-exchange.webp",
+    imageAlt: "Heat-recovery equipment, pumps and pipework inside a commercial mechanical plant room",
     name: "Cascadia Exchange",
     sector: "Commercial",
     status: "Complete",
@@ -98,6 +104,8 @@ export const projects: Project[] = [
   },
   {
     slug: "fraser-health-pavilion",
+    image: "/images/projects/fraser-health-pavilion.webp",
+    imageAlt: "Hospital pavilion construction with installed ductwork beside an existing healthcare building",
     name: "Fraser Health Pavilion",
     sector: "Institutional",
     status: "In construction",
@@ -127,6 +135,8 @@ export const projects: Project[] = [
   },
   {
     slug: "harbourline-transit",
+    image: "/images/projects/harbourline-transit.webp",
+    imageAlt: "Underground transit construction with tunnel ventilation equipment and exposed concrete",
     name: "Harbourline Transit Exchange",
     sector: "Special Projects",
     status: "In construction",
@@ -156,6 +166,8 @@ export const projects: Project[] = [
   },
   {
     slug: "northfield-ice-centre",
+    image: "/images/projects/northfield-ice-centre.webp",
+    imageAlt: "Community ice arena seen from the concourse with overhead ventilation and an empty rink",
     name: "Northfield Ice Centre",
     sector: "Institutional",
     status: "Complete",
@@ -185,6 +197,8 @@ export const projects: Project[] = [
   },
   {
     slug: "alder-quay-residences",
+    image: "/images/projects/alder-quay-residences.webp",
+    imageAlt: "Mid-rise residential building under construction beside a coastal waterfront",
     name: "Alder Quay Residences",
     sector: "Residential",
     status: "In design",

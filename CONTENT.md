@@ -15,6 +15,7 @@ same list inline.
 | `src/content/company.ts` → `leadership` | Real names, roles, bios, initials. Add photos if you have them. |
 | `src/content/company.ts` → `jobs` | Live vacancies only. **Delete roles you are not hiring for** — they emit `JobPosting` structured data and Google indexes them. |
 | `src/content/projects.ts` | Every project. `client` and `value` are literal `PLACEHOLDER` strings. |
+| `public/images/projects/*.webp` | Six AI-generated illustrative concept images. Replace each with consented, accurate project photography when real case studies are provided. |
 | `.env.local` | `NEXT_PUBLIC_SITE_URL` must be the real production origin before the first deploy — it drives canonicals, the sitemap and all JSON-LD `@id` values. |
 
 ## 2. Important — true but unverified
