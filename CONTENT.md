@@ -17,6 +17,7 @@ same list inline.
 | `src/content/projects.ts` | Every project. `client` and `value` are literal `PLACEHOLDER` strings. |
 | `public/images/projects/*.webp` | Six AI-generated illustrative concept images. Replace each with consented, accurate project photography when real case studies are provided. |
 | `public/images/services/*.webp` | Six AI-generated illustrative capability images, edited for natural documentary lighting. Replace with consented Mavron photography when available. |
+| `public/images/insights/*.webp` | Six AI-generated illustrative editorial images for the articles. They do not document real Mavron jobsites, projects or employees. Replace with consented, accurate photographs when available. |
 | `.env.local` | `NEXT_PUBLIC_SITE_URL` must be the real production origin before the first deploy — it drives canonicals, the sitemap and all JSON-LD `@id` values. |
 
 ## 2. Important — true but unverified

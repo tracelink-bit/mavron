@@ -16,6 +16,8 @@ export function pageMeta({
   type = "website",
   publishedTime,
   noIndex = false,
+  image,
+  imageAlt,
 }: {
   title: string;
   description: string;
@@ -24,6 +26,8 @@ export function pageMeta({
   type?: "website" | "article";
   publishedTime?: string;
   noIndex?: boolean;
+  image?: string;
+  imageAlt?: string;
 }): Metadata {
   const url = `${SITE_URL}${path === "/" ? "" : path}`;
   return {
@@ -51,14 +55,16 @@ export function pageMeta({
       description,
       siteName: site.name,
       locale: "en_CA",
-      images: [{ url: OG.default, width: OG.width, height: OG.height, alt: site.name }],
+      images: image
+        ? [{ url: image, alt: imageAlt ?? title }]
+        : [{ url: OG.default, width: OG.width, height: OG.height, alt: site.name }],
       ...(publishedTime ? { publishedTime } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [OG.default],
+      images: [image ?? OG.default],
     },
   };
 }
@@ -230,12 +236,14 @@ export function articleSchema({
   slug,
   date,
   author,
+  image,
 }: {
   title: string;
   description: string;
   slug: string;
   date: string;
   author: string;
+  image?: string;
 }) {
   return {
     "@type": "Article",
@@ -246,7 +254,7 @@ export function articleSchema({
     dateModified: date,
     author: { "@type": "Organization", name: author, url: SITE_URL },
     publisher: { "@id": ORG_ID },
-    image: `${SITE_URL}${OG.default}`,
+    image: `${SITE_URL}${image ?? OG.default}`,
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/insights/${slug}` },
     inLanguage: "en-CA",
   };

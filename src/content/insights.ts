@@ -16,6 +16,8 @@ export type Insight = {
   author: string;
   excerpt: string;
   metaDescription: string;
+  image: string;
+  imageAlt: string;
   body: InsightBlock[];
 };
 
@@ -38,6 +40,8 @@ export const insights: Insight[] = [
       "The business case for off-site fabrication is usually written in dollars. The stronger case is written in hours spent at height.",
     metaDescription:
       "Why mechanical prefabrication should be justified as a safety programme first: fewer hours at height, fewer hot works, and more consistent QA.",
+    image: "/images/insights/prefabrication-safety.webp",
+    imageAlt: "Tradesperson assembling a pipe spool at bench height in a mechanical fabrication shop",
     body: [
       {
         type: "p",
@@ -93,6 +97,8 @@ export const insights: Insight[] = [
       "A 4,000-clash report proves the model was tested. It proves nothing about whether the building can be built.",
     metaDescription:
       "Why clash closure records matter more than clash counts in mechanical VDC coordination, and what a functioning coordination cadence looks like.",
+    image: "/images/insights/clash-closure.webp",
+    imageAlt: "Mechanical coordinators reviewing duct and pipe routes in a building services model",
     body: [
       {
         type: "p",
@@ -140,6 +146,8 @@ export const insights: Insight[] = [
       "Swapping a boiler for a heat pump without rethinking distribution temperatures is how an electrification project quietly fails.",
     metaDescription:
       "Electrification and heat-pump conversions require low-temperature hydronic distribution. Why the distribution strategy, not the plant, decides the outcome.",
+    image: "/images/insights/hydronic-electrification.webp",
+    imageAlt: "Heat-pump equipment and hydronic pipework in a commercial mechanical plant room",
     body: [
       {
         type: "p",
@@ -187,6 +195,8 @@ export const insights: Insight[] = [
       "Four hundred and eighty prefabricated suite pods, 126 riser stacks, and a mechanical scope that came off the critical path at level nine.",
     metaDescription:
       "Project update from Mavron: mechanical scope complete at Meridian Tower, Burnaby — 480 prefabricated suite pods and 126 riser stacks.",
+    image: "/images/insights/mechanical-completion.webp",
+    imageAlt: "Illustrative high-rise mechanical floor with installed risers and workers in the distance",
     body: [
       {
         type: "p",
@@ -225,6 +235,8 @@ export const insights: Insight[] = [
       "Reality capture is sold as a documentation tool. On below-grade work it is a risk instrument.",
     metaDescription:
       "How scan-to-BIM and reality capture reduce risk on below-grade mechanical installation, from as-built verification to fabrication release.",
+    image: "/images/insights/laser-scanning.webp",
+    imageAlt: "Tripod-mounted laser scanner measuring a below-grade mechanical corridor",
     body: [
       {
         type: "p",
@@ -268,6 +280,8 @@ export const insights: Insight[] = [
       "Two years of shop rotation before the field looks slow. It produces tradespeople who understand why the assembly is shaped the way it is.",
     metaDescription:
       "Mavron's apprenticeship model: shop rotations before field placement, and why fabrication-first training produces better mechanical tradespeople.",
+    image: "/images/insights/apprentice-shop.webp",
+    imageAlt: "Apprentice and mentor measuring a pipe assembly together in a fabrication shop",
     body: [
       {
         type: "p",

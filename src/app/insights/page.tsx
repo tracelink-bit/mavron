@@ -38,6 +38,7 @@ export default function InsightsPage() {
             url: `${SITE_URL}/insights/${i.slug}`,
             datePublished: i.date,
             description: i.excerpt,
+            image: `${SITE_URL}${i.image}`,
           })),
         })}
       />
