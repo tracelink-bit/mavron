@@ -1,7 +1,7 @@
 # Mavron Mechanical Group
 
 Marketing site for Mavron Mechanical Group — a mechanical contractor
-delivering plumbing, HVAC-R, VDC/BIM, prefabrication, aftercare and
+delivering HVAC-R, plumbing, VDC/BIM, prefabrication, aftercare and
 coordinated trade scopes.
 
 Built with **Next.js 15 (App Router)**, **TypeScript** and **Tailwind CSS v4**.
@@ -34,7 +34,7 @@ Node 20+ required.
 | `/` | Cinematic homepage with the supplied M artwork in an interactive WebGL relief, scroll-responsive text, capabilities, and three project imagery panels |
 | `/about` | Story timeline, values, leadership, monogram, offices |
 | `/services` | Capability overview |
-| `/services/plumbing` · `/hvac-r` · `/vdc-bim` · `/prefabrication` · `/warranty-aftercare` · `/trade-partners` | Six service pages with capabilities, deliverables, related work and FAQs |
+| `/services/hvac-r` · `/services/plumbing` · `/services/vdc-bim` · `/services/prefabrication` · `/services/warranty-aftercare` · `/services/trade-partners` | Six service pages with capabilities, deliverables, related work and FAQs |
 | `/process` | The Mavron Method — six stages with outputs |
 | `/projects` | Filterable gallery (sector × status) |
 | `/projects/[slug]` | Case study: challenge, approach, outcome, numbers |

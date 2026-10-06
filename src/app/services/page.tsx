@@ -12,7 +12,7 @@ const crumbs = [
 export const metadata: Metadata = pageMeta({
   title: "Capabilities — Mechanical Contracting Services",
   description:
-    "Six mechanical scopes under one accountable contractor: commercial plumbing, HVAC-R, VDC/BIM, prefabrication, warranty and aftercare, and coordinated trade partners.",
+    "Six mechanical scopes under one accountable contractor: HVAC-R, commercial plumbing, VDC/BIM, prefabrication, warranty and aftercare, and coordinated trade partners.",
   path: "/services",
   keywords: [
     "mechanical contracting services",
@@ -51,6 +51,8 @@ export default function ServicesPage() {
             <Card
               key={s.slug}
               href={`/services/${s.slug}`}
+              image={s.image}
+              imageAlt={s.imageAlt}
               eyebrow={s.navLabel}
               title={s.heroLine}
               body={s.summary}

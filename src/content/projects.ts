@@ -51,7 +51,7 @@ export const projects: Project[] = [
     year: "2024",
     client: "PLACEHOLDER Developer",
     value: "PLACEHOLDER $M",
-    scope: ["Plumbing", "HVAC-R", "VDC / BIM", "Prefabrication"],
+    scope: ["HVAC-R", "Plumbing", "VDC / BIM", "Prefabrication"],
     summary:
       "A 42-storey residential tower delivered with fully prefabricated suite pods and floor-by-floor riser stacks.",
     metaDescription:
@@ -68,7 +68,7 @@ export const projects: Project[] = [
       { label: "Prefabricated pods", value: "480" },
       { label: "Riser stacks set", value: "126" },
     ],
-    services: ["plumbing", "hvac-r", "vdc-bim", "prefabrication"],
+    services: ["hvac-r", "plumbing", "vdc-bim", "prefabrication"],
     accent: "forge",
   },
   {
@@ -113,7 +113,7 @@ export const projects: Project[] = [
     year: "2026",
     client: "PLACEHOLDER Health Authority",
     value: "PLACEHOLDER $M",
-    scope: ["Plumbing", "HVAC-R", "Prefabrication", "Warranty & Aftercare"],
+    scope: ["HVAC-R", "Plumbing", "Prefabrication", "Warranty & Aftercare"],
     summary:
       "An acute-care pavilion built alongside a live hospital, with medical gas, isolation ventilation and zero tolerance for disruption.",
     metaDescription:
@@ -130,7 +130,7 @@ export const projects: Project[] = [
       { label: "Prefab corridor racks", value: "310" },
       { label: "Unplanned outages", value: "0" },
     ],
-    services: ["plumbing", "hvac-r", "prefabrication", "warranty-aftercare"],
+    services: ["hvac-r", "plumbing", "prefabrication", "warranty-aftercare"],
     accent: "steel",
   },
   {
@@ -206,7 +206,7 @@ export const projects: Project[] = [
     year: "2027",
     client: "PLACEHOLDER Developer",
     value: "PLACEHOLDER $M",
-    scope: ["Plumbing", "HVAC-R", "VDC / BIM"],
+    scope: ["HVAC-R", "Plumbing", "VDC / BIM"],
     summary:
       "An all-electric mid-rise on a design-assist route, with central heat pumps and a hydronic strategy set during design development.",
     metaDescription:
@@ -223,7 +223,7 @@ export const projects: Project[] = [
       { label: "Plant", value: "All-electric" },
       { label: "Route", value: "Design-assist" },
     ],
-    services: ["plumbing", "hvac-r", "vdc-bim"],
+    services: ["hvac-r", "plumbing", "vdc-bim"],
     accent: "steel",
   },
 ];

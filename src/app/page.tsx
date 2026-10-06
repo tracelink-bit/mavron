@@ -11,7 +11,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = pageMeta({
   title: "Mechanical Contractor in British Columbia",
   description: "Mavron Mechanical Group designs, models, prefabricates, installs and maintains complete mechanical systems across British Columbia.",
-  path: "/", keywords: ["mechanical contractor BC", "commercial plumbing", "HVAC-R", "VDC BIM", "prefabrication"],
+  path: "/", keywords: ["mechanical contractor BC", "HVAC-R", "commercial plumbing", "VDC BIM", "prefabrication"],
 });
 
 function Arrow({className=""}:{className?:string}) { return <svg className={className} width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" strokeWidth="1.4" /></svg>; }
@@ -27,7 +27,7 @@ const benefits = [
 
 export default function HomePage() {
   return <HomeMotion>
-    <JsonLd data={graph(faqSchema([{q:"What does Mavron do?",a:"Mavron delivers plumbing, HVAC-R, VDC/BIM, prefabrication and lifetime aftercare across British Columbia."}]))}/>
+    <JsonLd data={graph(faqSchema([{q:"What does Mavron do?",a:"Mavron delivers HVAC-R, plumbing, VDC/BIM, prefabrication and lifetime aftercare across British Columbia."}]))}/>
     <section className="mav-hero" id="top" aria-labelledby="hero-title">
       <div className="hero-location"><span className="status-dot"/>Mechanical contracting · British Columbia</div>
       <div className="hero-outline" aria-hidden="true" />
@@ -60,7 +60,7 @@ export default function HomePage() {
       <div className="service-columns">
         {[services.slice(0,3),services.slice(3,6)].map((column,c)=><div className="service-column" key={c}>{column.map((s,i)=><Link href={`/services/${s.slug}`} className="service-row" key={s.slug} data-reveal><div className="service-row-title"><span className="circle-number">0{c*3+i+1}</span><h3>{s.navLabel}</h3><Arrow/></div><div className="service-row-description"><span>Expertise</span><p>{s.summary}</p></div></Link>)}</div>)}
       </div>
-      <div className="capabilities-note" data-reveal><p>From plumbing and climate control to digitally coordinated fabrication. The details work together. So do we.</p><Link href="/services" className="square-arrow" aria-label="Explore all services"><Arrow/></Link></div>
+      <div className="capabilities-note" data-reveal><p>From climate control and plumbing to digitally coordinated fabrication. The details work together. So do we.</p><Link href="/services" className="square-arrow" aria-label="Explore all services"><Arrow/></Link></div>
     </section>
 
     <section className="mav-story" id="our-story">

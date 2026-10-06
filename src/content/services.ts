@@ -8,6 +8,8 @@ export type Service = {
   slug: string;
   name: string;
   navLabel: string;
+  image: string;
+  imageAlt: string;
   summary: string;
   metaTitle: string;
   metaDescription: string;
@@ -23,85 +25,9 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: "plumbing",
-    name: "Commercial Plumbing",
-    navLabel: "Plumbing",
-    summary:
-      "Water supply, gas piping, drainage and wastewater — designed, prefabricated and installed by our own crews.",
-    metaTitle: "Commercial Plumbing Contractor | Mavron Mechanical Group",
-    metaDescription:
-      "Commercial plumbing across BC: potable water supply, natural gas piping, drainage and wastewater systems, mechanical design, preconstruction, installation and maintenance.",
-    heroLine: "Every litre accounted for.",
-    intro:
-      "Plumbing is the scope that gets blamed when something goes wrong three years after handover. So we treat it as a permanent installation rather than a rough-in. Mavron designs, fabricates and installs the complete wet scope — supply, gas, drainage and waste — with our own tradespeople and our own shop, which means one accountable party from the first coordination model to the last pressure test.",
-    capabilities: [
-      {
-        title: "Potable water supply",
-        body: "Service entries, booster sets, pressure zoning, recirculation, backflow prevention and full domestic distribution for high-rise and horizontal builds.",
-      },
-      {
-        title: "Natural gas & fuel piping",
-        body: "Metered services, rooftop distribution, boiler and generator feeds, seismic restraint, purging and certified pressure testing.",
-      },
-      {
-        title: "Drainage & wastewater",
-        body: "Sanitary and storm systems, grease and oil interceptors, sump and ejector packages, trap priming and acoustic isolation where it matters.",
-      },
-      {
-        title: "Design & preconstruction",
-        body: "Design-assist and design-build routes, budget modelling, constructability review and value engineering before the first pipe is cut.",
-      },
-      {
-        title: "Installation",
-        body: "Self-performed installation by ticketed plumbers and apprentices, sequenced against the fabrication schedule rather than against hope.",
-      },
-      {
-        title: "Maintenance",
-        body: "Planned maintenance, recommissioning and reactive service for buildings we built and buildings we inherited.",
-      },
-    ],
-    sections: [
-      {
-        heading: "Designed once, built twice",
-        body: "Every system is modelled to installation tolerance before it reaches the floor. That model drives the fabrication drawings, the spool tickets, the hanger layouts and the field survey points — so the pipe that arrives on site was already installed, digitally, weeks earlier.",
-        points: [
-          "Coordinated to the federated model, not to a 2D riser diagram",
-          "Spool-level fabrication tickets with QR-tracked delivery",
-          "Hanger and sleeve layouts set out from model coordinates",
-          "Pressure-test records captured against the same part IDs",
-        ],
-      },
-      {
-        heading: "Where it earns its keep",
-        body: "Wet scopes fail at the joints between trades: the penetration nobody fire-stopped, the riser that clashes with structure on level 14, the interceptor specified for half the load. Model-first plumbing removes those failure points before they exist, and our warranty team — not a subcontractor's — is the one that answers when they don't.",
-      },
-    ],
-    deliverables: [
-      "Coordinated plumbing model (LOD 350–400)",
-      "Fabrication and spool drawings",
-      "Prefabricated risers, water-entry and pump packages",
-      "Pressure-test and chlorination records",
-      "As-built model and O&M handover pack",
-    ],
-    sectors: ["Residential towers", "Commercial", "Institutional", "Healthcare"],
-    faqs: [
-      {
-        q: "Do you self-perform plumbing installation?",
-        a: "Yes. Plumbing installation is performed by Mavron's own ticketed plumbers and apprentices. We do not subcontract the core wet scope, which is what lets us stand behind the warranty without pointing at somebody else.",
-      },
-      {
-        q: "Can you take a project on design-assist rather than hard bid?",
-        a: "Design-assist is our preferred route. Bringing our preconstruction and VDC teams in during design development typically removes the largest cost surprises before drawings are issued for tender.",
-      },
-      {
-        q: "Do you handle gas piping and certification?",
-        a: "We install and test natural gas and fuel piping to code, including purging and certified pressure testing, with documentation issued as part of the handover pack.",
-      },
-    ],
-    relatedProjects: ["meridian-tower", "fraser-health-pavilion"],
-  },
-  {
     slug: "hvac-r",
+    image: "/images/services/hvac-r.webp",
+    imageAlt: "Heat-pump and air-handling equipment on a commercial rooftop beneath an overcast sky",
     name: "HVAC-R",
     navLabel: "HVAC-R",
     summary:
@@ -179,7 +105,89 @@ export const services: Service[] = [
     relatedProjects: ["cascadia-exchange", "northfield-ice-centre"],
   },
   {
+    slug: "plumbing",
+    image: "/images/services/plumbing.webp",
+    imageAlt: "Copper water lines, valves and circulation pumps in a commercial plumbing plant room",
+    name: "Commercial Plumbing",
+    navLabel: "Plumbing",
+    summary:
+      "Water supply, gas piping, drainage and wastewater — designed, prefabricated and installed by our own crews.",
+    metaTitle: "Commercial Plumbing Contractor | Mavron Mechanical Group",
+    metaDescription:
+      "Commercial plumbing across BC: potable water supply, natural gas piping, drainage and wastewater systems, mechanical design, preconstruction, installation and maintenance.",
+    heroLine: "Every litre accounted for.",
+    intro:
+      "Plumbing is the scope that gets blamed when something goes wrong three years after handover. So we treat it as a permanent installation rather than a rough-in. Mavron designs, fabricates and installs the complete wet scope — supply, gas, drainage and waste — with our own tradespeople and our own shop, which means one accountable party from the first coordination model to the last pressure test.",
+    capabilities: [
+      {
+        title: "Potable water supply",
+        body: "Service entries, booster sets, pressure zoning, recirculation, backflow prevention and full domestic distribution for high-rise and horizontal builds.",
+      },
+      {
+        title: "Natural gas & fuel piping",
+        body: "Metered services, rooftop distribution, boiler and generator feeds, seismic restraint, purging and certified pressure testing.",
+      },
+      {
+        title: "Drainage & wastewater",
+        body: "Sanitary and storm systems, grease and oil interceptors, sump and ejector packages, trap priming and acoustic isolation where it matters.",
+      },
+      {
+        title: "Design & preconstruction",
+        body: "Design-assist and design-build routes, budget modelling, constructability review and value engineering before the first pipe is cut.",
+      },
+      {
+        title: "Installation",
+        body: "Self-performed installation by ticketed plumbers and apprentices, sequenced against the fabrication schedule rather than against hope.",
+      },
+      {
+        title: "Maintenance",
+        body: "Planned maintenance, recommissioning and reactive service for buildings we built and buildings we inherited.",
+      },
+    ],
+    sections: [
+      {
+        heading: "Designed once, built twice",
+        body: "Every system is modelled to installation tolerance before it reaches the floor. That model drives the fabrication drawings, the spool tickets, the hanger layouts and the field survey points — so the pipe that arrives on site was already installed, digitally, weeks earlier.",
+        points: [
+          "Coordinated to the federated model, not to a 2D riser diagram",
+          "Spool-level fabrication tickets with QR-tracked delivery",
+          "Hanger and sleeve layouts set out from model coordinates",
+          "Pressure-test records captured against the same part IDs",
+        ],
+      },
+      {
+        heading: "Where it earns its keep",
+        body: "Wet scopes fail at the joints between trades: the penetration nobody fire-stopped, the riser that clashes with structure on level 14, the interceptor specified for half the load. Model-first plumbing removes those failure points before they exist, and our warranty team — not a subcontractor's — is the one that answers when they don't.",
+      },
+    ],
+    deliverables: [
+      "Coordinated plumbing model (LOD 350–400)",
+      "Fabrication and spool drawings",
+      "Prefabricated risers, water-entry and pump packages",
+      "Pressure-test and chlorination records",
+      "As-built model and O&M handover pack",
+    ],
+    sectors: ["Residential towers", "Commercial", "Institutional", "Healthcare"],
+    faqs: [
+      {
+        q: "Do you self-perform plumbing installation?",
+        a: "Yes. Plumbing installation is performed by Mavron's own ticketed plumbers and apprentices. We do not subcontract the core wet scope, which is what lets us stand behind the warranty without pointing at somebody else.",
+      },
+      {
+        q: "Can you take a project on design-assist rather than hard bid?",
+        a: "Design-assist is our preferred route. Bringing our preconstruction and VDC teams in during design development typically removes the largest cost surprises before drawings are issued for tender.",
+      },
+      {
+        q: "Do you handle gas piping and certification?",
+        a: "We install and test natural gas and fuel piping to code, including purging and certified pressure testing, with documentation issued as part of the handover pack.",
+      },
+    ],
+    relatedProjects: ["meridian-tower", "fraser-health-pavilion"],
+  },
+  {
     slug: "vdc-bim",
+    image: "/images/services/vdc-bim.webp",
+    imageAlt: "Mechanical coordination model, plans and laser scanner in an active construction workspace",
     name: "VDC / BIM",
     navLabel: "VDC / BIM",
     summary:
@@ -258,6 +266,8 @@ export const services: Service[] = [
   },
   {
     slug: "prefabrication",
+    image: "/images/services/prefabrication.webp",
+    imageAlt: "Prefabricated pipe rack assembled on stands inside a working fabrication shop",
     name: "Prefabrication",
     navLabel: "Prefabrication",
     summary:
@@ -336,6 +346,8 @@ export const services: Service[] = [
   },
   {
     slug: "warranty-aftercare",
+    image: "/images/services/warranty-aftercare.webp",
+    imageAlt: "Maintenance technician inspecting mechanical equipment in a commercial plant room",
     name: "Warranty & Aftercare",
     navLabel: "Warranty & Aftercare",
     summary:
@@ -414,6 +426,8 @@ export const services: Service[] = [
   },
   {
     slug: "trade-partners",
+    image: "/images/services/trade-partners.webp",
+    imageAlt: "Construction tradespeople coordinating ductwork, pipework and cable trays on site",
     name: "Trade Partners",
     navLabel: "Trade Partners",
     summary:

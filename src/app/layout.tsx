@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   category: "Construction",
   keywords: [
     "mechanical contractor",
-    "commercial plumbing",
     "HVAC-R contractor",
+    "commercial plumbing",
     "VDC BIM coordination",
     "mechanical prefabrication",
     "British Columbia",

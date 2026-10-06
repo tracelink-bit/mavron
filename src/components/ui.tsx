@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -244,18 +245,31 @@ export function Card({
   title,
   body,
   footer,
+  image,
+  imageAlt,
 }: {
   href: string;
   eyebrow?: string;
   title: string;
   body: string;
   footer?: ReactNode;
+  image?: string;
+  imageAlt?: string;
 }) {
   return (
     <Link
       href={href}
-      className="surface surface-hover group flex flex-col rounded-sm p-6 md:p-7"
+      className={`surface surface-hover group flex flex-col overflow-hidden rounded-sm ${image ? "" : "p-6 md:p-7"}`}
     >
+      {image && (
+        <div className="relative aspect-[3/2] overflow-hidden bg-ink-800">
+          <Image src={image} alt={imageAlt ?? ""} fill sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.025]" />
+          <span className="absolute bottom-3 left-3 rounded-sm bg-ink-950/80 px-2 py-1 font-mono text-[0.58rem] uppercase tracking-[0.12em] text-steel-100 backdrop-blur-sm">
+            Illustrative image
+          </span>
+        </div>
+      )}
+      <div className={image ? "flex flex-1 flex-col p-6 md:p-7" : "flex flex-1 flex-col"}>
       {eyebrow && (
         <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-copper-400">
           {eyebrow}
@@ -271,6 +285,7 @@ export function Card({
           <path d="M2 7h10M8 3l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </span>
+      </div>
     </Link>
   );
 }

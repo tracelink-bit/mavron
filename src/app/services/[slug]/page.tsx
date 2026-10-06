@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
@@ -78,7 +79,18 @@ export default async function ServicePage({
       <PageHero kicker={service.navLabel} title={service.heroLine} lead={service.summary} />
       <Breadcrumbs items={crumbs} />
 
-      <Section>
+      <Section className="!py-10 md:!py-14">
+        <figure>
+          <div className="relative aspect-[3/2] overflow-hidden rounded-sm bg-ink-800 md:aspect-[2.15]">
+            <Image src={service.image} alt={service.imageAlt} fill priority sizes="(max-width: 767px) 100vw, 85vw" className="object-cover" />
+          </div>
+          <figcaption className="mt-3 text-xs leading-relaxed text-steel-400">
+            Illustrative image showing the {service.navLabel} scope. This is not a photograph of a Mavron jobsite.
+          </figcaption>
+        </figure>
+      </Section>
+
+      <Section className="!pt-0">
         <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
           <div>
             <p className="text-lg leading-relaxed text-steel-200">{service.intro}</p>

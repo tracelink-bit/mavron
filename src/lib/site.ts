@@ -15,7 +15,7 @@ export const site = {
   legalName: "Mavron Mechanical Group", // PLACEHOLDER — confirm registered legal name
   tagline: "Mechanical systems, built to hold.",
   description:
-    "Mavron Mechanical Group is a mechanical contractor delivering commercial plumbing, HVAC-R, VDC/BIM, prefabrication and lifetime aftercare across British Columbia.",
+    "Mavron Mechanical Group is a mechanical contractor delivering HVAC-R, commercial plumbing, VDC/BIM, prefabrication and lifetime aftercare across British Columbia.",
   founded: "2009", // PLACEHOLDER
   url: SITE_URL,
   email: "hello@mavronprotection.ca", // PLACEHOLDER
@@ -117,8 +117,8 @@ export const primaryNav: NavItem[] = [
     href: "/services",
     children: [
       { label: "All Services", href: "/services", blurb: "The full mechanical scope" },
-      { label: "Plumbing", href: "/services/plumbing", blurb: "Water, gas, drainage" },
       { label: "HVAC-R", href: "/services/hvac-r", blurb: "Heating, cooling, refrigeration" },
+      { label: "Plumbing", href: "/services/plumbing", blurb: "Water, gas, drainage" },
       { label: "VDC / BIM", href: "/services/vdc-bim", blurb: "Model-first coordination" },
       { label: "Prefabrication", href: "/services/prefabrication", blurb: "Built in the shop" },
       { label: "Warranty & Aftercare", href: "/services/warranty-aftercare", blurb: "After handover" },
@@ -135,8 +135,8 @@ export const footerNav = [
   {
     heading: "Capabilities",
     links: [
-      { label: "Plumbing", href: "/services/plumbing" },
       { label: "HVAC-R", href: "/services/hvac-r" },
+      { label: "Plumbing", href: "/services/plumbing" },
       { label: "VDC / BIM", href: "/services/vdc-bim" },
       { label: "Prefabrication", href: "/services/prefabrication" },
       { label: "Warranty & Aftercare", href: "/services/warranty-aftercare" },

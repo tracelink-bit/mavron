@@ -63,7 +63,7 @@ export default async function OgImage() {
             Mechanical systems, built to hold.
           </span>
           <span style={{ color: "#c3c9d1", fontSize: 26, marginTop: 24, maxWidth: 880 }}>
-            Plumbing · HVAC-R · VDC/BIM · Prefabrication · Aftercare
+            HVAC-R · Plumbing · VDC/BIM · Prefabrication · Aftercare
           </span>
         </div>
 
