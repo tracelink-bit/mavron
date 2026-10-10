@@ -49,6 +49,8 @@ same list inline.
 | `public/models/M-Forge-Static.glb` | Assembled, no animation — spare |
 | `public/images/m-forge-hero.webp` | Studio render, resized and compressed to 54 KB |
 | `public/images/m-forge-exploded.webp` | Exploded render, 67 KB — used on About |
+| `public/videos/mavron-home-hero.mp4` | Web-optimized, silent copy of the user-supplied `Sequence 05.mp4` for the homepage hero. The source remains in Downloads. |
+| `public/images/mavron-home-video-poster.webp` | First-scene poster shown before playback and when visitors prefer reduced motion. |
 | `public/images/people/*.webp` | Six AI-generated illustrative portraits for the homepage carousel. They represent service disciplines, not actual Mavron employees. Replace with consented staff photography when available. |
 | `public/vendor/model-viewer.min.js` | @google/model-viewer 4.1.0, BSD-3-Clause, self-hosted |
 | `src/app/icon.svg` | Favicon drawn to match the monogram |

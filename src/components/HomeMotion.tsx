@@ -9,7 +9,24 @@ const mix=(a:number,b:number,t:number)=>a+(b-a)*t;
 
 export function HomeMotion({children}:{children:React.ReactNode}) {
   const root=useRef<HTMLDivElement>(null), sculpture=useRef<HTMLDivElement>(null), canvas=useRef<HTMLCanvasElement>(null);
-  const [paused,setPaused]=useState(false);
+  const heroVideo=useRef<HTMLVideoElement>(null), videoLoaded=useRef(false);
+  const [paused,setPaused]=useState(false), [loadVideo,setLoadVideo]=useState(false);
+  useEffect(()=> {
+    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer=window.setTimeout(()=>setLoadVideo(true),300);
+    return()=>window.clearTimeout(timer);
+  },[]);
+  useEffect(()=> {
+    const video=heroVideo.current;
+    if(!loadVideo || !video) return;
+    if(!videoLoaded.current){video.load();videoLoaded.current=true;}
+    const media=window.matchMedia("(prefers-reduced-motion: reduce)");
+    const sync=()=>{if(paused || media.matches || document.hidden)video.pause();else void video.play().catch(()=>{});};
+    sync();
+    media.addEventListener("change",sync);
+    document.addEventListener("visibilitychange",sync);
+    return()=>{media.removeEventListener("change",sync);document.removeEventListener("visibilitychange",sync);};
+  },[loadVideo,paused]);
   useEffect(()=> {
     const el=root.current, figure=sculpture.current, surface=canvas.current;
     if(!el||!figure||!surface) return;
@@ -64,11 +81,17 @@ export function HomeMotion({children}:{children:React.ReactNode}) {
     return()=>{cancelAnimationFrame(frame);observer.disconnect();renderer?.dispose();media.removeEventListener("change",change);window.removeEventListener("pointermove",move);document.removeEventListener("visibilitychange",visibility);};
   },[paused]);
   return <div ref={root} className={`mav-home ${paused?"motion-paused":""}`}>
+    <div className="mav-hero-video" aria-hidden="true">
+      <video ref={heroVideo} autoPlay={loadVideo&&!paused} muted loop playsInline preload="none" poster="/images/mavron-home-video-poster.webp">
+        {loadVideo && <source src="/videos/mavron-home-hero.mp4" type="video/mp4" />}
+      </video>
+      <div className="mav-hero-video-shade" />
+    </div>
     <div ref={sculpture} className="mav-sculpture" role="img" aria-label="Mavron red metal M, animated in perspective from the supplied artwork">
       <div className="mav-sculpture-fallback"><Image src="/images/mavron-original.png" alt="" fill priority sizes="70vw" /></div>
       <canvas ref={canvas} aria-hidden="true" />
     </div>
     {children}
-    <button className="motion-toggle" onClick={()=>setPaused(v=>!v)} aria-pressed={paused} aria-label={paused?"Resume M animation":"Pause M animation"}>{paused?"▶":"Ⅱ"}<span>{paused?"Resume motion":"Pause motion"}</span></button>
+    <button className="motion-toggle" onClick={()=>setPaused(v=>!v)} aria-pressed={paused} aria-label={paused?"Resume homepage motion":"Pause homepage motion"}>{paused?"▶":"Ⅱ"}<span>{paused?"Resume motion":"Pause motion"}</span></button>
   </div>;
 }
