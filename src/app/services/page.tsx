@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
-import { Breadcrumbs, ButtonLink, Card, CTABand, PageHero, Section, SectionHead } from "@/components/ui";
+import { ServicesMotion } from "@/components/ServicesMotion";
 import { services } from "@/content/services";
 import { breadcrumbSchema, graph, pageMeta } from "@/lib/seo";
+import styles from "./services.module.css";
 
 const crumbs = [
   { label: "Home", href: "/" },
@@ -30,73 +33,117 @@ export default function ServicesPage() {
         data={graph(breadcrumbSchema(crumbs), {
           "@type": "ItemList",
           name: "Mavron Mechanical Group capabilities",
-          itemListElement: services.map((s, i) => ({
+          itemListElement: services.map((service, index) => ({
             "@type": "ListItem",
-            position: i + 1,
-            name: s.name,
-            url: `/services/${s.slug}`,
+            position: index + 1,
+            name: service.name,
+            url: `/services/${service.slug}`,
           })),
         })}
       />
-      <PageHero
-        kicker="Capabilities"
-        title="Six scopes. One accountable contractor."
-        lead="We design, model, fabricate, install and maintain complete mechanical systems. Taking all six scopes means the seams between them are ours to solve rather than ours to argue about."
-      />
-      <Breadcrumbs items={crumbs} />
 
-      <Section>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <Card
-              key={s.slug}
-              href={`/services/${s.slug}`}
-              image={s.image}
-              imageAlt={s.imageAlt}
-              eyebrow={s.navLabel}
-              title={s.heroLine}
-              body={s.summary}
-              footer={`Explore ${s.navLabel}`}
-            />
-          ))}
-        </div>
-      </Section>
+      <div id="mav-services" className={styles.page}>
+        <ServicesMotion />
 
-      <Section tone="raised">
-        <SectionHead
-          kicker="Why one contractor"
-          title="The seam is where buildings fail."
-          lead="A penetration nobody fire-stopped. A riser that clashes with structure on level fourteen. An interceptor sized for half the load. None of these are hard engineering problems — they are ownership problems, and they only appear where one party's scope ends and another's begins."
-        />
-        <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-ink-700 bg-ink-700 md:grid-cols-3">
-          {[
-            {
-              t: "One coordination model",
-              b: "Every scope we carry — including partner scopes — lives in the same federated model with the same sign-off gates and the same issue log.",
-            },
-            {
-              t: "One fabrication release",
-              b: "Coordination closure releases to our own shop. Shop output and field installation stay on the same version of the truth.",
-            },
-            {
-              t: "One warranty route",
-              b: "After handover, every scope routes through our standing aftercare team. The owner never has to identify which subcontractor owns a problem.",
-            },
-          ].map((x) => (
-            <div key={x.t} className="bg-ink-900 p-7">
-              <h3 className="text-base font-semibold text-copper-300">{x.t}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-steel-400">{x.b}</p>
+        <section className={styles.hero} aria-labelledby="services-title">
+          <div className={styles.heroRing} aria-hidden="true" />
+          <div className={styles.heroInner}>
+            <div className={styles.heroTitleBlock}>
+              <p className={styles.heroKicker}>Mavron capabilities</p>
+              <h1 id="services-title" className={styles.heroTitle}>
+                Built together.<br />
+                <span>Built to last.</span>
+              </h1>
             </div>
-          ))}
-        </div>
-        <div className="mt-10">
-          <ButtonLink href="/process" variant="ghost">
-            How we run a project
-          </ButtonLink>
-        </div>
-      </Section>
+            <div className={styles.heroAside}>
+              <p>Six mechanical capabilities. One accountable team. Explore how every scope connects from model to maintenance.</p>
+              <a href="#hvac-r" className={styles.textLink}>
+                View capabilities <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+          <nav className={styles.breadcrumb} aria-label="Breadcrumb">
+            <Link href="/">Home</Link><span aria-hidden="true">/</span><span aria-current="page">Capabilities</span>
+          </nav>
+        </section>
 
-      <CTABand />
+        <section className={styles.catalog} aria-label="Mechanical capabilities">
+          <aside className={styles.catalogIntro}>
+            <div className={styles.introContent}>
+              <p className={styles.overline}>Complete mechanical delivery</p>
+              <h2>Everything<br />works <em>together.</em></h2>
+              <div className={styles.redRule} aria-hidden="true" />
+              <p className={styles.introLead}>
+                From heating and plumbing to digital coordination, fabrication and aftercare, Mavron carries the work as one connected mechanical scope.
+              </p>
+              <p className={styles.introSecondary}>
+                One model. One fabrication release. One team that answers after handover.
+              </p>
+            </div>
+            <a href="#hvac-r" className={styles.introExplore}>
+              Explore capabilities <span aria-hidden="true">↓</span>
+            </a>
+          </aside>
+
+          <div className={styles.panels}>
+            {services.map((service, index) => (
+              <article
+                id={service.slug}
+                key={service.slug}
+                className={styles.panel}
+                data-service-panel
+                aria-labelledby={`${service.slug}-title`}
+              >
+                <Image
+                  src={service.image}
+                  alt={service.imageAlt}
+                  fill
+                  sizes="(min-width: 1000px) 50vw, 100vw"
+                  priority={index === 0}
+                  className={styles.panelImage}
+                />
+                <div className={styles.panelShade} aria-hidden="true" />
+                <nav className={styles.panelDots} aria-label="Capability sections">
+                  {services.map((item, itemIndex) => (
+                    <a
+                      key={item.slug}
+                      href={`#${item.slug}`}
+                      aria-label={`Jump to ${item.name}`}
+                      aria-current={itemIndex === index ? "location" : undefined}
+                      className={itemIndex === index ? styles.activeDot : styles.dot}
+                    />
+                  ))}
+                </nav>
+                <div className={styles.panelCopy}>
+                  <div className={styles.panelMeta}>
+                    <span className={styles.panelIcon} aria-hidden="true">M</span>
+                    <span>{String(index + 1).padStart(2, "0")} / {String(services.length).padStart(2, "0")}</span>
+                    <span className={styles.panelMetaRule} aria-hidden="true" />
+                    <span>{service.navLabel}</span>
+                  </div>
+                  <h3 id={`${service.slug}-title`}>{service.name}</h3>
+                  <p>{service.summary}</p>
+                  <Link href={`/services/${service.slug}`} className={styles.panelLink}>
+                    Explore capability <span aria-hidden="true">↗</span>
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.closing} aria-labelledby="closing-title">
+          <div>
+            <p className={styles.overline}>One contractor. Every connection.</p>
+            <h2 id="closing-title">The seams are<br /><em>ours to solve.</em></h2>
+          </div>
+          <div className={styles.closingAside}>
+            <p>Every scope lives in the same coordination model, releases through the same fabrication process and routes back to Mavron for aftercare.</p>
+            <Link href="/contact" className={styles.closingButton}>Start a project <span aria-hidden="true">↗</span></Link>
+            <Link href="/process" className={styles.closingSecondary}>See how we work <span aria-hidden="true">↗</span></Link>
+          </div>
+        </section>
+      </div>
     </>
   );
 }
