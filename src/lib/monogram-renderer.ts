@@ -59,13 +59,13 @@ export function createMonogramRenderer(canvas: HTMLCanvasElement, ready: () => v
   const angle=gl.getUniformLocation(program,"rotation"), aspect=gl.getUniformLocation(program,"aspect"), layer=gl.getUniformLocation(program,"layer");
   gl.enable(gl.BLEND); gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
   gl.clearColor(0,0,0,0);
-  let loaded=false, disposed=false;
+  let loaded=false, disposed=false, firstFrameDrawn=false;
   const img=new Image();
   img.onload=()=> {
     if(disposed) return;
     gl.bindTexture(gl.TEXTURE_2D,texture); gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);
     gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);
-    loaded=true; ready();
+    loaded=true;
   };
   img.src="/images/mavron-original.png";
   return {
@@ -77,6 +77,7 @@ export function createMonogramRenderer(canvas: HTMLCanvasElement, ready: () => v
       gl.clear(gl.COLOR_BUFFER_BIT); gl.uniform1f(aspect,w/h); gl.uniform3f(angle,x,y,z);
       // Thin repeated silhouettes give the photograph volume while preserving its face.
       for(let i=8;i>=0;i--) {gl.uniform1f(layer,-i*.012);gl.drawArrays(gl.TRIANGLES,0,vertices.length/2);}
+      if(!firstFrameDrawn) {firstFrameDrawn=true;ready();}
     },
     dispose() {disposed=true;img.onload=null;gl.deleteBuffer(buffer);gl.deleteTexture(texture);gl.deleteProgram(program);shaders.forEach(s=>gl.deleteShader(s));}
   };

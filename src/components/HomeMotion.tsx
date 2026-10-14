@@ -88,7 +88,7 @@ export function HomeMotion({children}:{children:React.ReactNode}) {
       <div className="mav-hero-video-shade" />
     </div>
     <div ref={sculpture} className="mav-sculpture" role="img" aria-label="Mavron red metal M, animated in perspective from the supplied artwork">
-      <div className="mav-sculpture-fallback"><Image src="/images/mavron-original.png" alt="" fill priority sizes="70vw" /></div>
+      <div className="mav-sculpture-fallback"><Image src="/brand/mavron-mark-white.svg" alt="" fill priority sizes="70vw" /></div>
       <canvas ref={canvas} aria-hidden="true" />
     </div>
     {children}
