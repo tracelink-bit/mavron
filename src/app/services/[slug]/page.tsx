@@ -143,11 +143,28 @@ export default async function ServicePage({
       <Section tone="raised">
         <SectionHead kicker="Inside the scope" title={`What ${service.navLabel} covers`} />
         <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-ink-700 bg-ink-700 sm:grid-cols-2 lg:grid-cols-3">
-          {service.capabilities.map((c) => (
-            <div key={c.title} className="bg-ink-900 p-7">
-              <h3 className="text-base font-semibold text-steel-50">{c.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-steel-400">{c.body}</p>
-            </div>
+          {service.capabilities.map((c, index) => (
+            <article key={c.title} className="group flex flex-col bg-ink-900">
+              {c.image && (
+                <div className="relative aspect-[8/5] overflow-hidden bg-ink-800">
+                  <Image
+                    src={c.image}
+                    alt={c.imageAlt ?? c.title}
+                    fill
+                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                  <span className="absolute bottom-3 left-4 bg-ink-950/75 px-2 py-1 font-mono text-[0.58rem] uppercase tracking-[0.12em] text-steel-100 backdrop-blur-sm">
+                    Illustrative image
+                  </span>
+                </div>
+              )}
+              <div className="flex-1 p-7">
+                {c.image && <span className="mb-5 block font-mono text-[0.62rem] tracking-[0.16em] text-copper-400">0{index + 1} / 0{service.capabilities.length}</span>}
+                <h3 className="text-base font-semibold text-steel-50">{c.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-steel-400">{c.body}</p>
+              </div>
+            </article>
           ))}
         </div>
       </Section>

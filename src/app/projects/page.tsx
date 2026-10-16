@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { ProjectGallery } from "@/components/ProjectGallery";
-import { Breadcrumbs, CTABand, PageHero, Section } from "@/components/ui";
 import { projects } from "@/content/projects";
 import { SITE_URL } from "@/lib/site";
 import { breadcrumbSchema, graph, pageMeta } from "@/lib/seo";
+import styles from "./projects.module.css";
 
 const crumbs = [
   { label: "Home", href: "/" },
@@ -31,7 +32,7 @@ export default function ProjectsPage() {
       <JsonLd
         data={graph(breadcrumbSchema(crumbs), {
           "@type": "CollectionPage",
-          name: "Mavron Mechanical Group projects",
+          name: "Mavron Mechanical Group project concepts",
           hasPart: projects.map((p) => ({
             "@type": "CreativeWork",
             name: p.name,
@@ -40,19 +41,40 @@ export default function ProjectsPage() {
           })),
         })}
       />
-      <PageHero
-        kicker="Projects"
-        title="Towers, plant rooms, hospitals and holes in the ground."
-        lead="Explore the kinds of mechanical challenges we build for. These project concepts and images are illustrative; real Mavron case studies will replace them."
-      />
-      <Breadcrumbs items={crumbs} />
-      <Section>
+
+      <main id="mav-projects" className={styles.page}>
+        <section className={styles.hero} aria-labelledby="projects-title">
+          <div className={styles.heroRing} aria-hidden="true" />
+          <div className={styles.heroInner}>
+            <div className={styles.heroTitleBlock}>
+              <p className={styles.overline}>Mavron project concepts</p>
+              <h1 id="projects-title" className={styles.heroTitle}>
+                Built for the<br /><span>complex.</span>
+              </h1>
+            </div>
+            <div className={styles.heroAside}>
+              <p>Mechanical work across towers, plant rooms, healthcare spaces and infrastructure. See how the scopes connect.</p>
+              <a href="#project-gallery" className={styles.textLink}>Explore projects <span aria-hidden="true">↓</span></a>
+            </div>
+          </div>
+          <nav className={styles.breadcrumb} aria-label="Breadcrumb">
+            <Link href="/">Home</Link><span aria-hidden="true">/</span><span aria-current="page">Projects</span>
+          </nav>
+        </section>
+
         <ProjectGallery projects={[...projects]} />
-      </Section>
-      <CTABand
-        title="Your project could be the next one on this page."
-        lead="Send us the scope, the schedule and the constraint that worries you most."
-      />
+
+        <section className={styles.closing} aria-labelledby="projects-closing-title">
+          <div>
+            <p className={styles.overline}>The next challenge</p>
+            <h2 id="projects-closing-title">Bring us the<br /><em>hard part.</em></h2>
+          </div>
+          <div className={styles.closingAside}>
+            <p>Bring us the scope, the schedule and the constraint that worries you most. We will start with the details.</p>
+            <Link href="/contact" className={styles.closingButton}>Start a project <span aria-hidden="true">↗</span></Link>
+          </div>
+        </section>
+      </main>
     </>
   );
 }

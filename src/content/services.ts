@@ -15,7 +15,7 @@ export type Service = {
   metaDescription: string;
   heroLine: string;
   intro: string;
-  capabilities: { title: string; body: string }[];
+  capabilities: { title: string; body: string; image?: string; imageAlt?: string }[];
   sections: ServiceSection[];
   deliverables: string[];
   sectors: string[];
@@ -42,26 +42,38 @@ export const services: Service[] = [
       {
         title: "Heating & cooling plant",
         body: "Boilers, chillers, heat pumps, heat-recovery chillers and thermal storage, delivered as tested skids wherever the geometry allows.",
+        image: "/images/hvac-scope/heating-cooling-plant.webp",
+        imageAlt: "Pumps, chillers and connected pipework in a commercial mechanical plant room",
       },
       {
         title: "Ventilation",
         body: "Make-up air, exhaust, pressurisation, DOAS and ERV systems, with ductwork coordinated to the architectural ceiling void rather than fought into it.",
+        image: "/images/hvac-scope/ventilation.webp",
+        imageAlt: "Galvanized ventilation ductwork and air-handling equipment in a mechanical room",
       },
       {
         title: "Refrigeration",
         body: "Commercial and process refrigeration, low-charge ammonia and CO₂ systems, cold rooms and specialist process cooling.",
+        image: "/images/hvac-scope/refrigeration.webp",
+        imageAlt: "Commercial refrigeration compressors and insulated process piping",
       },
       {
         title: "Hydronic systems",
         body: "Primary and secondary loops, in-floor radiant, fan-coil and VRF distribution, glycol systems, balancing and hydraulic modelling.",
+        image: "/images/hvac-scope/hydronic-systems.webp",
+        imageAlt: "Hydronic water distribution pipes, pumps and gauges in a plant room",
       },
       {
         title: "Low-carbon retrofit",
         body: "Electrification pathways, heat-pump conversions, plant replacement in occupied buildings and staged decarbonisation plans.",
+        image: "/images/hvac-scope/low-carbon-retrofit.webp",
+        imageAlt: "Modern heat-pump equipment installed alongside existing building plant",
       },
       {
         title: "Commissioning",
         body: "Pre-functional checks, functional testing, air and water balancing and a documented seasonal reassessment.",
+        image: "/images/hvac-scope/commissioning.webp",
+        imageAlt: "Technician checking an air-handling unit with a handheld instrument",
       },
     ],
     sections: [
