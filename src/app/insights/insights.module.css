@@ -393,7 +393,7 @@
   .story h2 { font-size: clamp(44px, 5.6vw, 68px); }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px), (max-width: 1023px) and (max-aspect-ratio: 2/3) {
   .hero h1 { font-size: clamp(60px, 10vw, 95px); }
   .introText { grid-template-columns: 1fr; gap: 32px; }
   .introAside { max-width: 650px; }
@@ -404,6 +404,10 @@
   .storyContent { width: 100%; padding: 140px 7vw 70px; }
   .story h2 { max-width: 780px; font-size: clamp(52px, 7vw, 75px); }
   .closingInner { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) and (max-aspect-ratio: 2/3) {
+  .hero, .heroContent { min-height: 980px; }
 }
 
 @media (max-width: 600px) {

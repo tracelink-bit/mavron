@@ -46,7 +46,7 @@ export function HomeMotion({children}:{children:React.ReactNode}) {
       if(!active) return;
       const dt=last?Math.min(now-last,40):16;last=now;
       if(!paused&&!reduced)time+=dt*.001;
-      const vh=window.innerHeight, vw=window.innerWidth, mobile=vw<768, scroll=window.scrollY;
+      const viewportHeight=window.innerHeight, vw=window.innerWidth, mobile=vw<768||(vw<1024&&viewportHeight/vw>1.5), vh=mobile?Math.min(viewportHeight,980):viewportHeight, scroll=window.scrollY;
       smooth.scroll=mix(smooth.scroll,scroll,.1);smooth.x=mix(smooth.x,pointer.x,.045);smooth.y=mix(smooth.y,pointer.y,.045);
       const y=smooth.scroll;
       const about=sections.about.offsetTop, method=sections.method.offsetTop, benefits=sections.benefits.offsetTop, footer=sections.footer.offsetTop;

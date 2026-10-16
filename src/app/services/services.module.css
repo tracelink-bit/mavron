@@ -417,6 +417,10 @@
   .closingSecondary { margin-left: 0; margin-top: 5px; }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) and (max-aspect-ratio: 2/3) {
+  .hero { min-height: 780px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .heroTitleBlock,
   .heroAside { animation: none; }
