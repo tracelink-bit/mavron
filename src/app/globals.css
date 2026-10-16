@@ -426,7 +426,7 @@
  .mav-sculpture{top:clamp(235px,31svh,285px);height:clamp(300px,44svh,390px)}
  .hero-bottom{left:18px;right:18px;bottom:max(25px,env(safe-area-inset-bottom))}
  .scroll-down{display:none}
- .motion-toggle{top:84px;bottom:auto;right:12px;min-width:44px;min-height:44px;justify-content:center}
+ .motion-toggle{position:absolute;top:84px;bottom:auto;right:12px;min-width:44px;min-height:44px;justify-content:center}
 }
 @media (min-width:768px) and (max-width:1023px) and (max-aspect-ratio:2/3) {
  html{font-size:20px}
