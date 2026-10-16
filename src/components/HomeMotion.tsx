@@ -52,7 +52,7 @@ export function HomeMotion({children}:{children:React.ReactNode}) {
       const about=sections.about.offsetTop, method=sections.method.offsetTop, benefits=sections.benefits.offsetTop, footer=sections.footer.offsetTop;
       let opacity=1,x=0,scale=1,vertical=0;
       const servicesProgress=clamp((y-vh*.35)/(about-vh*.9));
-      scale=mix(1,.68,servicesProgress);x=mix(0,vw*.02,servicesProgress);
+      scale=mix(mobile?.82:1,mobile?.55:.68,servicesProgress);x=mix(0,vw*.02,servicesProgress);
       if(y>about-vh)opacity=1-clamp((y-(about-vh))/(vh*.45));
       if(y>method-vh*.7&&y<benefits-vh*.3){
         opacity=clamp((y-(method-vh*.7))/(vh*.45));

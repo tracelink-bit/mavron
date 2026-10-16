@@ -396,7 +396,7 @@
 @media (max-width: 600px) {
   .hero { min-height: 680px; padding: 150px 23px 80px; }
   .heroKicker { margin-bottom: 36px; font-size: 11px; }
-  .heroTitle { font-size: clamp(54px, 12.5vw, 74px); white-space: normal; }
+  .heroTitle { font-size: clamp(46px, 11.8vw, 68px); line-height: 1.02; letter-spacing: -.06em !important; white-space: normal; }
   .heroAside p { font-size: 15px; }
   .breadcrumb { left: 23px; bottom: 22px; }
   .catalogIntro { min-height: 560px; padding: 85px 25px 42px; }
