@@ -42,7 +42,7 @@ export default function ProjectsPage() {
         })}
       />
 
-      <main id="mav-projects" className={styles.page}>
+      <div id="mav-projects" className={styles.page}>
         <section className={styles.hero} aria-labelledby="projects-title">
           <div className={styles.heroRing} aria-hidden="true" />
           <div className={styles.heroInner}>
@@ -74,7 +74,7 @@ export default function ProjectsPage() {
             <Link href="/contact" className={styles.closingButton}>Start a project <span aria-hidden="true">↗</span></Link>
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }

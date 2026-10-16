@@ -51,7 +51,7 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || open || pathname === "/services"
+        scrolled || open || pathname === "/services" || pathname === "/projects"
           ? "border-b border-ink-700 bg-ink-950/92 backdrop-blur-xl"
           : "border-b border-transparent"
       }`}
