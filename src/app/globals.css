@@ -429,6 +429,12 @@
  .motion-toggle{top:84px;bottom:auto;right:12px;min-width:44px;min-height:44px;justify-content:center}
 }
 @media (min-width:768px) and (max-width:1023px) and (max-aspect-ratio:2/3) {
+ html{font-size:20px}
+ .mav-sculpture{top:220px;height:560px}
+ .hero-intro{width:min(520px,90vw)}
+ .hero-promise{font-size:24px}
+ .hero-intro .muted{max-width:480px;font-size:18px}
+ .hero-intro .split-link{font-size:16px}
  main :is([class~="sm:grid-cols-2"],[class~="sm:grid-cols-3"],[class~="md:grid-cols-2"],[class~="md:grid-cols-3"],[class~="md:grid-cols-[1fr_auto]"],[class~="md:grid-cols-[auto_1fr_minmax(0,16rem)]"]){grid-template-columns:minmax(0,1fr)!important}
  main :is([class~="sm:flex-row"],[class~="md:flex-row"]){flex-direction:column!important}
 }
