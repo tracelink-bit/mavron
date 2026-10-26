@@ -5,11 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const portraits = [
-  { slug: "hvac-r", title: "HVAC-R", line: "Performance in every space.", image: "/images/people/hvac-r.webp", alt: "Illustrative portrait of an HVAC technician beside rooftop equipment" },
-  { slug: "plumbing", title: "Plumbing", line: "Built at every connection.", image: "/images/people/plumbing.webp", alt: "Illustrative portrait of a plumber in a commercial plant room" },
-  { slug: "vdc-bim", title: "VDC / BIM", line: "Precision begins in the model.", image: "/images/people/vdc-bim.webp", alt: "Illustrative portrait of a mechanical design coordinator at work" },
-  { slug: "prefabrication", title: "Prefabrication", line: "Made right before it reaches site.", image: "/images/people/prefabrication.webp", alt: "Illustrative portrait of a pipe fabrication specialist in a workshop" },
-  { slug: "warranty-aftercare", title: "Warranty & Aftercare", line: "Care that carries on.", image: "/images/people/aftercare.webp", alt: "Illustrative portrait of a mechanical aftercare technician beside plant equipment" },
+  { slug: "hvac-r", title: "HVAC-R", line: "Performance in every space.", image: "/images/people/hvac-r-portrait.webp", alt: "Illustrative portrait of an HVAC-R worker beside rooftop equipment" },
+  { slug: "plumbing", title: "Plumbing", line: "Built at every connection.", image: "/images/people/plumbing-portrait.webp", alt: "Illustrative portrait of a plumbing professional in front of mechanical pipework" },
+  { slug: "vdc-bim", title: "VDC / BIM", line: "Precision begins in the model.", image: "/images/people/vdc-bim-portrait.webp", alt: "Illustrative portrait of a VDC coordinator beside a mechanical building model" },
+  { slug: "prefabrication", title: "Prefabrication", line: "Made right before it reaches site.", image: "/images/people/prefabrication-portrait.webp", alt: "Illustrative portrait of a fabrication specialist in a workshop" },
+  { slug: "warranty-aftercare", title: "Warranty & Aftercare", line: "Care that carries on.", image: "/images/people/aftercare-portrait.webp", alt: "Illustrative portrait of an aftercare professional in a mechanical service area" },
   { slug: "trade-partners", title: "Trade Partners", line: "Every trade working together.", image: "/images/people/trade-partners.webp", alt: "Illustrative portrait of a construction coordination lead on site" },
 ] as const;
 
