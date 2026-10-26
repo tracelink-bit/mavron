@@ -24,6 +24,14 @@ const benefits = [
   ["People who know the trade", "Experienced tradespeople, engineers and apprentices bring care and practical intelligence to every connection."],
   ["Support beyond handover", "Commissioning, maintenance and a dedicated aftercare team keep your building performing long after opening day."],
 ];
+const fieldPhotos = [
+  { src: "/images/home-field/installation-overhead.webp", alt: "Illustrative view of a mechanic on a scissor lift inspecting overhead mechanical pipework", label: "Overhead installation" },
+  { src: "/images/home-field/commissioning-inspection.webp", alt: "Illustrative view of an HVAC technician inspecting an open air-handling unit", label: "System inspection" },
+  { src: "/images/home-field/air-distribution.webp", alt: "Illustrative view of suspended fabric-jacketed air distribution ducts", label: "Air distribution" },
+  { src: "/images/home-field/installation-team.webp", alt: "Illustrative view of two mechanics installing supported overhead pipework", label: "Coordinated installation" },
+  { src: "/images/home-field/rooftop-unit.webp", alt: "Illustrative view of tradespeople positioning a rooftop HVAC unit", label: "Rooftop plant" },
+  { src: "/images/home-field/commissioning-gauges.webp", alt: "Illustrative view of a technician checking HVAC commissioning gauges", label: "Testing and balancing" },
+];
 
 export default function HomePage() {
   return <HomeMotion>
@@ -78,6 +86,26 @@ export default function HomePage() {
       <h2 className="method-title"><Words>First, we build it in the model. Then, we make it real.</Words></h2>
       <div className="method-copy" data-reveal><span className="small-label">From digital precision to physical craft</span><p>Plan. Coordinate.<br/>Fabricate. Deliver.</p><div className="muted">Every connection is considered before a crew touches the building. Our coordinated models become tested assemblies, efficient installations and systems that perform.</div><SplitLink href="/process" outline>Discover our process</SplitLink></div>
       <div className="method-footnote">A shared model.<br/>A complete mechanical vision.</div>
+    </section>
+
+    <section className="home-field-gallery" aria-labelledby="field-gallery-title">
+      <div className="home-field-heading">
+        <div>
+          <p className="home-field-kicker" data-reveal>Mechanical work / In focus</p>
+          <h2 id="field-gallery-title" data-reveal>Built in the details.</h2>
+        </div>
+        <p className="home-field-intro" data-reveal>From overhead coordination to final checks, every connection asks for the same attention. These are illustrative scenes of the work, not photographs of Mavron projects.</p>
+      </div>
+      <div className="home-field-grid">
+        {fieldPhotos.map((photo, index) => (
+          <figure className="home-field-photo" key={photo.src} data-reveal>
+            <div className="home-field-frame">
+              <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 33vw" />
+            </div>
+            <figcaption><span>{String(index + 1).padStart(2, "0")}</span><span>{photo.label}</span></figcaption>
+          </figure>
+        ))}
+      </div>
     </section>
 
     <section className="mav-benefits" id="benefits">
