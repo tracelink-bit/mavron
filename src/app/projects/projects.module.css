@@ -1,7 +1,7 @@
 .page {
-  --paper: #f1eee7;
+  --paper: #f6f3ed;
   --ink: #211f1d;
-  --red: #b5231f;
+  --accent: #a65b2c;
   background: var(--paper);
   color: var(--ink);
   overflow: clip;
@@ -26,7 +26,7 @@
 
 .heroRing, .heroRing::after {
   position: absolute;
-  border: 1px solid #b5231f20;
+  border: 1px solid #a65b2c20;
   border-radius: 50%;
   pointer-events: none;
 }
@@ -55,7 +55,7 @@
 .heroAside { padding-bottom: 7px; animation: heroEnter 950ms 180ms cubic-bezier(.16, 1, .3, 1) both; }
 
 .overline {
-  color: var(--red);
+  color: var(--accent);
   font-size: clamp(11px, 1vw, 15px);
   font-weight: 750;
   letter-spacing: .22em;
@@ -64,7 +64,7 @@
 
 .heroTitleBlock .overline { margin-bottom: clamp(32px, 5vw, 66px); }
 .heroTitle { font-size: clamp(66px, 8.8vw, 160px); letter-spacing: -.075em !important; line-height: .85; white-space: nowrap; }
-.heroTitle span { color: var(--red); }
+.heroTitle span { color: var(--accent); }
 .heroAside p { max-width: 340px; color: #625e5a; font-size: clamp(15px, 1.1vw, 18px); line-height: 1.7; }
 
 .textLink {
@@ -80,7 +80,7 @@
   transition: color 250ms ease;
 }
 
-.textLink:hover { color: var(--red); }
+.textLink:hover { color: var(--accent); }
 .textLink span {
   display: grid;
   place-items: center;
@@ -93,7 +93,7 @@
   letter-spacing: 0;
   transition: transform 250ms ease, border-color 250ms ease;
 }
-.textLink:hover span { transform: translateY(4px); border-color: var(--red); }
+.textLink:hover span { transform: translateY(4px); border-color: var(--accent); }
 
 .breadcrumb {
   position: absolute;
@@ -108,7 +108,7 @@
   letter-spacing: .14em;
   text-transform: uppercase;
 }
-.breadcrumb a:hover { color: var(--red); }
+.breadcrumb a:hover { color: var(--accent); }
 
 .catalog { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
 .catalogIntro {
@@ -126,13 +126,13 @@
 }
 .introContent { margin: auto 0; max-width: 610px; }
 .introContent h2 { margin-top: 28px; font-size: clamp(52px, 5.5vw, 96px); line-height: .93; letter-spacing: -.065em !important; }
-.introContent h2 em { color: var(--red); font-style: normal; }
-.redRule { width: 64px; height: 2px; margin: 32px 0; background: var(--red); }
+.introContent h2 em { color: var(--accent); font-style: normal; }
+.redRule { width: 64px; height: 2px; margin: 32px 0; background: var(--accent); }
 .introLead { max-width: 490px; color: #4b4743; font-size: clamp(16px, 1.3vw, 20px); line-height: 1.62; }
 .disclaimer { max-width: 500px; margin-top: 17px; color: #706a64; font-size: 12px; line-height: 1.6; }
 .filters { display: grid; gap: 21px; margin-top: 32px; }
 .filters fieldset { min-width: 0; }
-.filters legend { margin-bottom: 10px; color: var(--red); font-size: 10px; font-weight: 750; letter-spacing: .2em; text-transform: uppercase; }
+.filters legend { margin-bottom: 10px; color: var(--accent); font-size: 10px; font-weight: 750; letter-spacing: .2em; text-transform: uppercase; }
 .filterOptions { display: flex; flex-wrap: wrap; gap: 7px; }
 .filter, .activeFilter {
   padding: 8px 10px;
@@ -143,8 +143,8 @@
   font-weight: 650;
   transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
 }
-.filter:hover, .filter:focus-visible { border-color: var(--red); color: var(--red); }
-.activeFilter { border-color: var(--red); background: var(--red); color: #fff; }
+.filter:hover, .filter:focus-visible { border-color: var(--accent); color: var(--accent); }
+.activeFilter { border-color: var(--accent); background: var(--accent); color: #fff; }
 .resultCount { display: flex; justify-content: space-between; gap: 16px; padding-top: 16px; border-top: 1px solid #211f1d30; color: #6e6862; font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
 .resultCount span { font-size: 17px; }
 
@@ -172,7 +172,7 @@
 .panelBottom { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-top: 28px; }
 .panelLink { display: inline-flex; align-items: center; gap: 15px; padding-bottom: 9px; border-bottom: 1px solid #ffffff91; color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; transition: color 250ms ease, border-color 250ms ease; }
 .panelLink span { font-size: 19px; font-weight: 400; letter-spacing: 0; }
-.panelLink:hover { color: #ff8179; border-color: #ff8179; }
+.panelLink:hover { color: #e0a572; border-color: #e0a572; }
 .imageNotice { color: #ffffffa1; font-family: var(--font-mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
 .emptyState { display: flex; flex-direction: column; justify-content: center; min-height: 70svh; padding: 60px; color: #fff; }
 .emptyState p { font-size: clamp(30px, 4vw, 60px); font-weight: 600; line-height: 1.05; }
@@ -185,11 +185,11 @@
 
 .closing { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 420px); align-items: end; gap: 60px; max-width: 1640px; margin: 0 auto; padding: clamp(96px, 10vw, 160px) clamp(26px, 5vw, 90px); }
 .closing h2 { margin-top: 28px; font-size: clamp(60px, 5.7vw, 104px); line-height: .93; letter-spacing: -.065em !important; }
-.closing h2 em { color: var(--red); font-style: normal; }
+.closing h2 em { color: var(--accent); font-style: normal; }
 .closingAside { padding-bottom: 8px; }
 .closingAside p { color: #625e5a; font-size: 17px; line-height: 1.7; }
-.closingButton { display: inline-flex; align-items: center; justify-content: space-between; gap: 50px; margin-top: 26px; padding: 16px 21px; background: var(--red); color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; transition: background-color 250ms ease; }
-.closingButton:hover { background: #8f1915; }
+.closingButton { display: inline-flex; align-items: center; justify-content: space-between; gap: 50px; margin-top: 26px; padding: 16px 21px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; transition: background-color 250ms ease; }
+.closingButton:hover { background: #87451e; }
 .closingButton span { font-size: 17px; font-weight: 400; letter-spacing: 0; }
 
 @keyframes heroEnter { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: none; } }

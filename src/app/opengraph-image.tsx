@@ -68,7 +68,7 @@ export default async function OgImage() {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div style={{ width: 120, height: 4, background: "linear-gradient(90deg,#b5231f,#e08a45)" }} />
+          <div style={{ width: 120, height: 4, background: "linear-gradient(90deg,#a65b2c,#e08a45)" }} />
           <span style={{ color: "#6b7280", fontSize: 20 }}>British Columbia, Canada</span>
         </div>
       </div>

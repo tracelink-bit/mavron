@@ -41,8 +41,8 @@ export default function HomePage() {
       <div className="hero-outline" aria-hidden="true" />
       <h1 className="hero-title" id="hero-title"><span className="hero-title-left">Mechanical</span><span className="hero-title-right">Excellence.</span></h1>
       <div className="hero-bottom">
-        <div className="hero-intro" data-reveal><p className="hero-promise">Built with precision.<br/>Built to hold.</p><p className="muted">Complete mechanical systems, from the first coordinated model to a lifetime of performance.</p><SplitLink href="/services">Explore our capabilities</SplitLink></div>
-        <a href="#capabilities" className="scroll-down"><span>Scroll to explore</span><span>↓</span></a>
+        <div className="hero-intro" data-reveal><p className="hero-promise">Commercial HVAC-R.<br/>Built to perform.</p><p className="muted">Heating, cooling, ventilation and refrigeration, coordinated from design through commissioning.</p><SplitLink href="/contact">Discuss an HVAC-R project</SplitLink></div>
+        <a href="#hvac-r" className="scroll-down"><span>Scroll to explore</span><span>↓</span></a>
       </div>
       <div className="hero-index" aria-hidden="true">M / 01</div>
     </section>
@@ -62,8 +62,35 @@ export default function HomePage() {
       </div>
     </section>
 
+    <section className="home-field-gallery" id="hvac-r" aria-labelledby="field-gallery-title">
+      <div className="home-field-heading">
+        <div>
+          <p className="home-field-kicker" data-reveal>01 / HVAC-R in focus</p>
+          <h2 id="field-gallery-title" data-reveal>Built for the way buildings work.</h2>
+        </div>
+        <div className="home-field-intro" data-reveal>
+          <p>From plant rooms and rooftop units to air distribution and final balancing, we bring the full HVAC-R scope together with one accountable team.</p>
+          <div className="home-field-actions">
+            <SplitLink href="/contact">Discuss an HVAC-R project</SplitLink>
+            <Link href="/services/hvac-r" className="home-field-secondary">Explore our HVAC-R scope <Arrow /></Link>
+          </div>
+        </div>
+      </div>
+      <div className="home-field-grid">
+        {fieldPhotos.map((photo, index) => (
+          <figure className="home-field-photo" key={photo.src} data-reveal>
+            <div className="home-field-frame">
+              <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 33vw" />
+            </div>
+            <figcaption><span>{String(index + 1).padStart(2, "0")}</span><span>{photo.label}</span></figcaption>
+          </figure>
+        ))}
+      </div>
+      <p className="home-field-note">Illustrative scenes of HVAC-R and mechanical work; these are not photographs of Mavron projects.</p>
+    </section>
+
     <section className="mav-capabilities home-pad" id="capabilities">
-      <div className="section-label" data-reveal><span>01 / Our capabilities</span><span>Connected by design.</span></div>
+      <div className="section-label" data-reveal><span>02 / Our capabilities</span><span>Connected by design.</span></div>
       <h2 className="statement"><Words>Every system. Every connection. One accountable team.</Words></h2>
       <div className="service-columns">
         {[services.slice(0,3),services.slice(3,6)].map((column,c)=><div className="service-column" key={c}>{column.map((s,i)=><Link href={`/services/${s.slug}`} className="service-row" key={s.slug} data-reveal><div className="service-row-title"><span className="circle-number">0{c*3+i+1}</span><h3>{s.navLabel}</h3><Arrow/></div><div className="service-row-description"><span>Expertise</span><p>{s.summary}</p></div></Link>)}</div>)}
@@ -82,40 +109,20 @@ export default function HomePage() {
     <PeopleCarousel />
 
     <section className="mav-method home-pad" id="method">
-      <div className="section-label" data-reveal><span>02 / The Mavron method</span><span>Think ahead. Build better.</span></div>
+      <div className="section-label" data-reveal><span>03 / The Mavron method</span><span>Think ahead. Build better.</span></div>
       <h2 className="method-title"><Words>First, we build it in the model. Then, we make it real.</Words></h2>
       <div className="method-copy" data-reveal><span className="small-label">From digital precision to physical craft</span><p>Plan. Coordinate.<br/>Fabricate. Deliver.</p><div className="muted">Every connection is considered before a crew touches the building. Our coordinated models become tested assemblies, efficient installations and systems that perform.</div><SplitLink href="/process" outline>Discover our process</SplitLink></div>
       <div className="method-footnote">A shared model.<br/>A complete mechanical vision.</div>
     </section>
 
-    <section className="home-field-gallery" aria-labelledby="field-gallery-title">
-      <div className="home-field-heading">
-        <div>
-          <p className="home-field-kicker" data-reveal>Mechanical work / In focus</p>
-          <h2 id="field-gallery-title" data-reveal>Built in the details.</h2>
-        </div>
-        <p className="home-field-intro" data-reveal>From overhead coordination to final checks, every connection asks for the same attention. These are illustrative scenes of the work, not photographs of Mavron projects.</p>
-      </div>
-      <div className="home-field-grid">
-        {fieldPhotos.map((photo, index) => (
-          <figure className="home-field-photo" key={photo.src} data-reveal>
-            <div className="home-field-frame">
-              <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 33vw" />
-            </div>
-            <figcaption><span>{String(index + 1).padStart(2, "0")}</span><span>{photo.label}</span></figcaption>
-          </figure>
-        ))}
-      </div>
-    </section>
-
     <section className="mav-benefits" id="benefits">
-      <div className="benefits-heading"><span className="small-label" data-reveal>03 / A better way to build</span><h2><span data-reveal>The value</span><span data-reveal>of Mavron.</span></h2></div>
+      <div className="benefits-heading"><span className="small-label" data-reveal>04 / A better way to build</span><h2><span data-reveal>The value</span><span data-reveal>of Mavron.</span></h2></div>
       <ol className="benefits-list">{benefits.map(([title,body],i)=><li key={title} data-reveal><span className="circle-number">{i+1}</span><div><h3>{title}</h3><p>{body}</p></div></li>)}</ol>
       <div className="benefits-bottom"><span>Designed with purpose. Delivered with care.</span><Link href="/contact">Let’s talk <Arrow/></Link></div>
     </section>
 
     <section className="home-image-grid home-pad" aria-label="Explore our work and people">
-      <Link className="home-image-card" href="/projects"><Image src="/images/mechanical.webp" alt="Precision pipework and red valves in a commercial mechanical plant room" fill sizes="(max-width:767px) 100vw, 50vw"/><div className="card-shade"/><div className="image-card-top"><h2 data-reveal>Our work.</h2><span className="round-arrow"><Arrow/></span></div><div className="image-card-bottom"><span className="small-label">Systems that make buildings work</span><p>Complex projects.<br/>Considered solutions.</p></div></Link>
+      <Link className="home-image-card" href="/projects"><Image src="/images/mechanical.webp" alt="Precision pipework and copper-toned valves in a commercial mechanical plant room" fill sizes="(max-width:767px) 100vw, 50vw"/><div className="card-shade"/><div className="image-card-top"><h2 data-reveal>Our work.</h2><span className="round-arrow"><Arrow/></span></div><div className="image-card-bottom"><span className="small-label">Systems that make buildings work</span><p>Complex projects.<br/>Considered solutions.</p></div></Link>
       <Link className="home-image-card" href="/culture"><Image src="/images/fabrication.webp" alt="A fabricator in protective equipment welding a steel pipe assembly" fill sizes="(max-width:767px) 100vw, 50vw"/><div className="card-shade"/><div className="image-card-top"><h2 data-reveal>Our people.</h2><span className="round-arrow"><Arrow/></span></div><div className="image-card-bottom"><span className="small-label">The craft behind every connection</span><p>Built by people<br/>who care.</p></div></Link>
     </section>
 

@@ -1,7 +1,7 @@
 .page {
-  --paper: #f3f0e9;
+  --paper: #f6f3ed;
   --ink: #272421;
-  --red: #d1362f;
+  --accent: #b87333;
   overflow: clip;
   background: var(--paper);
   color: var(--ink);
@@ -227,7 +227,7 @@
 }
 
 .storyNav a:hover { background: #05060766; color: #fff; }
-.storyNav a[aria-current="location"] { background: #050607af; color: #ff766f; backdrop-filter: blur(10px); }
+.storyNav a[aria-current="location"] { background: #050607af; color: #e0a572; backdrop-filter: blur(10px); }
 
 .storyPanels { position: relative; margin-top: -100svh; }
 
@@ -289,7 +289,7 @@
   text-transform: uppercase;
 }
 
-.storyMeta span:first-child { color: #ff756d; }
+.storyMeta span:first-child { color: #e0a572; }
 .storyMeta i { width: 40px; height: 1px; background: #ffffff6e; }
 
 .story h2 {
@@ -328,7 +328,7 @@
   transition: border-color 250ms ease, color 250ms ease;
 }
 
-.storyFoot a:hover { color: #ff756d; border-color: #ff756d; }
+.storyFoot a:hover { color: #e0a572; border-color: #e0a572; }
 .storyFoot a span { font-size: 20px; font-weight: 400; letter-spacing: 0; }
 .storyFoot > span { color: #ffffffa8; font-size: 12px; letter-spacing: .03em; }
 
@@ -347,7 +347,7 @@
 }
 
 .closingKicker {
-  color: #ad3029;
+  color: #965021;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: .26em;
@@ -365,7 +365,7 @@
   gap: 70px;
   margin-top: 30px;
   padding: 17px 24px;
-  background: #b5231f;
+  background: #a65b2c;
   color: #fff;
   font-size: 11px;
   font-weight: 800;
@@ -374,7 +374,7 @@
   transition: background-color 250ms ease;
 }
 
-.closingAside a:hover { background: #8f1915; }
+.closingAside a:hover { background: #87451e; }
 .closingAside a span { font-size: 19px; font-weight: 400; letter-spacing: 0; }
 
 @keyframes curtainOpen {

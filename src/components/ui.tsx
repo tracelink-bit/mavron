@@ -153,7 +153,7 @@ export function PageHero({
       <div className="grid-backdrop pointer-events-none absolute inset-0 opacity-50" aria-hidden="true" />
       <div
         className="pointer-events-none absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full opacity-25 blur-[120px]"
-        style={{ background: "radial-gradient(circle, #b5231f, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, #a65b2c, transparent 70%)" }}
         aria-hidden="true"
       />
       <div className="container-x relative">

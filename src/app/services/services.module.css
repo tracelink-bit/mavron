@@ -1,7 +1,7 @@
 .page {
-  --paper: #f1eee7;
+  --paper: #f6f3ed;
   --ink: #211f1d;
-  --red: #b5231f;
+  --accent: #a65b2c;
   background: var(--paper);
   color: var(--ink);
   overflow: clip;
@@ -29,7 +29,7 @@
 .heroRing,
 .heroRing::after {
   position: absolute;
-  border: 1px solid #b5231f20;
+  border: 1px solid #a65b2c20;
   border-radius: 50%;
   pointer-events: none;
 }
@@ -63,7 +63,7 @@
 
 .heroKicker,
 .overline {
-  color: var(--red);
+  color: var(--accent);
   font-size: clamp(11px, 1vw, 15px);
   font-weight: 750;
   letter-spacing: .22em;
@@ -79,7 +79,7 @@
   white-space: nowrap;
 }
 
-.heroTitle span { color: var(--red); }
+.heroTitle span { color: var(--accent); }
 
 .heroAside {
   padding-bottom: 7px;
@@ -109,7 +109,7 @@
 }
 
 .textLink:hover,
-.introExplore:hover { color: var(--red); }
+.introExplore:hover { color: var(--accent); }
 
 .textLink span,
 .introExplore span {
@@ -126,7 +126,7 @@
 }
 
 .textLink:hover span,
-.introExplore:hover span { transform: translateY(4px); border-color: var(--red); }
+.introExplore:hover span { transform: translateY(4px); border-color: var(--accent); }
 
 .breadcrumb {
   position: absolute;
@@ -142,7 +142,7 @@
   text-transform: uppercase;
 }
 
-.breadcrumb a:hover { color: var(--red); }
+.breadcrumb a:hover { color: var(--accent); }
 
 .catalog {
   display: grid;
@@ -172,9 +172,9 @@
 }
 
 .introContent h2 em,
-.closing h2 em { color: var(--red); font-style: normal; }
+.closing h2 em { color: var(--accent); font-style: normal; }
 
-.redRule { width: 64px; height: 2px; margin: 38px 0; background: var(--red); }
+.redRule { width: 64px; height: 2px; margin: 38px 0; background: var(--accent); }
 
 .introLead {
   max-width: 480px;
@@ -249,7 +249,7 @@
 }
 
 .dot:hover { background: #fff; transform: scale(1.3); }
-.activeDot { height: 27px; background: #e1352c; }
+.activeDot { height: 27px; background: #c47c44; }
 
 .panelCopy {
   width: 100%;
@@ -327,7 +327,7 @@
 }
 
 .panelLink span { font-size: 19px; font-weight: 400; letter-spacing: 0; }
-.panelLink:hover { color: #ff8179; border-color: #ff8179; }
+.panelLink:hover { color: #e0a572; border-color: #e0a572; }
 
 .closing {
   display: grid;
@@ -358,10 +358,10 @@
   transition: background-color 250ms ease, color 250ms ease;
 }
 
-.closingButton { background: var(--red); color: #fff; }
-.closingButton:hover { background: #8f1915; }
+.closingButton { background: var(--accent); color: #fff; }
+.closingButton:hover { background: #87451e; }
 .closingSecondary { margin-left: 8px; padding-inline: 0; color: #4b4743; }
-.closingSecondary:hover { color: var(--red); }
+.closingSecondary:hover { color: var(--accent); }
 .closingButton span,
 .closingSecondary span { font-size: 17px; font-weight: 400; letter-spacing: 0; }
 
