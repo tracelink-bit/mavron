@@ -15,14 +15,12 @@ const crumbs = [
 export const metadata: Metadata = pageMeta({
   title: "Capabilities — Mechanical Contracting Services",
   description:
-    "Six mechanical scopes under one accountable contractor: HVAC-R, commercial plumbing, VDC/BIM, prefabrication, warranty and aftercare, and coordinated trade partners.",
+    "Four connected capabilities under one accountable contractor: HVAC-R, commercial plumbing, warranty and aftercare, and coordinated trade partners.",
   path: "/services",
   keywords: [
     "mechanical contracting services",
     "commercial plumbing contractor",
     "HVAC-R services",
-    "BIM coordination services",
-    "mechanical prefabrication",
   ],
 });
 
@@ -56,7 +54,7 @@ export default function ServicesPage() {
               </h1>
             </div>
             <div className={styles.heroAside}>
-              <p>Six mechanical capabilities. One accountable team. Explore how every scope connects from model to maintenance.</p>
+              <p>Four mechanical capabilities. One accountable team. Explore how every scope connects from installation to maintenance.</p>
               <a href="#hvac-r" className={styles.textLink}>
                 View capabilities <span aria-hidden="true">↓</span>
               </a>
@@ -74,10 +72,10 @@ export default function ServicesPage() {
               <h2>Everything<br />works <em>together.</em></h2>
               <div className={styles.redRule} aria-hidden="true" />
               <p className={styles.introLead}>
-                From heating and plumbing to digital coordination, fabrication and aftercare, Mavron carries the work as one connected mechanical scope.
+                From heating and plumbing through commissioning and aftercare, Mavron carries the work as one connected mechanical scope.
               </p>
               <p className={styles.introSecondary}>
-                One model. One fabrication release. One team that answers after handover.
+                One project team. One clear handover. People who answer after the building opens.
               </p>
             </div>
             <a href="#hvac-r" className={styles.introExplore}>
@@ -138,7 +136,7 @@ export default function ServicesPage() {
             <h2 id="closing-title">The seams are<br /><em>ours to solve.</em></h2>
           </div>
           <div className={styles.closingAside}>
-            <p>Every scope lives in the same coordination model, releases through the same fabrication process and routes back to Mavron for aftercare.</p>
+            <p>Every scope is planned with the other trades, installed with care and supported by Mavron after handover.</p>
             <Link href="/contact" className={styles.closingButton}>Start a project <span aria-hidden="true">↗</span></Link>
             <Link href="/process" className={styles.closingSecondary}>See how we work <span aria-hidden="true">↗</span></Link>
           </div>

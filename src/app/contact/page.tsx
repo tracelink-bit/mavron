@@ -31,12 +31,12 @@ const routes = [
   },
   {
     title: "Careers",
-    body: "Apprenticeships, journeypersons, VDC coordinators, fabricators and project delivery. General applications welcome.",
+    body: "Apprenticeships, journeypersons, HVAC-R technicians and project delivery. General applications welcome.",
     contact: site.careersEmail,
   },
   {
     title: "Partnerships",
-    body: "Trade partners, suppliers, consultants and owners' representatives who want to work alongside our coordination model.",
+    body: "Trade partners, suppliers, consultants and owners' representatives who want to work with our mechanical teams.",
     contact: site.partnersEmail,
   },
 ];

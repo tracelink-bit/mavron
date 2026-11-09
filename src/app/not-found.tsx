@@ -12,7 +12,7 @@ export default function NotFound() {
     <>
       <PageHero
         kicker="404"
-        title="That page is not where the model said it would be."
+        title="We could not find that page."
         lead="Which is exactly the sort of thing we spend our working lives preventing. Here are some places that do exist."
       >
         <div className="mt-9 flex flex-wrap gap-3">

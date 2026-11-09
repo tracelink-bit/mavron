@@ -11,16 +11,14 @@ const crumbs = [
 ];
 
 export const metadata: Metadata = pageMeta({
-  title: "Careers — Mechanical Trades, VDC & Fabrication Jobs in BC",
+  title: "Careers — Mechanical Trades & HVAC-R Jobs in BC",
   description:
-    "Open roles at Mavron Mechanical Group: journeyperson plumbers, HVAC-R technicians, VDC coordinators, fabrication welders, project managers and sponsored apprenticeships across British Columbia.",
+    "Open roles at Mavron Mechanical Group: journeyperson plumbers, HVAC-R technicians, project managers and sponsored apprenticeships across British Columbia.",
   path: "/careers",
   keywords: [
     "plumber jobs Vancouver",
     "HVAC technician jobs BC",
-    "VDC coordinator job",
     "mechanical apprenticeship BC",
-    "fabrication welder job",
   ],
 });
 
@@ -31,7 +29,7 @@ export default function CareersPage() {
       <PageHero
         kicker="Careers"
         title="We are hiring people who want to be tradespeople, not staff."
-        lead="Sponsored apprenticeships, ticket support, shop rotations and a coordination environment that expects field crews to read models and argue with them."
+        lead="Sponsored apprenticeships, ticket support and practical field training with experienced mechanical crews."
       >
         <div className="mt-9 flex flex-wrap gap-3">
           <ButtonLink href="#roles">See open roles</ButtonLink>
@@ -49,9 +47,9 @@ export default function CareersPage() {
         />
         <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-ink-700 bg-ink-700 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            ["Shop rotations", "Apprentices spend their first rotations on the fabrication floor before field placement."],
+            ["Field mentoring", "Apprentices learn alongside experienced tradespeople on active mechanical projects."],
             ["Ticket support", "Sponsored technical training, manufacturer training and exam support."],
-            ["Model literacy", "Field crews are trained to read and challenge the coordination model, not just install from it."],
+            ["Field coordination", "Crews review drawings, site conditions and access with other trades before installation."],
             ["Real aftercare", "A standing warranty team means nobody gets pulled off a project to fix last year's."],
           ].map(([t, b]) => (
             <div key={t} className="bg-ink-900 p-7">

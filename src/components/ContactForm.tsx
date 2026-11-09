@@ -11,7 +11,7 @@ const ROUTES = [
   {
     id: "careers",
     label: "Careers",
-    blurb: "Apprenticeships, trades, VDC, fabrication, project delivery.",
+    blurb: "Apprenticeships, mechanical trades and project delivery.",
   },
   {
     id: "partnerships",

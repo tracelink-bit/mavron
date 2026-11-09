@@ -15,7 +15,7 @@ export const site = {
   legalName: "Mavron Mechanical Group", // PLACEHOLDER — confirm registered legal name
   tagline: "Mechanical systems, built to hold.",
   description:
-    "Mavron Mechanical Group is a mechanical contractor delivering HVAC-R, commercial plumbing, VDC/BIM, prefabrication and lifetime aftercare across British Columbia.",
+    "Mavron Mechanical Group is a mechanical contractor delivering HVAC-R, commercial plumbing, trade partner coordination and lifetime aftercare across British Columbia.",
   founded: "2009", // PLACEHOLDER
   url: SITE_URL,
   email: "hello@mavronprotection.ca", // PLACEHOLDER
@@ -43,12 +43,12 @@ export type Office = {
   geo: { lat: number; lng: number };
 };
 
-/** PLACEHOLDER — replace with Mavron's real offices and shop addresses. */
+/** PLACEHOLDER — replace with Mavron's real office addresses. */
 export const offices: Office[] = [
   {
     id: "burnaby",
-    label: "Burnaby — Head Office & Fabrication Shop",
-    role: "Head office, VDC studio, 40,000 sq ft fabrication floor",
+    label: "Burnaby — Head Office",
+    role: "Head office and mechanical project team",
     street: "8420 Meridian Way",
     locality: "Burnaby",
     region: "BC",
@@ -119,8 +119,6 @@ export const primaryNav: NavItem[] = [
       { label: "All Services", href: "/services", blurb: "The full mechanical scope" },
       { label: "HVAC-R", href: "/services/hvac-r", blurb: "Heating, cooling, refrigeration" },
       { label: "Plumbing", href: "/services/plumbing", blurb: "Water, gas, drainage" },
-      { label: "VDC / BIM", href: "/services/vdc-bim", blurb: "Model-first coordination" },
-      { label: "Prefabrication", href: "/services/prefabrication", blurb: "Built in the shop" },
       { label: "Warranty & Aftercare", href: "/services/warranty-aftercare", blurb: "After handover" },
       { label: "Trade Partners", href: "/services/trade-partners", blurb: "Coordinated scopes" },
     ],
@@ -137,8 +135,6 @@ export const footerNav = [
     links: [
       { label: "HVAC-R", href: "/services/hvac-r" },
       { label: "Plumbing", href: "/services/plumbing" },
-      { label: "VDC / BIM", href: "/services/vdc-bim" },
-      { label: "Prefabrication", href: "/services/prefabrication" },
       { label: "Warranty & Aftercare", href: "/services/warranty-aftercare" },
       { label: "Trade Partners", href: "/services/trade-partners" },
     ],

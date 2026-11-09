@@ -24,8 +24,6 @@ export const metadata: Metadata = {
     "mechanical contractor",
     "HVAC-R contractor",
     "commercial plumbing",
-    "VDC BIM coordination",
-    "mechanical prefabrication",
     "British Columbia",
     "Vancouver",
   ],

@@ -12,13 +12,11 @@ const crumbs = [
 export const metadata: Metadata = pageMeta({
   title: "The Mavron Method — Our Process",
   description:
-    "Six stages from early planning to aftercare: preconstruction, VDC coordination, shop fabrication, site installation, commissioning and a standing warranty team.",
+    "Five stages from early planning to aftercare: site coordination, installation, commissioning, handover and ongoing service.",
   path: "/process",
   keywords: [
     "mechanical construction process",
     "design assist mechanical",
-    "VDC coordination process",
-    "prefabrication workflow",
   ],
 });
 
@@ -41,8 +39,8 @@ export default function ProcessPage() {
       />
       <PageHero
         kicker="The Mavron Method"
-        title="We build it twice. The first one is free."
-        lead="Six stages, in order, every time. The discipline is not the stages — everybody has stages. The discipline is refusing to release anything to the next one until the current one has actually closed."
+        title="Plan carefully. Build with purpose."
+        lead="Five connected stages from planning to aftercare. The discipline is not the stages — everybody has stages. The discipline is refusing to release anything to the next one until the current one has actually closed."
       />
       <Breadcrumbs items={crumbs} />
 
@@ -87,8 +85,8 @@ export default function ProcessPage() {
       <Section tone="raised">
         <SectionHead
           kicker="The gate that matters"
-          title="Nothing reaches the shop floor before coordination closes."
-          lead="It is occasionally an unpopular rule. It moves pressure from the field, where it costs cranes and change orders, into coordination, where it costs hours. That trade is the entire argument for how we work."
+          title="Resolve the details before installation begins."
+          lead="Early decisions about equipment, routes and access help crews work safely and reduce avoidable changes during construction."
         />
       </Section>
 

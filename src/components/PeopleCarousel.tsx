@@ -7,8 +7,6 @@ import Link from "next/link";
 const portraits = [
   { slug: "hvac-r", title: "HVAC-R", line: "Performance in every space.", image: "/images/people/hvac-r-portrait.webp", alt: "Illustrative portrait of an HVAC-R worker beside rooftop equipment" },
   { slug: "plumbing", title: "Plumbing", line: "Built at every connection.", image: "/images/people/plumbing-portrait.webp", alt: "Illustrative portrait of a plumbing professional in front of mechanical pipework" },
-  { slug: "vdc-bim", title: "VDC / BIM", line: "Precision begins in the model.", image: "/images/people/vdc-bim-portrait.webp", alt: "Illustrative portrait of a VDC coordinator beside a mechanical building model" },
-  { slug: "prefabrication", title: "Prefabrication", line: "Made right before it reaches site.", image: "/images/people/prefabrication-portrait.webp", alt: "Illustrative portrait of a fabrication specialist in a workshop" },
   { slug: "warranty-aftercare", title: "Warranty & Aftercare", line: "Care that carries on.", image: "/images/people/aftercare-portrait.webp", alt: "Illustrative portrait of an aftercare professional in a mechanical service area" },
   { slug: "trade-partners", title: "Trade Partners", line: "Every trade working together.", image: "/images/people/trade-partners.webp", alt: "Illustrative portrait of a construction coordination lead on site" },
 ] as const;
@@ -87,7 +85,7 @@ export function PeopleCarousel() {
           <h2 data-reveal>People make<br />the difference.</h2>
         </div>
         <div className="people-carousel-intro" data-reveal>
-          <p>Six connected disciplines. The knowledge and care to make every system work.</p>
+          <p>Four connected disciplines. The knowledge and care to make every system work.</p>
           <div className="people-carousel-arrows">
             <button type="button" onClick={goPrevious} aria-label="Previous portrait">←</button>
             <button type="button" onClick={goNext} aria-label="Next portrait">→</button>
@@ -103,7 +101,7 @@ export function PeopleCarousel() {
             const content = <>
               <Image src={portrait.image} alt={duplicate ? "" : portrait.alt} fill sizes="(max-width: 767px) 78vw, (max-width: 1100px) 35vw, 27vw" />
               <span className="portrait-card-shade" aria-hidden="true" />
-              <span className="portrait-card-copy"><span className="portrait-card-number">0{position % portraits.length + 1} / 06</span><strong>{portrait.title}</strong><span>{portrait.line}</span></span>
+              <span className="portrait-card-copy"><span className="portrait-card-number">0{position % portraits.length + 1} / {String(portraits.length).padStart(2, "0")}</span><strong>{portrait.title}</strong><span>{portrait.line}</span></span>
             </>;
             return duplicate ? <div key={`copy-${portrait.slug}`} className={`portrait-card ${active ? "is-active" : ""}`} aria-hidden="true">{content}</div> : <Link key={portrait.slug} href={`/services/${portrait.slug}`} className={`portrait-card ${active ? "is-active" : ""}`} aria-label={`Explore ${portrait.title} services`}>{content}</Link>;
           })}

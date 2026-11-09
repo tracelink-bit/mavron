@@ -22,7 +22,7 @@ const crumbs = [
 export const metadata: Metadata = pageMeta({
   title: "About Us — Company, Leadership & Values",
   description:
-    "Mavron Mechanical Group started in 2009 with two vans and a rented bay. Today: 240 people, a 40,000 sq ft fabrication shop and three offices across British Columbia.",
+    "Mavron Mechanical Group started in 2009 with two vans and a rented bay. Today its mechanical teams serve projects across British Columbia.",
   path: "/about",
   keywords: ["mechanical contractor history", "Mavron leadership", "BC mechanical company"],
 });

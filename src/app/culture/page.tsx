@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import {
   Breadcrumbs,
-  ButtonLink,
   CTABand,
   PageHero,
   Section,
@@ -35,8 +34,8 @@ export default function CulturePage() {
       <JsonLd data={graph(breadcrumbSchema(crumbs))} />
       <PageHero
         kicker="People & culture"
-        title="Every apprentice starts on the shop floor."
-        lead="Not because the shop needs the hands. Because the bench is the only place where an apprentice can see the whole assembly at once, and understanding why a spool breaks where it breaks is the difference between a tradesperson and a pair of hands."
+        title="Every apprentice learns from the crew."
+        lead="Experienced tradespeople share the judgement behind every installation. We pair practical field experience with technical training and a strong safety culture."
       />
       <Breadcrumbs items={crumbs} />
 
@@ -66,19 +65,14 @@ export default function CulturePage() {
       <Section>
         <SectionHead
           kicker="Safety"
-          title="Our safety case and our prefabrication case are the same case."
-          lead="The serious incidents in mechanical construction cluster in a handful of activities: work at height, hot works in congested overhead space, manual handling of awkward loads. Every one of those is something the shop removes. We report the shop-to-site hours ratio alongside incident data, not alongside cost data."
+          title="Safety is part of every work plan."
+          lead="Mechanical construction involves work at height, lifting and complex shared spaces. Our crews plan access, review risks and coordinate with other trades before work begins."
         />
-        <div className="mt-10">
-          <ButtonLink href="/insights/prefabrication-is-a-safety-programme" variant="ghost">
-            Read the argument in full
-          </ButtonLink>
-        </div>
       </Section>
 
       <CTABand
         title="Want to build here?"
-        lead="Apprenticeships, journeypersons, VDC coordinators, fabricators and project managers. Tickets matter; so does being the kind of person the crew wants on the job."
+        lead="Apprenticeships, journeypersons, HVAC-R technicians and project managers. Tickets matter; so does being the kind of person the crew wants on the job."
         primaryHref="/careers"
         primaryLabel="Open roles"
         secondaryHref="/about"

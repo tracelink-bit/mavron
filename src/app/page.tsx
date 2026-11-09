@@ -10,8 +10,8 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "Mechanical Contractor in British Columbia",
-  description: "Mavron Mechanical Group designs, models, prefabricates, installs and maintains complete mechanical systems across British Columbia.",
-  path: "/", keywords: ["mechanical contractor BC", "HVAC-R", "commercial plumbing", "VDC BIM", "prefabrication"],
+  description: "Mavron Mechanical Group designs, installs, commissions and maintains complete mechanical systems across British Columbia.",
+  path: "/", keywords: ["mechanical contractor BC", "HVAC-R", "commercial plumbing", "mechanical commissioning", "building maintenance"],
 });
 
 function Arrow({className=""}:{className?:string}) { return <svg className={className} width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" strokeWidth="1.4" /></svg>; }
@@ -19,8 +19,8 @@ function SplitLink({href,children,outline=false}:{href:string;children:React.Rea
 function Words({children}:{children:string}) {return <span data-scroll-words>{children.split(" ").map((word,i)=><span className="scroll-word" key={`${word}-${i}`}>{word}{" "}</span>)}</span>;}
 const benefits = [
   ["One accountable team", "From early design to the final pressure test, your mechanical scope stays with people who know the whole project."],
-  ["Precision before installation", "Coordinated digital models resolve the difficult details before they become difficult days on site."],
-  ["Built better in the shop", "Prefabricated assemblies arrive tested, sequenced and ready. Less time at height. More certainty on the programme."],
+  ["Planning before installation", "We resolve routing, access and sequencing challenges early so crews can work efficiently on site."],
+  ["HVAC-R from start to finish", "From central plant and air distribution to final balancing, one team stays accountable for performance."],
   ["People who know the trade", "Experienced tradespeople, engineers and apprentices bring care and practical intelligence to every connection."],
   ["Support beyond handover", "Commissioning, maintenance and a dedicated aftercare team keep your building performing long after opening day."],
 ];
@@ -35,7 +35,7 @@ const fieldPhotos = [
 
 export default function HomePage() {
   return <HomeMotion>
-    <JsonLd data={graph(faqSchema([{q:"What does Mavron do?",a:"Mavron delivers HVAC-R, plumbing, VDC/BIM, prefabrication and lifetime aftercare across British Columbia."}]))}/>
+    <JsonLd data={graph(faqSchema([{q:"What does Mavron do?",a:"Mavron delivers HVAC-R, plumbing, trade partner coordination and lifetime aftercare across British Columbia."}]))}/>
     <section className="mav-hero" id="top" aria-labelledby="hero-title">
       <div className="hero-location"><span className="status-dot"/>Mechanical contracting · British Columbia</div>
       <div className="hero-outline" aria-hidden="true" />
@@ -93,9 +93,9 @@ export default function HomePage() {
       <div className="section-label" data-reveal><span>02 / Our capabilities</span><span>Connected by design.</span></div>
       <h2 className="statement"><Words>Every system. Every connection. One accountable team.</Words></h2>
       <div className="service-columns">
-        {[services.slice(0,3),services.slice(3,6)].map((column,c)=><div className="service-column" key={c}>{column.map((s,i)=><Link href={`/services/${s.slug}`} className="service-row" key={s.slug} data-reveal><div className="service-row-title"><span className="circle-number">0{c*3+i+1}</span><h3>{s.navLabel}</h3><Arrow/></div><div className="service-row-description"><span>Expertise</span><p>{s.summary}</p></div></Link>)}</div>)}
+        {[services.slice(0,2),services.slice(2,4)].map((column,c)=><div className="service-column" key={c}>{column.map((s,i)=><Link href={`/services/${s.slug}`} className="service-row" key={s.slug} data-reveal><div className="service-row-title"><span className="circle-number">0{c*2+i+1}</span><h3>{s.navLabel}</h3><Arrow/></div><div className="service-row-description"><span>Expertise</span><p>{s.summary}</p></div></Link>)}</div>)}
       </div>
-      <div className="capabilities-note" data-reveal><p>From climate control and plumbing to digitally coordinated fabrication. The details work together. So do we.</p><Link href="/services" className="square-arrow" aria-label="Explore all services"><Arrow/></Link></div>
+      <div className="capabilities-note" data-reveal><p>From climate control and plumbing to ongoing building care. The details work together. So do we.</p><Link href="/services" className="square-arrow" aria-label="Explore all services"><Arrow/></Link></div>
     </section>
 
     <section className="mav-story" id="our-story">
@@ -110,9 +110,9 @@ export default function HomePage() {
 
     <section className="mav-method home-pad" id="method">
       <div className="section-label" data-reveal><span>03 / The Mavron method</span><span>Think ahead. Build better.</span></div>
-      <h2 className="method-title"><Words>First, we build it in the model. Then, we make it real.</Words></h2>
-      <div className="method-copy" data-reveal><span className="small-label">From digital precision to physical craft</span><p>Plan. Coordinate.<br/>Fabricate. Deliver.</p><div className="muted">Every connection is considered before a crew touches the building. Our coordinated models become tested assemblies, efficient installations and systems that perform.</div><SplitLink href="/process" outline>Discover our process</SplitLink></div>
-      <div className="method-footnote">A shared model.<br/>A complete mechanical vision.</div>
+      <h2 className="method-title"><Words>Plan with care. Install with precision. Prove performance.</Words></h2>
+      <div className="method-copy" data-reveal><span className="small-label">From first plan to lasting performance</span><p>Plan. Install.<br/>Commission. Care.</p><div className="muted">Every connection is considered before a crew touches the building. Our crews turn careful planning into efficient installations and systems that perform.</div><SplitLink href="/process" outline>Discover our process</SplitLink></div>
+      <div className="method-footnote">One accountable team.<br/>A complete mechanical vision.</div>
     </section>
 
     <section className="mav-benefits" id="benefits">
@@ -123,7 +123,7 @@ export default function HomePage() {
 
     <section className="home-image-grid home-pad" aria-label="Explore our work and people">
       <Link className="home-image-card" href="/projects"><Image src="/images/mechanical.webp" alt="Precision pipework and copper-toned valves in a commercial mechanical plant room" fill sizes="(max-width:767px) 100vw, 50vw"/><div className="card-shade"/><div className="image-card-top"><h2 data-reveal>Our work.</h2><span className="round-arrow"><Arrow/></span></div><div className="image-card-bottom"><span className="small-label">Systems that make buildings work</span><p>Complex projects.<br/>Considered solutions.</p></div></Link>
-      <Link className="home-image-card" href="/culture"><Image src="/images/fabrication.webp" alt="A fabricator in protective equipment welding a steel pipe assembly" fill sizes="(max-width:767px) 100vw, 50vw"/><div className="card-shade"/><div className="image-card-top"><h2 data-reveal>Our people.</h2><span className="round-arrow"><Arrow/></span></div><div className="image-card-bottom"><span className="small-label">The craft behind every connection</span><p>Built by people<br/>who care.</p></div></Link>
+      <Link className="home-image-card" href="/culture"><Image src="/images/people/hvac-r-portrait.webp" alt="HVAC-R professional beside rooftop equipment" fill sizes="(max-width:767px) 100vw, 50vw"/><div className="card-shade"/><div className="image-card-top"><h2 data-reveal>Our people.</h2><span className="round-arrow"><Arrow/></span></div><div className="image-card-bottom"><span className="small-label">The craft behind every connection</span><p>Built by people<br/>who care.</p></div></Link>
     </section>
 
     <footer className="mav-home-footer home-pad" id="home-contact">

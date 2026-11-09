@@ -14,23 +14,17 @@ const crumbs = [
 ];
 
 const chapterLabels = [
-  "Safety through fabrication",
-  "Clash closure",
   "Hydronic strategy",
   "Mechanical complete",
-  "Scan to BIM",
-  "Training the next crew",
 ];
 
 export const metadata: Metadata = pageMeta({
   title: "Resources & Insights — Mechanical Construction Articles",
   description:
-    "Articles, project updates and technical notes from Mavron: prefabrication, VDC coordination, electrification and hydronic strategy, safety and the trades.",
+    "Articles and project updates from Mavron about HVAC-R, electrification, hydronic systems and mechanical delivery.",
   path: "/insights",
   keywords: [
     "mechanical construction articles",
-    "prefabrication insights",
-    "BIM coordination blog",
     "HVAC electrification",
   ],
 });
@@ -81,18 +75,18 @@ export default function InsightsPage() {
         <section id="our-thinking" className={styles.intro} aria-labelledby="intro-title">
           <div className={styles.introInner}>
             <div className={styles.introText}>
-              <h2 id="intro-title" data-insight-reveal>Built in the shop.<br />Proven on site.<br />Shared here.</h2>
+              <h2 id="intro-title" data-insight-reveal>Planned with care.<br />Proven on site.<br />Shared here.</h2>
               <div className={styles.introAside} data-insight-reveal>
-                <p>We write about the decisions that shape a mechanical project: where coordination prevents rework, where fabrication improves safety, and what a building needs after handover.</p>
+                <p>We write about the decisions that shape a mechanical project: how HVAC-R systems perform, how teams solve site challenges, and what a building needs after handover.</p>
                 <p>Technical notes and project updates from the people doing the work.</p>
               </div>
             </div>
             <div className={styles.introPhotos}>
               <div className={styles.introPhotoLarge} data-insight-reveal>
-                <Image src="/images/insights/clash-closure.webp" alt="Mechanical coordinators reviewing a building services model" fill sizes="(min-width: 1000px) 65vw, 65vw" />
+                <Image src="/images/insights/hydronic-electrification.webp" alt="Hydronic system equipment in a mechanical plant room" fill sizes="(min-width: 1000px) 65vw, 65vw" />
               </div>
               <div className={styles.introPhotoSmall} data-insight-reveal>
-                <Image src="/images/insights/apprentice-shop.webp" alt="Apprentice and mentor measuring a pipe assembly in the fabrication shop" fill sizes="(min-width: 1000px) 30vw, 35vw" />
+                <Image src="/images/insights/mechanical-completion.webp" alt="Mechanical systems inside a commercial building" fill sizes="(min-width: 1000px) 30vw, 35vw" />
               </div>
             </div>
           </div>

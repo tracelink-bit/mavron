@@ -11,13 +11,13 @@ same list inline.
 | `src/lib/site.ts` → `site` | `legalName`, `founded`, `email`, `careersEmail`, `partnersEmail`, `phone`, `phoneDisplay`, `social.linkedin`, `social.instagram` |
 | `src/lib/site.ts` → `offices` | All three addresses, phone numbers and lat/lng. Delete any office that does not exist. The `geo` values feed LocalBusiness schema — wrong coordinates hurt local SEO. |
 | `src/lib/site.ts` → `serviceAreas` | The cities you actually serve. |
-| `src/content/company.ts` → `stats` | Years, headcount, shop size, area delivered. |
+| `src/content/company.ts` → `stats` | Years, headcount and area delivered. |
 | `src/content/company.ts` → `leadership` | Real names, roles, bios, initials. Add photos if you have them. |
 | `src/content/company.ts` → `jobs` | Live vacancies only. **Delete roles you are not hiring for** — they emit `JobPosting` structured data and Google indexes them. |
 | `src/content/projects.ts` | Every project. `client` and `value` are literal `PLACEHOLDER` strings. |
 | `public/images/projects/*.webp` | Six AI-generated illustrative concept images. Replace each with consented, accurate project photography when real case studies are provided. |
-| `public/images/services/*.webp` | Six AI-generated illustrative capability images, edited for natural documentary lighting. Replace with consented Mavron photography when available. |
-| `public/images/insights/*.webp` | Six AI-generated illustrative editorial images for the articles. They do not document real Mavron jobsites, projects or employees. Replace with consented, accurate photographs when available. |
+| `public/images/services/*.webp` | Four AI-generated illustrative capability images, edited for natural documentary lighting. Replace with consented Mavron photography when available. |
+| `public/images/insights/*.webp` | Two AI-generated illustrative editorial images for the articles. They do not document real Mavron jobsites, projects or employees. Replace with consented, accurate photographs when available. |
 | `.env.local` | `NEXT_PUBLIC_SITE_URL` must be the real production origin before the first deploy — it drives canonicals, the sitemap and all JSON-LD `@id` values. |
 
 ## 2. Important — true but unverified
@@ -27,7 +27,7 @@ same list inline.
 | `src/content/services.ts` | Only list what Mavron genuinely delivers. The Trade Partners page in particular says "we only list what we actually deliver" — make that true. |
 | `src/content/company.ts` → `story` | The 2009–today timeline is invented. |
 | `src/content/company.ts` → `cultureBlocks` | Apprenticeship and community paragraphs are marked PLACEHOLDER. |
-| `src/content/insights.ts` | Six articles written in Mavron's voice. Keep, rewrite or delete — but do not publish claims about your own projects that are not true. |
+| `src/content/insights.ts` | Two articles written in Mavron's voice. Keep, rewrite or delete — but do not publish claims about your own projects that are not true. |
 | `src/app/privacy/page.tsx` | Template only. Have a Canadian privacy lawyer review it, name your real service providers and storage jurisdictions, and update `UPDATED`. |
 
 ## 3. Functional wiring
@@ -51,6 +51,6 @@ same list inline.
 | `public/images/m-forge-exploded.webp` | Exploded render, 67 KB — used on About |
 | `public/videos/mavron-home-hero.mp4` | Web-optimized, silent copy of the user-supplied `Sequence 05.mp4` for the homepage hero. The source remains in Downloads. |
 | `public/images/mavron-home-video-poster.webp` | First-scene poster shown before playback and when visitors prefer reduced motion. |
-| `public/images/people/*.webp` | Six AI-generated illustrative portraits for the homepage carousel. They represent service disciplines, not actual Mavron employees. Replace with consented staff photography when available. |
+| `public/images/people/*.webp` | Four AI-generated illustrative portraits for the homepage carousel. They represent service disciplines, not actual Mavron employees. Replace with consented staff photography when available. |
 | `public/vendor/model-viewer.min.js` | @google/model-viewer 4.1.0, BSD-3-Clause, self-hosted |
 | `src/app/icon.svg` | Favicon drawn to match the monogram |

@@ -51,24 +51,24 @@ export const projects: Project[] = [
     year: "2024",
     client: "PLACEHOLDER Developer",
     value: "PLACEHOLDER $M",
-    scope: ["HVAC-R", "Plumbing", "VDC / BIM", "Prefabrication"],
+    scope: ["HVAC-R", "Plumbing"],
     summary:
-      "A 42-storey residential tower delivered with fully prefabricated suite pods and floor-by-floor riser stacks.",
+      "A 42-storey residential tower with complex heating, ventilation and plumbing across 480 suites.",
     metaDescription:
-      "Case study: 42-storey residential tower in Burnaby delivered by Mavron with prefabricated suite pods, riser stacks and a full LOD 400 mechanical model.",
+      "Case study: 42-storey residential tower in Burnaby with HVAC-R and plumbing delivered across 480 suites.",
     challenge:
       "Four hundred and eighty repeating suites on an aggressive residential programme, with a single tower crane shared across every trade and a mechanical scope that could not be allowed to sit on the critical path.",
     approach:
-      "We modelled one suite to fabrication level, proved it in a full-scale mock-up, and then produced it four hundred and eighty times. Risers were prefabricated as floor-height stacks and set as complete units; suite mechanical arrived as tested pods with supply, drainage and ventilation pre-assembled.",
+      "We established a repeatable installation sequence for each suite, coordinated riser locations with the structure and verified supply, drainage and ventilation as work progressed floor by floor.",
     outcome:
       "Mechanical came off the critical path at level nine and stayed off it. Field labour hours per suite fell substantially against the baseline estimate, and rework attributable to mechanical coordination was close to eliminated.",
     stats: [
       { label: "Storeys", value: "42" },
       { label: "Suites", value: "480" },
-      { label: "Prefabricated pods", value: "480" },
-      { label: "Riser stacks set", value: "126" },
+      { label: "Mechanical suites", value: "480" },
+      { label: "Riser locations", value: "126" },
     ],
-    services: ["hvac-r", "plumbing", "vdc-bim", "prefabrication"],
+    services: ["hvac-r", "plumbing"],
     accent: "forge",
   },
   {
@@ -82,24 +82,23 @@ export const projects: Project[] = [
     year: "2023",
     client: "PLACEHOLDER Owner",
     value: "PLACEHOLDER $M",
-    scope: ["HVAC-R", "VDC / BIM", "Prefabrication", "Trade Partners"],
+    scope: ["HVAC-R", "Trade Partners"],
     summary:
-      "A 310,000 sq ft office campus with a heat-recovery chiller plant delivered as tested skids.",
+      "A 310,000 sq ft office campus with a heat-recovery chiller plant serving the campus.",
     metaDescription:
-      "Case study: Cascadia Exchange office campus in Vancouver — heat-recovery chiller plant, skid-built mechanical rooms and full multi-trade coordination by Mavron.",
+      "Case study: Cascadia Exchange office campus in Vancouver — heat-recovery chiller plant and coordinated mechanical installation by Mavron.",
     challenge:
       "A central plant with a demanding energy target, a plant room that had to be finished before the building above it was watertight, and a rigging window measured in days rather than weeks.",
     approach:
-      "The entire plant room was built in our shop as six skid assemblies — pumps, headers, heat exchangers and heat-recovery chiller connections — pre-wired, insulated and pressure-tested. Rigging routes were validated against the federated model before a single skid was loaded.",
+      "The team planned plant-room access, lifting and installation around the building programme, then installed pumps, headers, heat exchangers and heat-recovery chiller connections with staged pressure testing.",
     outcome:
-      "Plant room installation was completed inside the rigging window. Commissioning started ahead of schedule because the assemblies arrived already tested.",
+      "Plant room installation was completed inside the rigging window. Commissioning started ahead of schedule following staged testing and installation.",
     stats: [
       { label: "Floor area", value: "310k sq ft" },
-      { label: "Plant skids", value: "6" },
+      { label: "Plant systems", value: "6" },
       { label: "Site install", value: "4 days" },
-      { label: "Clashes closed pre-build", value: "2,140" },
     ],
-    services: ["hvac-r", "vdc-bim", "prefabrication", "trade-partners"],
+    services: ["hvac-r", "trade-partners"],
     accent: "copper",
   },
   {
@@ -113,24 +112,23 @@ export const projects: Project[] = [
     year: "2026",
     client: "PLACEHOLDER Health Authority",
     value: "PLACEHOLDER $M",
-    scope: ["HVAC-R", "Plumbing", "Prefabrication", "Warranty & Aftercare"],
+    scope: ["HVAC-R", "Plumbing", "Warranty & Aftercare"],
     summary:
       "An acute-care pavilion built alongside a live hospital, with medical gas, isolation ventilation and zero tolerance for disruption.",
     metaDescription:
-      "Case study: acute-care pavilion in Surrey — medical gas, isolation room ventilation and prefabricated mechanical delivered by Mavron adjacent to a live hospital.",
+      "Case study: acute-care pavilion in Surrey — medical gas and isolation room ventilation delivered by Mavron adjacent to a live hospital.",
     challenge:
       "Building against a functioning hospital means noise limits, infection-control protocols, restricted delivery windows and services that cannot be interrupted for any reason at any time.",
     approach:
-      "Prefabrication carried almost the entire risk reduction. Overhead corridor racks, isolation-room ventilation assemblies and utility modules were shop-built and tested, cutting on-site hot works and overhead labour to a fraction of a conventional build. Every tie-in was modelled, rehearsed and scheduled into agreed shutdown windows.",
+      "The team planned corridor work, isolation-room ventilation and utility tie-ins around the hospital's operating schedule. Each connection was reviewed with facilities staff and completed within an agreed shutdown window.",
     outcome:
       "In progress. To date, every planned tie-in has been completed inside its agreed window with no unplanned service interruption to the adjacent facility.",
     stats: [
       { label: "Beds", value: "180" },
       { label: "Isolation rooms", value: "24" },
-      { label: "Prefab corridor racks", value: "310" },
       { label: "Unplanned outages", value: "0" },
     ],
-    services: ["hvac-r", "plumbing", "prefabrication", "warranty-aftercare"],
+    services: ["hvac-r", "plumbing", "warranty-aftercare"],
     accent: "steel",
   },
   {
@@ -144,24 +142,22 @@ export const projects: Project[] = [
     year: "2026",
     client: "PLACEHOLDER Transit Authority",
     value: "PLACEHOLDER $M",
-    scope: ["VDC / BIM", "HVAC-R", "Trade Partners"],
+    scope: ["HVAC-R", "Trade Partners"],
     summary:
       "Below-grade transit infrastructure with tunnel ventilation, smoke control and a coordination problem in three dimensions.",
     metaDescription:
-      "Case study: Harbourline Transit Exchange — tunnel ventilation, smoke control and below-grade multi-trade coordination delivered by Mavron's VDC studio.",
+      "Case study: Harbourline Transit Exchange — tunnel ventilation, smoke control and below-grade mechanical work.",
     challenge:
       "Below-grade infrastructure has no spare space. Tunnel ventilation, smoke control, drainage and structure compete for the same void, and a clash discovered in the field is a concrete problem rather than a pipe problem.",
     approach:
-      "The VDC studio ran the project as a coordination-first engagement: laser scanning of the constructed shell, scan-to-BIM registration against design, and a coordination cadence that closed every hard and soft clash before any fabrication release.",
+      "The mechanical team reviewed built conditions and access before installation, coordinating tunnel ventilation, smoke control and drainage with the structural and electrical trades.",
     outcome:
-      "In progress. Scan-verified installation has so far eliminated field-discovered structural conflicts in the mechanical scope.",
+      "In progress. Field coordination has so far avoided structural conflicts in the mechanical scope.",
     stats: [
-      { label: "Scan setups", value: "1,400+" },
-      { label: "Clashes resolved", value: "3,860" },
       { label: "Field structural conflicts", value: "0" },
       { label: "Levels below grade", value: "4" },
     ],
-    services: ["vdc-bim", "hvac-r", "trade-partners"],
+    services: ["hvac-r", "trade-partners"],
     accent: "copper",
   },
   {
@@ -206,7 +202,7 @@ export const projects: Project[] = [
     year: "2027",
     client: "PLACEHOLDER Developer",
     value: "PLACEHOLDER $M",
-    scope: ["HVAC-R", "Plumbing", "VDC / BIM"],
+    scope: ["HVAC-R", "Plumbing"],
     summary:
       "An all-electric mid-rise on a design-assist route, with central heat pumps and a hydronic strategy set during design development.",
     metaDescription:
@@ -223,7 +219,7 @@ export const projects: Project[] = [
       { label: "Plant", value: "All-electric" },
       { label: "Route", value: "Design-assist" },
     ],
-    services: ["hvac-r", "plumbing", "vdc-bim"],
+    services: ["hvac-r", "plumbing"],
     accent: "steel",
   },
 ];
