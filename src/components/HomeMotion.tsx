@@ -5,12 +5,19 @@ import Image from "next/image";
 import { createMonogramRenderer } from "@/lib/monogram-renderer";
 
 const clamp=(n:number)=>Math.max(0,Math.min(1,n));
-const mix=(a:number,b:number,t:number)=>a+(b-a)*t;
 
 export function HomeMotion({children}:{children:React.ReactNode}) {
   const root=useRef<HTMLDivElement>(null), sculpture=useRef<HTMLDivElement>(null), canvas=useRef<HTMLCanvasElement>(null);
   const heroVideo=useRef<HTMLVideoElement>(null), videoLoaded=useRef(false);
   const [paused,setPaused]=useState(false), [loadVideo,setLoadVideo]=useState(false);
+  const [introPhase,setIntroPhase]=useState<"show"|"exit"|"done">("show");
+  const introDone=introPhase==="done";
+  useEffect(()=> {
+    const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const exit=window.setTimeout(()=>setIntroPhase("exit"),reduced?350:1550);
+    const done=window.setTimeout(()=>setIntroPhase("done"),reduced?700:2250);
+    return()=>{window.clearTimeout(exit);window.clearTimeout(done);};
+  },[]);
   useEffect(()=> {
     if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer=window.setTimeout(()=>setLoadVideo(true),300);
@@ -28,45 +35,35 @@ export function HomeMotion({children}:{children:React.ReactNode}) {
     return()=>{media.removeEventListener("change",sync);document.removeEventListener("visibilitychange",sync);};
   },[loadVideo,paused]);
   useEffect(()=> {
-    const el=root.current, figure=sculpture.current, surface=canvas.current;
-    if(!el||!figure||!surface) return;
-    const media=window.matchMedia("(prefers-reduced-motion: reduce)");
-    let reduced=media.matches, frame=0, active=true, last=0, time=0;
-    const pointer={x:0,y:0}, smooth={x:0,y:0,scroll:window.scrollY};
+    if(introDone) return;
+    const figure=sculpture.current, surface=canvas.current;
+    if(!figure||!surface) return;
+    const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const renderer=createMonogramRenderer(surface,()=>figure.classList.add("is-rendered"));
-    const sections={services:el.querySelector<HTMLElement>("#capabilities")!,about:el.querySelector<HTMLElement>("#our-story")!,method:el.querySelector<HTMLElement>("#method")!,benefits:el.querySelector<HTMLElement>("#benefits")!,footer:el.querySelector<HTMLElement>("#home-contact")!};
+    let frame=0;
+    const start=performance.now();
+    const draw=(now:number)=>{
+      const time=(now-start)*.001;
+      renderer?.render(reduced?0:Math.sin(time*1.2)*.045,reduced?0:Math.sin(time*.9)*.13,0);
+      frame=requestAnimationFrame(draw);
+    };
+    frame=requestAnimationFrame(draw);
+    return()=>{cancelAnimationFrame(frame);renderer?.dispose();};
+  },[introDone]);
+  useEffect(()=> {
+    const el=root.current;
+    if(!el) return;
+    const media=window.matchMedia("(prefers-reduced-motion: reduce)");
+    let reduced=media.matches, frame=0, active=true;
     const text=Array.from(el.querySelectorAll<HTMLElement>("[data-reveal]"));
     const words=Array.from(el.querySelectorAll<HTMLElement>("[data-scroll-words]"));
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target);}}),{threshold:.12});
     el.classList.add("motion-enabled");text.forEach(t=>observer.observe(t));
     const change=()=>{reduced=media.matches;};
-    const move=(event:PointerEvent)=>{pointer.x=(event.clientX/window.innerWidth-.5)*2;pointer.y=(event.clientY/window.innerHeight-.5)*2;};
-    const visibility=()=>{active=!document.hidden;last=0;if(active)frame=requestAnimationFrame(draw);else cancelAnimationFrame(frame);};
-    function draw(now:number) {
+    const visibility=()=>{active=!document.hidden;if(active)frame=requestAnimationFrame(draw);else cancelAnimationFrame(frame);};
+    function draw() {
       if(!active) return;
-      const dt=last?Math.min(now-last,40):16;last=now;
-      if(!paused&&!reduced)time+=dt*.001;
-      const viewportHeight=window.innerHeight, vw=window.innerWidth, mobile=vw<768||(vw<1024&&viewportHeight/vw>1.5), vh=mobile?Math.min(viewportHeight,980):viewportHeight, scroll=window.scrollY;
-      smooth.scroll=mix(smooth.scroll,scroll,.1);smooth.x=mix(smooth.x,pointer.x,.045);smooth.y=mix(smooth.y,pointer.y,.045);
-      const y=smooth.scroll;
-      const about=sections.about.offsetTop, method=sections.method.offsetTop, benefits=sections.benefits.offsetTop, footer=sections.footer.offsetTop;
-      let opacity=1,x=0,scale=1,vertical=0;
-      const servicesProgress=clamp((y-vh*.35)/(about-vh*.9));
-      scale=mix(mobile?.82:1,mobile?.55:.68,servicesProgress);x=mix(0,vw*.02,servicesProgress);
-      if(y>about-vh)opacity=1-clamp((y-(about-vh))/(vh*.45));
-      if(y>method-vh*.7&&y<benefits-vh*.3){
-        opacity=clamp((y-(method-vh*.7))/(vh*.45));
-        opacity*=1-clamp((y-(benefits-vh))/(vh*.6));
-        x=mobile?-vw*.14:-vw*.19;scale=mobile?.68:.9;vertical=vh*.03;
-      }
-      if(y>footer-vh*.6){opacity=clamp((y-(footer-vh*.6))/(vh*.45));scale=mobile?.34:.40;x=-vw*.31;vertical=vh*.16;}
-      if(mobile&&y>vh*.8&&y<method-vh*.7)opacity=0;
-      figure!.style.opacity=String(opacity);
-      figure!.style.transform=`translate3d(${x}px,${vertical}px,0) scale(${scale})`;
-      if(opacity>.01) {
-        const motion=paused||reduced?0:1;
-        renderer?.render(motion*(Math.sin(time*.37)*.045+smooth.y*.065),motion*(Math.sin(time*.3)*.14+Math.sin(y/vh*1.6)*.38+smooth.x*.10),motion*(Math.sin(y/vh*.85)*-.065+Math.sin(time*.4)*.02));
-      }
+      const vh=window.innerHeight, scroll=window.scrollY;
       words.forEach(block=> {
         const bounds=block.getBoundingClientRect();
         const progress=reduced?1:clamp((vh*.87-bounds.top)/(vh*.56));
@@ -76,20 +73,23 @@ export function HomeMotion({children}:{children:React.ReactNode}) {
       el!.style.setProperty("--hero-shift",`${reduced?0:Math.min(scroll*.10,80)}px`);
       frame=requestAnimationFrame(draw);
     }
-    media.addEventListener("change",change);window.addEventListener("pointermove",move,{passive:true});document.addEventListener("visibilitychange",visibility);
+    media.addEventListener("change",change);document.addEventListener("visibilitychange",visibility);
     frame=requestAnimationFrame(draw);
-    return()=>{cancelAnimationFrame(frame);observer.disconnect();renderer?.dispose();media.removeEventListener("change",change);window.removeEventListener("pointermove",move);document.removeEventListener("visibilitychange",visibility);};
+    return()=>{cancelAnimationFrame(frame);observer.disconnect();media.removeEventListener("change",change);document.removeEventListener("visibilitychange",visibility);};
   },[paused]);
-  return <div ref={root} className={`mav-home ${paused?"motion-paused":""}`}>
+  return <div ref={root} className={`mav-home ${paused?"motion-paused":""} ${!introDone?"intro-active":""}`}>
+    {!introDone && <div className={`mav-intro ${introPhase==="exit"?"is-exiting":""}`} aria-hidden="true">
+      <div ref={sculpture} className="mav-intro-mark" role="img" aria-label="Mavron copper M">
+        <div className="mav-intro-fallback"><Image src="/brand/mavron-mark-white.svg" alt="" fill priority sizes="70vw" /></div>
+        <canvas ref={canvas} aria-hidden="true" />
+      </div>
+      <span className="mav-intro-caption">MAVRON <span>MECHANICAL GROUP</span></span>
+    </div>}
     <div className="mav-hero-video" aria-hidden="true">
       <video ref={heroVideo} autoPlay={loadVideo&&!paused} muted loop playsInline preload="none" poster="/images/mavron-home-video-poster.webp">
         {loadVideo && <source src="/videos/mavron-home-hero.mp4" type="video/mp4" />}
       </video>
       <div className="mav-hero-video-shade" />
-    </div>
-    <div ref={sculpture} className="mav-sculpture" role="img" aria-label="Mavron copper metal M, animated in perspective from the supplied artwork">
-      <div className="mav-sculpture-fallback"><Image src="/brand/mavron-mark-white.svg" alt="" fill priority sizes="70vw" /></div>
-      <canvas ref={canvas} aria-hidden="true" />
     </div>
     {children}
     <button className="motion-toggle" onClick={()=>setPaused(v=>!v)} aria-pressed={paused} aria-label={paused?"Resume homepage motion":"Pause homepage motion"}>{paused?"▶":"Ⅱ"}<span>{paused?"Resume motion":"Pause motion"}</span></button>
