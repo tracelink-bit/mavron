@@ -130,6 +130,11 @@ export default function HomePage() {
       <div className="footer-top"><a className="back-top" href="#top"><span className="round-arrow">↑</span>Back to top</a><div className="footer-contact-intro"><span className="small-label">Start a conversation</span><a href={`mailto:${site.email}`}>{site.email}</a></div><nav aria-label="Footer"><Link href="/services">Services</Link><Link href="/about">About</Link><Link href="/projects">Projects</Link><Link href="/culture">Culture</Link><Link href="/process">Our process</Link><Link href="/careers">Careers</Link><Link href="/insights">Insights</Link><Link href="/contact">Contact</Link></nav></div>
       <div className="footer-main"><Image src="/brand/mavron-logo-white.svg" alt="Mavron Mechanical Group" width={670} height={500} className="home-footer-brand"/><div className="footer-cta"><h2 data-reveal>Let’s build<br/>what comes next.</h2><SplitLink href="/contact">Start your project</SplitLink></div></div>
       <div className="footer-legal"><span>© {new Date().getFullYear()} Mavron Mechanical Group</span><Link href="/privacy">Privacy policy</Link><span>Built to hold.</span></div>
+      <div className="footer-giant-signoff" aria-label="Mavron Mechanical Group">
+        <div className="footer-giant-top"><span>Mechanical excellence, built to last.</span><span>British Columbia · Canada</span></div>
+        <div className="footer-giant-wordmark" data-reveal><Image src="/brand/mavron-wordmark-black.svg" alt="Mavron" width={665} height={160} sizes="100vw" /></div>
+        <div className="footer-giant-bottom"><span>Mavron Mechanical Group</span><a href="#top">Back to top ↑</a></div>
+      </div>
     </footer>
   </HomeMotion>;
 }
