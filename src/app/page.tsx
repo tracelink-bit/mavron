@@ -121,11 +121,6 @@ export default function HomePage() {
       <div className="benefits-bottom"><span>Designed with purpose. Delivered with care.</span><Link href="/contact">Let’s talk <Arrow/></Link></div>
     </section>
 
-    <section className="home-image-grid home-pad" aria-label="Explore our work and people">
-      <Link className="home-image-card" href="/projects"><Image src="/images/mechanical.webp" alt="Precision pipework and copper-toned valves in a commercial mechanical plant room" fill sizes="(max-width:767px) 100vw, 50vw"/><div className="card-shade"/><div className="image-card-top"><h2 data-reveal>Our work.</h2><span className="round-arrow"><Arrow/></span></div><div className="image-card-bottom"><span className="small-label">Systems that make buildings work</span><p>Complex projects.<br/>Considered solutions.</p></div></Link>
-      <Link className="home-image-card" href="/culture"><Image src="/images/people/hvac-r-portrait.webp" alt="HVAC-R professional beside rooftop equipment" fill sizes="(max-width:767px) 100vw, 50vw"/><div className="card-shade"/><div className="image-card-top"><h2 data-reveal>Our people.</h2><span className="round-arrow"><Arrow/></span></div><div className="image-card-bottom"><span className="small-label">The craft behind every connection</span><p>Built by people<br/>who care.</p></div></Link>
-    </section>
-
     <footer className="mav-home-footer home-pad" id="home-contact">
       <div className="footer-top"><a className="back-top" href="#top"><span className="round-arrow">↑</span>Back to top</a><div className="footer-contact-intro"><span className="small-label">Start a conversation</span><a href={`mailto:${site.email}`}>{site.email}</a></div><nav aria-label="Footer"><Link href="/services">Services</Link><Link href="/about">About</Link><Link href="/projects">Projects</Link><Link href="/culture">Culture</Link><Link href="/process">Our process</Link><Link href="/careers">Careers</Link><Link href="/insights">Insights</Link><Link href="/contact">Contact</Link></nav></div>
       <div className="footer-main"><Image src="/brand/mavron-logo-white.svg" alt="Mavron Mechanical Group" width={670} height={500} className="home-footer-brand"/><div className="footer-cta"><h2 data-reveal>Let’s build<br/>what comes next.</h2><SplitLink href="/contact">Start your project</SplitLink></div></div>
