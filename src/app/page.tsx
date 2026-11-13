@@ -17,13 +17,6 @@ export const metadata: Metadata = pageMeta({
 function Arrow({className=""}:{className?:string}) { return <svg className={className} width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" strokeWidth="1.4" /></svg>; }
 function SplitLink({href,children,outline=false}:{href:string;children:React.ReactNode;outline?:boolean}) {return <Link href={href} className={`split-link ${outline?"split-link-outline":""}`}><span>{children}</span><span><Arrow /></span></Link>;}
 function Words({children}:{children:string}) {return <span data-scroll-words>{children.split(" ").map((word,i)=><span className="scroll-word" key={`${word}-${i}`}>{word}{" "}</span>)}</span>;}
-const benefits = [
-  ["One accountable team", "From early design to the final pressure test, your mechanical scope stays with people who know the whole project."],
-  ["Planning before installation", "We resolve routing, access and sequencing challenges early so crews can work efficiently on site."],
-  ["HVAC-R from start to finish", "From central plant and air distribution to final balancing, one team stays accountable for performance."],
-  ["People who know the trade", "Experienced tradespeople, engineers and apprentices bring care and practical intelligence to every connection."],
-  ["Support beyond handover", "Commissioning, maintenance and a dedicated aftercare team keep your building performing long after opening day."],
-];
 const fieldPhotos = [
   { src: "/images/home-field/installation-overhead.webp", alt: "Illustrative view of a mechanic on a scissor lift inspecting overhead mechanical pipework", label: "Overhead installation" },
   { src: "/images/home-field/commissioning-inspection.webp", alt: "Illustrative view of an HVAC technician inspecting an open air-handling unit", label: "System inspection" },
@@ -113,12 +106,6 @@ export default function HomePage() {
       <h2 className="method-title"><Words>Plan with care. Install with precision. Prove performance.</Words></h2>
       <div className="method-copy" data-reveal><span className="small-label">From first plan to lasting performance</span><p>Plan. Install.<br/>Commission. Care.</p><div className="muted">Every connection is considered before a crew touches the building. Our crews turn careful planning into efficient installations and systems that perform.</div><SplitLink href="/process" outline>Discover our process</SplitLink></div>
       <div className="method-footnote">One accountable team.<br/>A complete mechanical vision.</div>
-    </section>
-
-    <section className="mav-benefits" id="benefits">
-      <div className="benefits-heading"><span className="small-label" data-reveal>04 / A better way to build</span><h2><span data-reveal>The value</span><span data-reveal>of Mavron.</span></h2></div>
-      <ol className="benefits-list">{benefits.map(([title,body],i)=><li key={title} data-reveal><span className="circle-number">{i+1}</span><div><h3>{title}</h3><p>{body}</p></div></li>)}</ol>
-      <div className="benefits-bottom"><span>Designed with purpose. Delivered with care.</span><Link href="/contact">Let’s talk <Arrow/></Link></div>
     </section>
 
     <footer className="mav-home-footer home-pad" id="home-contact">
