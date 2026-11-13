@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { JsonLd } from "@/components/JsonLd";
 import { ContactForm } from "@/components/ContactForm";
+import { BrandReveal } from "@/components/BrandReveal";
 import { Breadcrumbs, Section, SectionHead } from "@/components/ui";
 import { offices, serviceAreas, site } from "@/lib/site";
 import { breadcrumbSchema, graph, pageMeta } from "@/lib/seo";
@@ -127,6 +128,7 @@ export default function ContactPage() {
           </aside>
         </div>
       </Section>
+      <BrandReveal />
     </>
   );
 }

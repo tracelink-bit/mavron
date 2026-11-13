@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { JsonLd } from "@/components/JsonLd";
+import { BrandReveal } from "@/components/BrandReveal";
 import { Breadcrumbs, ButtonLink, CTABand, Section, SectionHead } from "@/components/ui";
 import { jobs } from "@/content/company";
 import { site } from "@/lib/site";
@@ -125,6 +126,7 @@ export default function CareersPage() {
         secondaryHref="/culture"
         secondaryLabel="People & culture"
       />
+      <BrandReveal />
     </>
   );
 }
