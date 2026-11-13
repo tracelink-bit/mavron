@@ -88,6 +88,8 @@ export default function ContactPage() {
         </div>
       </Section>
 
+      <BrandReveal />
+
       <Section tone="raised" className="tm-contact-detail">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
           <div>
@@ -128,7 +130,6 @@ export default function ContactPage() {
           </aside>
         </div>
       </Section>
-      <BrandReveal />
     </>
   );
 }

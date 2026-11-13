@@ -74,6 +74,8 @@ export default function CareersPage() {
         </div>
       </Section>
 
+      <BrandReveal />
+
       <Section id="roles" tone="raised">
         <SectionHead kicker="Open roles" title={`${jobs.length} positions open`} />
         <div className="mt-12 divide-y divide-ink-700 border-y border-ink-700">
@@ -126,7 +128,6 @@ export default function CareersPage() {
         secondaryHref="/culture"
         secondaryLabel="People & culture"
       />
-      <BrandReveal />
     </>
   );
 }
