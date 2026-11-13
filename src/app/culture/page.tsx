@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import { EditorialPhoto } from "@/components/EditorialPhoto";
 import { JsonLd } from "@/components/JsonLd";
 import {
   Breadcrumbs,
   CTABand,
-  PageHero,
   Section,
   SectionHead,
 } from "@/components/ui";
@@ -32,11 +33,15 @@ export default function CulturePage() {
   return (
     <>
       <JsonLd data={graph(breadcrumbSchema(crumbs))} />
-      <PageHero
-        kicker="People & culture"
-        title="Every apprentice learns from the crew."
-        lead="Experienced tradespeople share the judgement behind every installation. We pair practical field experience with technical training and a strong safety culture."
-      />
+      <header className="tm-page-hero tm-culture-hero">
+        <Image src="/images/home-field/installation-team.webp" alt="Illustrative mechanical crew working together on overhead installation" fill priority sizes="100vw" className="tm-page-hero-image" />
+        <div className="tm-page-hero-shade" />
+        <div className="container-x tm-page-hero-content">
+          <p className="tm-eyebrow">People & culture</p>
+          <h1>Every apprentice<br />learns from the crew.</h1>
+          <p>Practical field experience, technical training and a strong safety culture shape how our people grow.</p>
+        </div>
+      </header>
       <Breadcrumbs items={crumbs} />
 
       <Section>
@@ -48,6 +53,20 @@ export default function CulturePage() {
               <p className="mt-3 text-sm leading-relaxed text-steel-400">{v.body}</p>
             </div>
           ))}
+        </div>
+        <div className="editorial-pair mt-12">
+          <EditorialPhoto
+            src="/images/people/hvac-r-portrait.webp"
+            alt="Illustrative portrait of an HVAC-R professional near rooftop equipment"
+            caption="Knowledge shared on the job"
+            className="editorial-photo-portrait"
+          />
+          <EditorialPhoto
+            src="/images/people/plumbing-portrait.webp"
+            alt="Illustrative portrait of a plumbing professional in a mechanical room"
+            caption="Skill built through practice"
+            className="editorial-photo-portrait"
+          />
         </div>
       </Section>
 
@@ -67,6 +86,13 @@ export default function CulturePage() {
           kicker="Safety"
           title="Safety is part of every work plan."
           lead="Mechanical construction involves work at height, lifting and complex shared spaces. Our crews plan access, review risks and coordinate with other trades before work begins."
+        />
+        <EditorialPhoto
+          src="/images/home-field/commissioning-inspection.webp"
+          alt="Illustrative technician inspecting HVAC equipment while wearing safety gear"
+          caption="Careful checks are part of the work"
+          className="editorial-photo-wide mt-10"
+          sizes="100vw"
         />
       </Section>
 

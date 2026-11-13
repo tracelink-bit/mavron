@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import { EditorialPhoto } from "@/components/EditorialPhoto";
 import { JsonLd } from "@/components/JsonLd";
-import { Breadcrumbs, CTABand, PageHero, Section, SectionHead } from "@/components/ui";
+import { Breadcrumbs, CTABand, Section, SectionHead } from "@/components/ui";
 import { processSteps } from "@/content/company";
 import { breadcrumbSchema, graph, pageMeta } from "@/lib/seo";
 
@@ -37,14 +39,32 @@ export default function ProcessPage() {
           })),
         })}
       />
-      <PageHero
-        kicker="The Mavron Method"
-        title="Plan carefully. Build with purpose."
-        lead="Five connected stages from planning to aftercare. The discipline is not the stages — everybody has stages. The discipline is refusing to release anything to the next one until the current one has actually closed."
-      />
+      <header className="tm-page-hero tm-process-hero">
+        <Image src="/images/insights/mechanical-completion.webp" alt="Illustrative mechanical installation and pipework in a commercial building" fill priority sizes="100vw" className="tm-page-hero-image" />
+        <div className="tm-page-hero-shade" />
+        <div className="container-x tm-page-hero-content">
+          <p className="tm-eyebrow">The Mavron Method</p>
+          <h1>Plan carefully.<br />Build with purpose.</h1>
+          <p>Five connected stages from planning through aftercare, with the details resolved before the next stage begins.</p>
+        </div>
+      </header>
       <Breadcrumbs items={crumbs} />
 
       <Section>
+        <div className="editorial-pair mb-14">
+          <EditorialPhoto
+            src="/images/insights/hydronic-electrification.webp"
+            alt="Illustrative mechanical plant with a technician checking equipment"
+            caption="01 / Understand the system"
+            className="editorial-photo-wide"
+          />
+          <EditorialPhoto
+            src="/images/home-field/installation-team.webp"
+            alt="Illustrative mechanics installing overhead services from a lift"
+            caption="02 / Coordinate the installation"
+            className="editorial-photo-wide"
+          />
+        </div>
         <div className="space-y-px overflow-hidden rounded-sm border border-ink-700 bg-ink-700">
           {processSteps.map((step) => (
             <div
@@ -87,6 +107,13 @@ export default function ProcessPage() {
           kicker="The gate that matters"
           title="Resolve the details before installation begins."
           lead="Early decisions about equipment, routes and access help crews work safely and reduce avoidable changes during construction."
+        />
+        <EditorialPhoto
+          src="/images/home-field/commissioning-gauges.webp"
+          alt="Illustrative technician checking HVAC commissioning gauges"
+          caption="03 / Test performance before handover"
+          className="editorial-photo-wide mt-10"
+          sizes="100vw"
         />
       </Section>
 

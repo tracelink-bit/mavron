@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { EditorialPhoto } from "@/components/EditorialPhoto";
 import { JsonLd } from "@/components/JsonLd";
 import {
   Breadcrumbs,
   ButtonLink,
   CTABand,
-  PageHero,
   Section,
   SectionHead,
   StatGrid,
@@ -31,11 +31,15 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd data={graph(breadcrumbSchema(crumbs), { "@type": "AboutPage", name: "About Mavron Mechanical Group" })} />
-      <PageHero
-        kicker="Company"
-        title="Two vans, a rented bay, and a stubborn opinion about coordination."
-        lead="Mavron started as a plumbing contractor that insisted on paying for coordination drawings before anyone else thought they were worth it. Sixteen years later that insistence is the whole business model."
-      />
+      <header className="tm-page-hero tm-about-hero">
+        <Image src="/images/construction.webp" alt="Illustrative British Columbia construction site at sunset" fill priority sizes="100vw" className="tm-page-hero-image" />
+        <div className="tm-page-hero-shade" />
+        <div className="container-x tm-page-hero-content">
+          <p className="tm-eyebrow">Company / About Mavron</p>
+          <h1>Built on better<br />coordination.</h1>
+          <p>From a rented bay in Burnaby to complex mechanical work across British Columbia, careful coordination has shaped how we build.</p>
+        </div>
+      </header>
       <Breadcrumbs items={crumbs} />
 
       <Section tone="raised" className="!py-16">
@@ -44,10 +48,18 @@ export default function AboutPage() {
 
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-          <SectionHead
-            kicker="Our story"
-            title="How we got from a bay in Burnaby to here."
-          />
+          <div>
+            <SectionHead
+              kicker="Our story"
+              title="How we got from a bay in Burnaby to here."
+            />
+            <EditorialPhoto
+              src="/images/home-field/installation-overhead.webp"
+              alt="Illustrative mechanics coordinating overhead pipe installation on site"
+              caption="The work behind every connection"
+              className="editorial-photo-tall mt-10"
+            />
+          </div>
           <ol className="relative border-l border-ink-600 pl-8">
             {story.map((s) => (
               <li key={s.year} className="relative pb-10 last:pb-0">
@@ -100,6 +112,13 @@ export default function AboutPage() {
           title="Six rules we actually run the company on."
           lead="Not a poster in the lunchroom. These are the decisions we defend when defending them costs us something."
         />
+        <EditorialPhoto
+          src="/images/home-field/air-distribution.webp"
+          alt="Illustrative finished overhead air distribution in a bright commercial space"
+          caption="Details that become part of the building"
+          className="editorial-photo-wide mt-10"
+          sizes="100vw"
+        />
         <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-ink-700 bg-ink-700 sm:grid-cols-2 lg:grid-cols-3">
           {values.map((v) => (
             <div key={v.title} className="bg-ink-900 p-7">
@@ -133,6 +152,13 @@ export default function AboutPage() {
 
       <Section>
         <SectionHead kicker="Where we are" title="Three locations, one coordination environment." />
+        <EditorialPhoto
+          src="/images/home-field/rooftop-unit.webp"
+          alt="Illustrative mechanics positioning a rooftop HVAC unit"
+          caption="Coordinated work across British Columbia"
+          className="editorial-photo-wide mt-10"
+          sizes="100vw"
+        />
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {offices.map((o) => (
             <div key={o.id} className="surface rounded-sm p-6">

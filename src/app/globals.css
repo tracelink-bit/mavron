@@ -83,6 +83,20 @@
 .brand-reveal{height:clamp(190px,26svh,320px);background-color:#f4f2e9;background-image:url('/brand/mavron-word-only-black.svg');background-repeat:no-repeat;background-position:center center;background-size:min(85vw,1900px) auto;background-attachment:fixed}
 @media(max-width:767px){.brand-reveal{height:160px;background-attachment:scroll;background-size:88vw auto}}
 
+.tm-about-hero .tm-page-hero-image{object-position:center 55%}
+.tm-process-hero .tm-page-hero-image{object-position:center 52%}
+.tm-culture-hero .tm-page-hero-image{object-position:center 42%}
+.editorial-photo{position:relative;isolation:isolate;overflow:hidden;min-height:280px;background:#28303d}
+.editorial-photo img{object-fit:cover;transition:transform .7s ease}
+.editorial-photo:hover img{transform:scale(1.025)}
+.editorial-photo::after{content:"";position:absolute;z-index:1;inset:48% 0 0;background:linear-gradient(transparent,rgba(12,16,18,.75));pointer-events:none}
+.editorial-photo figcaption{position:absolute;z-index:2;right:24px;bottom:23px;left:24px;color:#fff;font-size:13px;font-weight:600;letter-spacing:.045em}
+.editorial-photo-tall{height:clamp(390px,44vw,650px)}
+.editorial-photo-wide{height:clamp(290px,31vw,480px)}
+.editorial-photo-portrait{height:clamp(380px,47vw,650px)}
+.editorial-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media(max-width:767px){.editorial-pair{grid-template-columns:1fr;gap:12px}.editorial-photo-tall{height:380px}.editorial-photo-wide{height:280px}.editorial-photo-portrait{height:440px}.editorial-photo figcaption{right:16px;bottom:16px;left:16px;font-size:12px}}
+
 @keyframes rise {
   from { opacity: 0; transform: translate3d(0, 18px, 0); }
   to { opacity: 1; transform: none; }
