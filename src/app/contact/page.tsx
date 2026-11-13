@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { JsonLd } from "@/components/JsonLd";
 import { ContactForm } from "@/components/ContactForm";
-import { Breadcrumbs, PageHero, Section, SectionHead } from "@/components/ui";
+import { Breadcrumbs, Section, SectionHead } from "@/components/ui";
 import { offices, serviceAreas, site } from "@/lib/site";
 import { breadcrumbSchema, graph, pageMeta } from "@/lib/seo";
 
@@ -28,16 +29,22 @@ const routes = [
     title: "Start a project",
     body: "Tenders, design-assist packages, plant replacement in occupied buildings, or a problem you want a second opinion on.",
     contact: site.email,
+    image: "/images/home-field/installation-team.webp",
+    alt: "Illustrative mechanical installation team at work",
   },
   {
     title: "Careers",
     body: "Apprenticeships, journeypersons, HVAC-R technicians and project delivery. General applications welcome.",
     contact: site.careersEmail,
+    image: "/images/people/hvac-r-portrait.webp",
+    alt: "Illustrative portrait of an HVAC-R professional",
   },
   {
     title: "Partnerships",
     body: "Trade partners, suppliers, consultants and owners' representatives who want to work with our mechanical teams.",
     contact: site.partnersEmail,
+    image: "/images/people/trade-partners.webp",
+    alt: "Illustrative portrait of a mechanical trade partner",
   },
 ];
 
@@ -50,31 +57,37 @@ export default function ContactPage() {
           name: "Contact Mavron Mechanical Group",
         })}
       />
-      <PageHero
-        kicker="Contact"
-        title="Three ways in. Pick the one that fits."
-        lead={`Or just call ${site.phoneDisplay}. ${site.serviceHours}`}
-      />
+      <header className="tm-page-hero">
+        <Image src="/images/home-field/installation-overhead.webp" alt="Illustrative overhead mechanical installation" fill priority sizes="100vw" className="tm-page-hero-image" />
+        <div className="tm-page-hero-shade" />
+        <div className="container-x tm-page-hero-content">
+          <p className="tm-eyebrow">Contact / Mavron Mechanical Group</p>
+          <h1>Let&apos;s make<br />it happen.</h1>
+          <p>From first conversation to final commissioning, we&apos;re ready to hear what you&apos;re building.</p>
+          <a href="#contact-routes" className="tm-hero-link">Find your way in <span aria-hidden="true">↘</span></a>
+        </div>
+      </header>
       <Breadcrumbs items={crumbs} />
 
-      <Section>
-        <div className="grid gap-5 md:grid-cols-3">
+      <Section id="contact-routes" className="tm-mint-section">
+        <div className="tm-section-intro"><span>01 / Get in touch</span><h2>The right conversation starts here.</h2><p>Choose the team that fits your enquiry. We&apos;ll get it to the right people.</p></div>
+        <div className="tm-route-grid">
           {routes.map((r) => (
-            <div key={r.title} className="surface rounded-sm p-6">
-              <h2 className="text-lg font-semibold text-copper-300">{r.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-steel-400">{r.body}</p>
+            <article key={r.title} className="tm-route-card">
+              <div className="tm-route-image"><Image src={r.image} alt={r.alt} fill sizes="(max-width: 767px) 100vw, 33vw" /></div>
+              <div className="tm-route-copy"><h3>{r.title}</h3><p>{r.body}</p>
               <a
                 href={`mailto:${r.contact}`}
-                className="mt-5 inline-block text-sm text-steel-200 underline underline-offset-4 transition-colors hover:text-copper-300"
+                className="tm-route-link"
               >
-                {r.contact}
-              </a>
-            </div>
+                {r.contact} <span aria-hidden="true">↗</span>
+              </a></div>
+            </article>
           ))}
         </div>
       </Section>
 
-      <Section tone="raised" className="!pt-0">
+      <Section tone="raised" className="tm-contact-detail">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
           <div>
             <SectionHead kicker="Enquiry form" title="Send us the details." />
@@ -84,6 +97,7 @@ export default function ContactPage() {
           </div>
 
           <aside>
+            <div className="tm-aside-image"><Image src="/images/services/hvac-r.webp" alt="Illustrative HVAC-R mechanical work" fill sizes="(max-width: 1023px) 100vw, 40vw" /></div>
             <h2 className="kicker">Offices</h2>
             <div className="mt-6 space-y-5">
               {offices.map((o) => (

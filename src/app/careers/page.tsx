@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { JsonLd } from "@/components/JsonLd";
-import { Breadcrumbs, ButtonLink, CTABand, PageHero, Section, SectionHead } from "@/components/ui";
+import { Breadcrumbs, ButtonLink, CTABand, Section, SectionHead } from "@/components/ui";
 import { jobs } from "@/content/company";
 import { site } from "@/lib/site";
 import { breadcrumbSchema, graph, jobPostingSchema, pageMeta } from "@/lib/seo";
@@ -26,19 +27,31 @@ export default function CareersPage() {
   return (
     <>
       <JsonLd data={graph(breadcrumbSchema(crumbs), ...jobs.map(jobPostingSchema))} />
-      <PageHero
-        kicker="Careers"
-        title="We are hiring people who want to be tradespeople, not staff."
-        lead="Sponsored apprenticeships, ticket support and practical field training with experienced mechanical crews."
-      >
-        <div className="mt-9 flex flex-wrap gap-3">
+      <header className="tm-page-hero tm-careers-hero">
+        <Image src="/images/home-field/installation-team.webp" alt="Illustrative mechanical crew installing building systems" fill priority sizes="100vw" className="tm-page-hero-image" />
+        <div className="tm-page-hero-shade" />
+        <div className="container-x tm-page-hero-content">
+          <p className="tm-eyebrow">Careers / Build with us</p>
+          <h1>Make your<br />mark here.</h1>
+          <p>Learn from experienced crews. Build systems that matter. Grow a lasting mechanical career in British Columbia.</p>
+          <div className="mt-9 flex flex-wrap gap-3">
           <ButtonLink href="#roles">See open roles</ButtonLink>
           <ButtonLink href={`mailto:${site.careersEmail}`} variant="ghost">
             Send a general application
           </ButtonLink>
+          </div>
         </div>
-      </PageHero>
+      </header>
       <Breadcrumbs items={crumbs} />
+
+      <Section className="tm-mint-section tm-career-intro">
+        <div className="tm-section-intro"><span>01 / Life at Mavron</span><h2>Good work is built together.</h2><p>We value practical knowledge, careful execution and people who look out for their crew.</p></div>
+        <div className="tm-career-gallery">
+          <div><Image src="/images/people/hvac-r-portrait.webp" alt="Illustrative HVAC-R technician" fill sizes="(max-width: 767px) 100vw, 33vw" /></div>
+          <div><Image src="/images/people/plumbing-portrait.webp" alt="Illustrative plumbing professional" fill sizes="(max-width: 767px) 100vw, 33vw" /></div>
+          <div><Image src="/images/home-field/commissioning-inspection.webp" alt="Illustrative technician inspecting HVAC equipment" fill sizes="(max-width: 767px) 100vw, 33vw" /></div>
+        </div>
+      </Section>
 
       <Section>
         <SectionHead
