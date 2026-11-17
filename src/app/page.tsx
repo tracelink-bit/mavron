@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { HomeMotion } from "@/components/HomeMotion";
+import { HomeFieldVideo } from "@/components/HomeFieldVideo";
 import { PeopleCarousel } from "@/components/PeopleCarousel";
 import { JsonLd } from "@/components/JsonLd";
 import { services } from "@/content/services";
@@ -18,12 +19,12 @@ function Arrow({className=""}:{className?:string}) { return <svg className={clas
 function SplitLink({href,children,outline=false}:{href:string;children:React.ReactNode;outline?:boolean}) {return <Link href={href} className={`split-link ${outline?"split-link-outline":""}`}><span>{children}</span><span><Arrow /></span></Link>;}
 function Words({children}:{children:string}) {return <span data-scroll-words>{children.split(" ").map((word,i)=><span className="scroll-word" key={`${word}-${i}`}>{word}{" "}</span>)}</span>;}
 const fieldPhotos = [
-  { src: "/images/home-field/installation-overhead.webp", alt: "Illustrative view of a mechanic on a scissor lift inspecting overhead mechanical pipework", label: "Overhead installation" },
-  { src: "/images/home-field/commissioning-inspection.webp", alt: "Illustrative view of an HVAC technician inspecting an open air-handling unit", label: "System inspection" },
-  { src: "/images/home-field/air-distribution.webp", alt: "Illustrative view of suspended fabric-jacketed air distribution ducts", label: "Air distribution" },
-  { src: "/images/home-field/installation-team.webp", alt: "Illustrative view of two mechanics installing supported overhead pipework", label: "Coordinated installation" },
-  { src: "/images/home-field/rooftop-unit.webp", alt: "Illustrative view of tradespeople positioning a rooftop HVAC unit", label: "Rooftop plant" },
-  { src: "/images/home-field/commissioning-gauges.webp", alt: "Illustrative view of a technician checking HVAC commissioning gauges", label: "Testing and balancing" },
+  { src: "/images/home-field/installation-overhead.webp", alt: "Illustrative view of a mechanic on a scissor lift inspecting overhead mechanical pipework", label: "Overhead installation", videoSrc: "/videos/home-field/overhead-installation.mp4" },
+  { src: "/images/home-field/commissioning-inspection.webp", alt: "Illustrative view of an HVAC technician inspecting an open air-handling unit", label: "System inspection", videoSrc: "/videos/home-field/system-inspection.mp4" },
+  { src: "/images/home-field/air-distribution.webp", alt: "Illustrative view of suspended fabric-jacketed air distribution ducts", label: "Air distribution", videoSrc: "/videos/home-field/air-distribution.mp4" },
+  { src: "/images/home-field/installation-team.webp", alt: "Illustrative view of two mechanics installing supported overhead pipework", label: "Coordinated installation", videoSrc: "/videos/home-field/overhead-installation.mp4" },
+  { src: "/images/home-field/rooftop-unit.webp", alt: "Illustrative view of tradespeople positioning a rooftop HVAC unit", label: "Rooftop plant", videoSrc: "/videos/home-field/rooftop-plant.mp4" },
+  { src: "/images/home-field/commissioning-gauges.webp", alt: "Illustrative view of a technician checking HVAC commissioning gauges", label: "Testing and balancing", videoSrc: "/videos/home-field/testing-balancing.mp4" },
 ];
 
 export default function HomePage() {
@@ -70,16 +71,9 @@ export default function HomePage() {
         </div>
       </div>
       <div className="home-field-grid">
-        {fieldPhotos.map((photo, index) => (
-          <figure className="home-field-photo" key={photo.src} data-reveal>
-            <div className="home-field-frame">
-              <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 33vw" />
-            </div>
-            <figcaption><span>{String(index + 1).padStart(2, "0")}</span><span>{photo.label}</span></figcaption>
-          </figure>
-        ))}
+        {fieldPhotos.map((photo, index) => <HomeFieldVideo key={photo.src} {...photo} index={index} />)}
       </div>
-      <p className="home-field-note">Illustrative scenes of HVAC-R and mechanical work; these are not photographs of Mavron projects.</p>
+      <p className="home-field-note">Illustrative scenes and footage of HVAC-R and mechanical work; these do not depict Mavron projects.</p>
     </section>
 
     <section className="mav-capabilities home-pad" id="capabilities">
