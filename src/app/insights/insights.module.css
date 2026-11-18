@@ -68,10 +68,10 @@
 .curtain span {
   background: #071426;
   transform-origin: top;
-  animation: curtainOpen 1050ms cubic-bezier(.76, 0, .24, 1) 180ms both;
+  animation: curtainOpen 700ms cubic-bezier(.76, 0, .24, 1) 80ms both;
 }
 
-.curtain span:nth-child(even) { transform-origin: bottom; animation-delay: 310ms; }
+.curtain span:nth-child(even) { transform-origin: bottom; animation-delay: 150ms; }
 
 .heroContent {
   position: relative;
@@ -92,7 +92,7 @@
   font-weight: 800;
   letter-spacing: .32em;
   text-transform: uppercase;
-  animation: heroRise 850ms 650ms cubic-bezier(.16, 1, .3, 1) both;
+  animation: heroRise 650ms 200ms cubic-bezier(.16, 1, .3, 1) both;
 }
 
 .hero h1 {
@@ -100,7 +100,7 @@
   font-size: clamp(62px, 9vw, 156px);
   line-height: .86;
   letter-spacing: -.075em;
-  animation: heroRise 1000ms 760ms cubic-bezier(.16, 1, .3, 1) both;
+  animation: heroRise 750ms 260ms cubic-bezier(.16, 1, .3, 1) both;
 }
 
 .heroExplore {
@@ -115,7 +115,7 @@
   font-weight: 800;
   letter-spacing: .25em;
   text-transform: uppercase;
-  animation: heroRise 800ms 1000ms cubic-bezier(.16, 1, .3, 1) both;
+  animation: heroRise 650ms 350ms cubic-bezier(.16, 1, .3, 1) both;
 }
 
 .heroExplore span { font-size: 18px; font-weight: 400; letter-spacing: 0; transition: transform 250ms ease; }
@@ -167,7 +167,6 @@
 .introPhotos > div:hover img { transform: scale(1.04); }
 
 .page[data-motion-ready="true"] [data-insight-reveal]:not([data-visible="true"]) {
-  opacity: 0;
   transform: translateY(45px);
 }
 
@@ -273,7 +272,6 @@
 }
 
 .page[data-motion-ready="true"] .story:not([data-visible="true"]) .storyContent {
-  opacity: 0;
   transform: translateY(70px);
 }
 

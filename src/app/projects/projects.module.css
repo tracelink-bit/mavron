@@ -55,7 +55,7 @@
 .heroAside { padding-bottom: 7px; animation: heroEnter 950ms 180ms cubic-bezier(.16, 1, .3, 1) both; }
 
 .overline {
-  color: var(--accent);
+  color: #005AC8;
   font-size: clamp(11px, 1vw, 15px);
   font-weight: 750;
   letter-spacing: .22em;
@@ -132,7 +132,7 @@
 .disclaimer { max-width: 500px; margin-top: 17px; color: #64748B; font-size: 12px; line-height: 1.6; }
 .filters { display: grid; gap: 21px; margin-top: 32px; }
 .filters fieldset { min-width: 0; }
-.filters legend { margin-bottom: 10px; color: var(--accent); font-size: 10px; font-weight: 750; letter-spacing: .2em; text-transform: uppercase; }
+.filters legend { margin-bottom: 10px; color: #005AC8; font-size: 10px; font-weight: 750; letter-spacing: .2em; text-transform: uppercase; }
 .filterOptions { display: flex; flex-wrap: wrap; gap: 7px; }
 .filter, .activeFilter {
   padding: 8px 10px;
@@ -178,9 +178,9 @@
 .emptyState p { font-size: clamp(30px, 4vw, 60px); font-weight: 600; line-height: 1.05; }
 .emptyState button { align-self: start; margin-top: 24px; padding-bottom: 8px; border-bottom: 1px solid #F5F7FA; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
 
-.page[data-motion-ready="true"] [data-project-reveal]:not(.panel):not([data-visible="true"]) { opacity: 0; transform: translateY(28px); }
+.page[data-motion-ready="true"] [data-project-reveal]:not(.panel):not([data-visible="true"]) { transform: translateY(28px); }
 .page [data-project-reveal]:not(.panel) { transition: opacity 800ms ease, transform 950ms cubic-bezier(.16, 1, .3, 1); }
-.page[data-motion-ready="true"] .panel:not([data-visible="true"]) .panelContent { opacity: 0; transform: translateY(44px); }
+.page[data-motion-ready="true"] .panel:not([data-visible="true"]) .panelContent { transform: translateY(44px); }
 .page[data-motion-ready="true"] .panel:not([data-visible="true"]) .panelImage { transform: scale(1.11); }
 
 .closing { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 420px); align-items: end; gap: 60px; max-width: 1640px; margin: 0 auto; padding: clamp(96px, 10vw, 160px) clamp(26px, 5vw, 90px); }

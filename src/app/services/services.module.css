@@ -63,7 +63,7 @@
 
 .heroKicker,
 .overline {
-  color: var(--accent);
+  color: #005AC8;
   font-size: clamp(11px, 1vw, 15px);
   font-weight: 750;
   letter-spacing: .22em;
@@ -258,7 +258,6 @@
 }
 
 .page[data-motion-ready="true"] .panel:not([data-visible="true"]) .panelCopy {
-  opacity: 0;
   transform: translateY(44px);
 }
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type HomeFieldVideoProps = {
   src: string;
@@ -12,8 +12,24 @@ type HomeFieldVideoProps = {
 };
 
 export function HomeFieldVideo({ src, alt, label, videoSrc, index }: HomeFieldVideoProps) {
+  const frameRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    const frame = frameRef.current;
+    const video = videoRef.current;
+    if (!frame || !video || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        video.preload = "auto";
+        video.load();
+        observer.disconnect();
+      }
+    }, { rootMargin: "300px 0px" });
+    observer.observe(frame);
+    return () => observer.disconnect();
+  }, []);
 
   function playVideo() {
     const video = videoRef.current;
@@ -33,6 +49,7 @@ export function HomeFieldVideo({ src, alt, label, videoSrc, index }: HomeFieldVi
   return (
     <figure className="home-field-photo" data-reveal>
       <div
+        ref={frameRef}
         className={`home-field-frame home-field-video-frame${showVideo ? " is-playing" : ""}`}
         onMouseEnter={playVideo}
         onMouseLeave={stopVideo}
@@ -43,7 +60,7 @@ export function HomeFieldVideo({ src, alt, label, videoSrc, index }: HomeFieldVi
           src={videoSrc}
           muted
           playsInline
-          preload="auto"
+          preload="none"
           aria-hidden="true"
           onPlaying={() => setShowVideo(true)}
           onError={() => setShowVideo(false)}

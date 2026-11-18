@@ -5,8 +5,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
   images: {
-    formats: ["image/avif", "image/webp"],
-    deviceSizes: [360, 480, 640, 768, 1024, 1280, 1536, 1920],
+    // The site artwork is already compressed WebP. Serve it as a static asset
+    // so the first visitor does not wait for on-demand image conversion.
+    unoptimized: true,
   },
   async headers() {
     return [

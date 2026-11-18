@@ -14,13 +14,13 @@ export function HomeMotion({children}:{children:React.ReactNode}) {
   const introDone=introPhase==="done";
   useEffect(()=> {
     const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const exit=window.setTimeout(()=>setIntroPhase("exit"),reduced?350:1550);
-    const done=window.setTimeout(()=>setIntroPhase("done"),reduced?700:2250);
+    const exit=window.setTimeout(()=>setIntroPhase("exit"),reduced?250:850);
+    const done=window.setTimeout(()=>setIntroPhase("done"),reduced?500:1500);
     return()=>{window.clearTimeout(exit);window.clearTimeout(done);};
   },[]);
   useEffect(()=> {
     if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const timer=window.setTimeout(()=>setLoadVideo(true),300);
+    const timer=window.setTimeout(()=>setLoadVideo(true),1100);
     return()=>window.clearTimeout(timer);
   },[]);
   useEffect(()=> {
@@ -54,15 +54,16 @@ export function HomeMotion({children}:{children:React.ReactNode}) {
     const el=root.current;
     if(!el) return;
     const media=window.matchMedia("(prefers-reduced-motion: reduce)");
-    let reduced=media.matches, frame=0, active=true;
+    let reduced=media.matches, frame=0;
     const text=Array.from(el.querySelectorAll<HTMLElement>("[data-reveal]"));
     const words=Array.from(el.querySelectorAll<HTMLElement>("[data-scroll-words]"));
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target);}}),{threshold:.12});
     el.classList.add("motion-enabled");text.forEach(t=>observer.observe(t));
-    const change=()=>{reduced=media.matches;};
-    const visibility=()=>{active=!document.hidden;if(active)frame=requestAnimationFrame(draw);else cancelAnimationFrame(frame);};
+    const schedule=()=>{if(!frame && !document.hidden) frame=requestAnimationFrame(draw);};
+    const change=()=>{reduced=media.matches;schedule();};
+    const visibility=()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0;}else schedule();};
     function draw() {
-      if(!active) return;
+      frame=0;
       const vh=window.innerHeight, scroll=window.scrollY;
       words.forEach(block=> {
         const bounds=block.getBoundingClientRect();
@@ -71,11 +72,11 @@ export function HomeMotion({children}:{children:React.ReactNode}) {
         spans.forEach((word,i)=>{const fill=clamp(progress*(spans.length+3)-i);word.style.opacity=String(.24+fill*.76);word.style.transform=`translateY(${reduced?0:(1-fill)*12}px)`;});
       });
       el!.style.setProperty("--hero-shift",`${reduced?0:Math.min(scroll*.10,80)}px`);
-      frame=requestAnimationFrame(draw);
     }
     media.addEventListener("change",change);document.addEventListener("visibilitychange",visibility);
-    frame=requestAnimationFrame(draw);
-    return()=>{cancelAnimationFrame(frame);observer.disconnect();media.removeEventListener("change",change);document.removeEventListener("visibilitychange",visibility);};
+    window.addEventListener("scroll",schedule,{passive:true});window.addEventListener("resize",schedule);
+    schedule();
+    return()=>{cancelAnimationFrame(frame);observer.disconnect();media.removeEventListener("change",change);document.removeEventListener("visibilitychange",visibility);window.removeEventListener("scroll",schedule);window.removeEventListener("resize",schedule);};
   },[paused]);
   return <div ref={root} className={`mav-home ${paused?"motion-paused":""} ${!introDone?"intro-active":""}`}>
     {!introDone && <div className={`mav-intro ${introPhase==="exit"?"is-exiting":""}`} aria-hidden="true">
