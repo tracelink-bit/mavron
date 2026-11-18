@@ -17,7 +17,7 @@ export default async function OgImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           background:
-            "linear-gradient(135deg, #08090b 0%, #16191e 55%, #2a1310 100%)",
+            "linear-gradient(135deg, #071426 0%, #242830 62%, #005AC8 100%)",
           padding: 72,
           fontFamily: "sans-serif",
         }}
@@ -28,22 +28,22 @@ export default async function OgImage() {
               width: 64,
               height: 64,
               borderRadius: 6,
-              background: "#08090b",
-              border: "2px solid #45494b",
+              background: "#242830",
+              border: "2px solid #C0C0C0",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
             }}
           >
             <svg width="50" height="34" viewBox="0 0 450 295" fill="none" aria-hidden="true">
-              <path fill="#ffffff" d="M7,6 76,6 223,122 229,121 372,6 443,8 438,17 438,50 221,185 77,289 7,289 43,259 176,166 73,87 73,214 7,249Z M432,84 435,84 435,122 439,125 439,289 373,289 372,173 307,214 229,214Z" />
+              <path fill="#F5F7FA" d="M7,6 76,6 223,122 229,121 372,6 443,8 438,17 438,50 221,185 77,289 7,289 43,259 176,166 73,87 73,214 7,249Z M432,84 435,84 435,122 439,125 439,289 373,289 372,173 307,214 229,214Z" />
             </svg>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ color: "#f5f6f8", fontSize: 28, fontWeight: 800, letterSpacing: -0.5 }}>
+            <span style={{ color: "#F5F7FA", fontSize: 28, fontWeight: 800, letterSpacing: -0.5 }}>
               MAVRON
             </span>
-            <span style={{ color: "#9aa2ad", fontSize: 15, letterSpacing: 5 }}>
+            <span style={{ color: "#C0C0C0", fontSize: 15, letterSpacing: 5 }}>
               MECHANICAL GROUP
             </span>
           </div>
@@ -52,7 +52,7 @@ export default async function OgImage() {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <span
             style={{
-              color: "#f5f6f8",
+              color: "#F5F7FA",
               fontSize: 68,
               fontWeight: 800,
               lineHeight: 1.05,
@@ -62,14 +62,14 @@ export default async function OgImage() {
           >
             Mechanical systems, built to hold.
           </span>
-          <span style={{ color: "#c3c9d1", fontSize: 26, marginTop: 24, maxWidth: 880 }}>
+          <span style={{ color: "#C0C0C0", fontSize: 26, marginTop: 24, maxWidth: 880 }}>
             HVAC-R · Plumbing · Trade Partners · Aftercare
           </span>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div style={{ width: 120, height: 4, background: "linear-gradient(90deg,#a65b2c,#e08a45)" }} />
-          <span style={{ color: "#6b7280", fontSize: 20 }}>British Columbia, Canada</span>
+          <div style={{ width: 120, height: 4, background: "linear-gradient(90deg,#C0C0C0,#007BFF)" }} />
+          <span style={{ color: "#64748B", fontSize: 20 }}>British Columbia, Canada</span>
         </div>
       </div>
     ),

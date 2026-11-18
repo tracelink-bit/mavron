@@ -171,7 +171,7 @@ export function ContactForm({ initialRoute = "project" }: { initialRoute?: Route
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex items-center justify-center rounded-sm bg-forge-500 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-forge-400 disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex items-center justify-center rounded-sm bg-forge-500 px-6 py-3 text-sm font-semibold text-ink-950 transition-colors hover:bg-forge-400 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {status === "sending" ? "Sending…" : "Send enquiry"}
         </button>

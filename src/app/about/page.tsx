@@ -86,7 +86,7 @@ export default function AboutPage() {
             <SectionHead
               kicker="The monogram"
               title="A logo that comes apart the way our work does."
-              lead="The Mavron M is a mechanical assembly: red armour plating, a graphite chassis, copper reveals and steel actuator rods. It opens in a staggered sequence, holds, and reassembles — which is a reasonably honest description of how we build a mechanical scope."
+              lead="The Mavron M is a mechanical assembly: chrome-like panels, a graphite chassis, electric blue reveals and steel actuator rods. It opens in a staggered sequence, holds, and reassembles — which is a reasonably honest description of how we build a mechanical scope."
             />
             <div className="mt-8">
               <ButtonLink href="/process" variant="ghost">
@@ -100,7 +100,7 @@ export default function AboutPage() {
               alt="The Mavron monogram shown as an exploded assembly, with armour panels, actuator rods and bearing details separated to reveal the internal structure."
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-contain"
+              className="object-contain [filter:hue-rotate(210deg)_saturate(1.35)_brightness(1.16)]"
             />
           </div>
         </div>

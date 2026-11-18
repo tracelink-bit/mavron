@@ -79,7 +79,7 @@ export function HomeMotion({children}:{children:React.ReactNode}) {
   },[paused]);
   return <div ref={root} className={`mav-home ${paused?"motion-paused":""} ${!introDone?"intro-active":""}`}>
     {!introDone && <div className={`mav-intro ${introPhase==="exit"?"is-exiting":""}`} aria-hidden="true">
-      <div ref={sculpture} className="mav-intro-mark" role="img" aria-label="Mavron copper M">
+      <div ref={sculpture} className="mav-intro-mark" role="img" aria-label="Mavron metallic M">
         <div className="mav-intro-fallback"><Image src="/brand/mavron-mark-white.svg" alt="" fill priority sizes="70vw" /></div>
         <canvas ref={canvas} aria-hidden="true" />
       </div>
