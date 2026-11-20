@@ -59,7 +59,7 @@ export default function ContactPage() {
         })}
       />
       <header className="tm-page-hero">
-        <Image src="/images/home-field/installation-overhead.webp" alt="Illustrative overhead mechanical installation" fill priority sizes="100vw" className="tm-page-hero-image" />
+        <Image src="/images/contact-hero.webp" alt="Mechanical project manager reviewing building plans with a client in a plant room" fill priority sizes="100vw" className="tm-page-hero-image" />
         <div className="tm-page-hero-shade" />
         <div className="container-x tm-page-hero-content">
           <p className="tm-eyebrow">Contact / Mavron Mechanical Group</p>

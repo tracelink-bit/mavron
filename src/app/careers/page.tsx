@@ -29,7 +29,7 @@ export default function CareersPage() {
     <>
       <JsonLd data={graph(breadcrumbSchema(crumbs), ...jobs.map(jobPostingSchema))} />
       <header className="tm-page-hero tm-careers-hero">
-        <Image src="/images/home-field/installation-team.webp" alt="Illustrative mechanical crew installing building systems" fill priority sizes="100vw" className="tm-page-hero-image" />
+        <Image src="/images/careers-hero.webp" alt="Mechanical trades crew installing ventilation ductwork on a commercial site" fill priority sizes="100vw" className="tm-page-hero-image" />
         <div className="tm-page-hero-shade" />
         <div className="container-x tm-page-hero-content">
           <p className="tm-eyebrow">Careers / Build with us</p>
