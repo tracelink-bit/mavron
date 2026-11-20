@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-forge-500 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-ink-950"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-forge-500 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-steel-100"
         >
           Skip to content
         </a>

@@ -1,7 +1,7 @@
 .page {
   --paper: #F5F7FA;
   --ink: #242830;
-  --accent: #007BFF;
+  --accent: #1A2FFB;
   background: var(--paper);
   color: var(--ink);
   overflow: clip;
@@ -29,7 +29,7 @@
 .heroRing,
 .heroRing::after {
   position: absolute;
-  border: 1px solid #007BFF20;
+  border: 1px solid #1A2FFB20;
   border-radius: 50%;
   pointer-events: none;
 }
@@ -63,7 +63,7 @@
 
 .heroKicker,
 .overline {
-  color: #005AC8;
+  color: #1423C9;
   font-size: clamp(11px, 1vw, 15px);
   font-weight: 750;
   letter-spacing: .22em;
@@ -249,7 +249,7 @@
 }
 
 .dot:hover { background: #F5F7FA; transform: scale(1.3); }
-.activeDot { height: 27px; background: #007BFF; }
+.activeDot { height: 27px; background: #1A2FFB; }
 
 .panelCopy {
   width: 100%;
@@ -326,7 +326,7 @@
 }
 
 .panelLink span { font-size: 19px; font-weight: 400; letter-spacing: 0; }
-.panelLink:hover { color: #007BFF; border-color: #007BFF; }
+.panelLink:hover { color: #9AA3FF; border-color: #9AA3FF; }
 
 .closing {
   display: grid;
@@ -357,8 +357,8 @@
   transition: background-color 250ms ease, color 250ms ease;
 }
 
-.closingButton { background: var(--accent); color: #071426; }
-.closingButton:hover { background: #74BAFF; }
+.closingButton { background: var(--accent); color: #F5F7FA; }
+.closingButton:hover { background: #1423C9; }
 .closingSecondary { margin-left: 8px; padding-inline: 0; color: #64748B; }
 .closingSecondary:hover { color: var(--accent); }
 .closingButton span,

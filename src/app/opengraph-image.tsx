@@ -17,7 +17,7 @@ export default async function OgImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           background:
-            "linear-gradient(135deg, #071426 0%, #242830 62%, #005AC8 100%)",
+            "linear-gradient(135deg, #071426 0%, #242830 62%, #1423C9 100%)",
           padding: 72,
           fontFamily: "sans-serif",
         }}
@@ -68,7 +68,7 @@ export default async function OgImage() {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div style={{ width: 120, height: 4, background: "linear-gradient(90deg,#C0C0C0,#007BFF)" }} />
+          <div style={{ width: 120, height: 4, background: "linear-gradient(90deg,#C0C0C0,#1A2FFB)" }} />
           <span style={{ color: "#64748B", fontSize: 20 }}>British Columbia, Canada</span>
         </div>
       </div>

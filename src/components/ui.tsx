@@ -71,7 +71,7 @@ export function ButtonLink({
   const base =
     "inline-flex items-center justify-center gap-2 rounded-sm px-5 py-3 text-sm font-semibold transition-all duration-200";
   const variants = {
-    primary: "bg-forge-500 text-ink-900 hover:bg-forge-400",
+    primary: "bg-forge-500 text-steel-100 hover:bg-forge-400",
     ghost:
       "border border-ink-600 text-steel-100 hover:border-copper-500 hover:text-copper-300",
     quiet: "text-copper-300 hover:text-copper-200 px-0",
@@ -153,7 +153,7 @@ export function PageHero({
       <div className="grid-backdrop pointer-events-none absolute inset-0 opacity-50" aria-hidden="true" />
       <div
         className="pointer-events-none absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full opacity-25 blur-[120px]"
-        style={{ background: "radial-gradient(circle, #007BFF, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, #1A2FFB, transparent 70%)" }}
         aria-hidden="true"
       />
       <div className="container-x relative">
@@ -220,7 +220,7 @@ export function CTABand({
     <section className="relative overflow-hidden border-y border-ink-700 bg-ink-900">
       <div
         className="pointer-events-none absolute inset-y-0 right-0 w-1/2 opacity-20 blur-[100px]"
-        style={{ background: "radial-gradient(circle at 70% 50%, #007BFF, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle at 70% 50%, #1A2FFB, transparent 70%)" }}
         aria-hidden="true"
       />
       <div className="container-x relative flex flex-col gap-8 py-16 md:flex-row md:items-center md:justify-between md:py-20">
