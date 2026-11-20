@@ -5,10 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const portraits = [
-  { slug: "hvac-r", title: "HVAC-R", line: "Performance in every space.", image: "/images/people/hvac-r-portrait.webp", alt: "Illustrative portrait of an HVAC-R worker beside rooftop equipment" },
-  { slug: "plumbing", title: "Plumbing", line: "Built at every connection.", image: "/images/people/plumbing-portrait.webp", alt: "Illustrative portrait of a plumbing professional in front of mechanical pipework" },
-  { slug: "warranty-aftercare", title: "Warranty & Aftercare", line: "Care that carries on.", image: "/images/people/aftercare-portrait.webp", alt: "Illustrative portrait of an aftercare professional in a mechanical service area" },
-  { slug: "trade-partners", title: "Trade Partners", line: "Every trade working together.", image: "/images/people/trade-partners.webp", alt: "Illustrative portrait of a construction coordination lead on site" },
+  { slug: "hvac-r", title: "HVAC-R", line: "Performance in every space.", image: "/images/people/hvac-r-portrait.webp", video: "/videos/people/hvac-r.mp4", alt: "Illustrative portrait of an HVAC-R worker beside rooftop equipment" },
+  { slug: "plumbing", title: "Plumbing", line: "Built at every connection.", image: "/images/people/plumbing-portrait.webp", video: "/videos/people/plumbing.mp4", alt: "Illustrative portrait of a plumbing professional in front of mechanical pipework" },
+  { slug: "warranty-aftercare", title: "Warranty & Aftercare", line: "Care that carries on.", image: "/images/people/aftercare-portrait.webp", video: "/videos/people/aftercare.mp4", alt: "Illustrative portrait of an aftercare professional in a mechanical service area" },
+  { slug: "trade-partners", title: "Trade Partners", line: "Every trade working together.", image: "/images/people/trade-partners.webp", video: "/videos/people/trade-partners.mp4", alt: "Illustrative portrait of a construction coordination lead on site" },
 ] as const;
 
 const loopCards = [...portraits, ...portraits.slice(0, 4)];
@@ -41,11 +41,48 @@ export function PeopleCarousel() {
   }, []);
 
   useEffect(() => {
+    const track = trackRef.current;
+    const home = track?.closest(".mav-home");
+    if (!track || !home) return;
+    const videos = Array.from(track.querySelectorAll("video"));
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const visible = new Set<HTMLVideoElement>();
+    const sync = () => {
+      const shouldPlay = !document.hidden && !media.matches && !home.classList.contains("motion-paused");
+      videos.forEach((video) => {
+        if (shouldPlay && visible.has(video)) void video.play().catch(() => {});
+        else video.pause();
+      });
+    };
+    const viewportObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target as HTMLVideoElement;
+        if (entry.isIntersecting) visible.add(video);
+        else visible.delete(video);
+      });
+      sync();
+    }, { rootMargin: "300px 0px", threshold: 0.01 });
+    videos.forEach((video) => viewportObserver.observe(video));
+    const observer = new MutationObserver(sync);
+    observer.observe(home, { attributes: true, attributeFilter: ["class"] });
+    media.addEventListener("change", sync);
+    document.addEventListener("visibilitychange", sync);
+    sync();
+    return () => {
+      observer.disconnect();
+      viewportObserver.disconnect();
+      media.removeEventListener("change", sync);
+      document.removeEventListener("visibilitychange", sync);
+      videos.forEach((video) => video.pause());
+    };
+  }, []);
+
+  useEffect(() => {
     if (focusPaused || reducedMotion) return;
     const timer = window.setInterval(() => {
       if (document.hidden || document.querySelector(".mav-home.motion-paused")) return;
       setIndex((current) => current + 1);
-    }, 4100);
+    }, 7600);
     return () => window.clearInterval(timer);
   }, [focusPaused, reducedMotion]);
 
@@ -100,6 +137,9 @@ export function PeopleCarousel() {
             const active = position === index;
             const content = <>
               <Image src={portrait.image} alt={duplicate ? "" : portrait.alt} fill sizes="(max-width: 767px) 78vw, (max-width: 1100px) 35vw, 27vw" />
+              <video className="portrait-card-video" muted loop playsInline preload="none" poster={portrait.image} aria-hidden="true" onLoadedData={(event) => event.currentTarget.classList.add("is-ready")}>
+                <source src={portrait.video} type="video/mp4" />
+              </video>
               <span className="portrait-card-shade" aria-hidden="true" />
               <span className="portrait-card-copy"><span className="portrait-card-number">0{position % portraits.length + 1} / {String(portraits.length).padStart(2, "0")}</span><strong>{portrait.title}</strong><span>{portrait.line}</span></span>
             </>;
